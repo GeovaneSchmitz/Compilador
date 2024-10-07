@@ -635,9 +635,12 @@ int main() {
 
     StateMachine close_parenthesis(")");
 
-    StateMachine union_machine = StateMachine::union_machine({ident, int_constant, float_constant, string_constant, comparator,
-                                                              high_priority_op, low_priority_op, semicolon, assignment, comma,
-                                                              open_curly_brace, close_curly_brace, open_square_bracket, close_square_bracket,
+    StateMachine union_machine = StateMachine::union_machine({ident, int_constant, float_constant,
+                                                              string_constant, comparator,
+                                                              high_priority_op, low_priority_op,
+                                                              semicolon, assignment, comma,
+                                                              open_curly_brace, close_curly_brace,
+                                                              open_square_bracket, close_square_bracket,
                                                               open_parenthesis, close_parenthesis});
 
     StateMachine::determinize_machine(union_machine).print();
