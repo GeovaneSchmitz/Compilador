@@ -1,27 +1,124 @@
-#pragma once
+
 #include <limits.h>
 
+#include <cstdint>
+#include <iomanip>
+#include <iostream>
 #include <stdexcept>
 #include <string>
 #include <unordered_map>
 #include <unordered_set>
+#include <vector>
+
+std::unordered_map<uint64_t, std::string> state_to_string = {
+    {1, "Ident"},
+    {2, "Int constant"},
+    {3, "Float constant"},
+    {4, "String constant"},
+    {5, "Comparator"},
+    {6, "High priority operator"},
+    {7, "Low priority operator"},
+    {8, "Semicolon"},
+    {9, "Assignment"},
+    {10, "Comma"},
+    {11, "Open curly brace"},
+    {12, "Close curly brace"},
+    {13, "Open square bracket"},
+    {14, "Close square bracket"},
+    {15, "Open parenthesis"},
+    {16, "Close parenthesis"},
+};
 
 class StateMachine {
    public:
-    StateMachine();
+    explicit StateMachine();
+    StateMachine(const char *str);
+    StateMachine(const StateMachine &other);
+    StateMachine(const std::vector<StateMachine> &machines);
     ~StateMachine();
-    unsigned int add_state(bool is_initial = false, bool is_final = false,
-                           bool is_rollback = false);
-    unsigned int add_state();
+    uint64_t add_state(bool is_initial = false, bool is_final = false,
+                       bool is_rollback = false, uint64_t id = UINT_MAX);
 
-    unsigned int add_initial_state();
-    unsigned int add_final_state();
-    unsigned int add_rollback_state();
+    uint64_t add_initial_state();
+    uint64_t add_final_state(uint64_t id = UINT_MAX);
+    uint64_t add_rollback_state();
 
-    void add_transition(unsigned int state, const std::unordered_set<char> &symbols,
-                        unsigned int next_state);
+    void add_transition_set(uint64_t state, const std::unordered_set<char> &symbols,
+                            uint64_t next_state);
 
-    static const std::unordered_set<char> &char_to_set(const char *str) {
+    void add_transition(uint64_t state, uint64_t next_state);
+    void add_transition(uint64_t state, uint64_t symbol, uint64_t next_state);
+    void add_epson_transition(uint64_t state, uint64_t next_state);
+
+    std::unordered_map<uint64_t, std::unordered_set<uint64_t> *> *get_transitions(uint64_t state) {
+        if (transitions.find(state) == transitions.end()) {
+            return nullptr;
+        }
+        return transitions[state];
+    }
+
+    uint64_t get_state_count() { return state_count; }
+
+    bool is_state_initial(uint64_t state) { return state == initial_state_; }
+    bool is_state_final(uint64_t state) { return final_states.find(state) != final_states.end(); }
+    bool is_state_rollback(uint64_t state) { return rollback_states.find(state) != rollback_states.end(); }
+
+    std::unordered_set<uint64_t> get_final_state_ids(uint64_t state) {
+        auto it = final_states.find(state);
+        if (it == final_states.end()) {
+            return std::unordered_set<uint64_t>();
+        }
+        return it->second;
+    }
+
+    void add_final_state_id(uint64_t state, uint64_t id) {
+        auto it = final_states.find(state);
+        if (it == final_states.end()) {
+            std::unordered_set<uint64_t> set;
+            set.insert(id);
+            final_states[state] = set;
+        } else {
+            it->second.insert(id);
+        }
+    }
+
+    static uint64_t convert_symbol_to_map(char symbol) {
+        return static_cast<uint64_t>(symbol);
+    }
+
+    static char convert_map_to_symbol(uint64_t symbol) {
+        return static_cast<char>(symbol);
+    }
+
+    static uint64_t default_symbol() {
+        return 1 << 8;
+    }
+
+    static uint64_t epson_symbol() {
+        return 1 << 9;
+    }
+
+    static uint64_t digit_set() {
+        return 1 << 10;
+    }
+
+    static uint64_t lowercase_letter_set() {
+        return 1 << 11;
+    }
+
+    static uint64_t uppercase_letter_set() {
+        return 1 << 12;
+    }
+
+    static uint64_t letter_set() {
+        return 1 << 13;
+    }
+
+    static uint64_t alphanumeric_set() {
+        return 1 << 14;
+    }
+
+    static const std::unordered_set<char> char_to_set(const char *str) {
         std::unordered_set<char> set;
         const char *p = str;
         while (*p) {
@@ -31,38 +128,312 @@ class StateMachine {
         return set;
     }
 
-    static const std::unordered_set<char> &digit_set() { return char_to_set("0123456789"); }
-
-    static const std::unordered_set<char> &lowercase_letter_set() {
-        return char_to_set("abcdefghijklmnopqrstuvwxyz");
+    const uint64_t initial_state() const {
+        return this->initial_state_;
     }
 
-    static const std::unordered_set<char> &uppercase_letter_set() {
-        return char_to_set("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    void print_state_props(uint64_t state) {
+        bool open_bracket = false;
+        if (is_state_initial(state)) {
+            if (!open_bracket) {
+                open_bracket = true;
+                std::cout << "{";
+            }
+            std::cout << " Initial";
+        }
+        if (is_state_rollback(state)) {
+            if (!open_bracket) {
+                open_bracket = true;
+                std::cout << "{";
+            }
+            std::cout << " Rollback";
+        }
+        if (is_state_final(state)) {
+            if (!open_bracket) {
+                open_bracket = true;
+                std::cout << "{";
+            }
+            std::cout << " Final";
+        }
+        if (open_bracket) {
+            std::cout << " }";
+        }
+    }
+
+    void print_state(uint64_t state) {
+        std::cout << std::setw(10) << "State: " << state << " ";
+        print_state_props(state);
+        std::cout << std::endl;
+        if (is_state_final(state)) {
+            std::cout << std::setw(10) << "Final id: ";
+            for (auto id : final_states[state]) {
+                std::cout << state_to_string[id] << " ";
+            }
+            std::cout << std::endl;
+        }
+        auto transitions = get_transitions(state);
+        std::cout << std::setw(10) << "Transitions: " << std::endl;
+        if (transitions != nullptr) {
+            for (auto transition : *transitions) {
+                if (transition.first == default_symbol()) {
+                    std::cout << std::setw(10) << "Symbol: " << "Default" << std::endl;
+                } else if (transition.first == epson_symbol()) {
+                    std::cout << std::setw(10) << "Symbol: " << "Epson" << std::endl;
+                } else if (transition.first == digit_set()) {
+                    std::cout << std::setw(10) << "Symbol: " << "Digit" << std::endl;
+                } else if (transition.first == lowercase_letter_set()) {
+                    std::cout << std::setw(10) << "Symbol: " << "Lowercase letter" << std::endl;
+                } else if (transition.first == uppercase_letter_set()) {
+                    std::cout << std::setw(10) << "Symbol: " << "Uppercase letter" << std::endl;
+                } else if (transition.first == letter_set()) {
+                    std::cout << std::setw(10) << "Symbol: " << "Letter" << std::endl;
+                } else if (transition.first == alphanumeric_set()) {
+                    std::cout << std::setw(10) << "Symbol: " << "Alphanumeric" << std::endl;
+                } else {
+                    std::cout << std::setw(10) << "Symbol: " << convert_map_to_symbol(transition.first) << std::endl;
+                }
+                std::cout << std::setw(10) << "Next: ";
+                for (auto next_state : *transition.second) {
+                    std::cout << next_state << " ";
+                }
+                std::cout << std::endl
+                          << std::endl;
+            }
+        }
+
+        std::cout << std::endl;
+    }
+
+    void print() {
+        for (uint64_t i = 0; i < state_count; i++) {
+            print_state(i);
+        }
+    }
+
+    static StateMachine union_machine(const std::vector<StateMachine> &machines) {
+        StateMachine result;
+        uint64_t machine_id = 0;
+        auto initial_state = result.add_initial_state();
+        for (auto machine : machines) {
+            machine_id++;
+            std::unordered_map<uint64_t, uint64_t> state_map;
+            std::unordered_map<uint64_t, bool> visited;
+            std::vector<uint64_t> states_to_visit;
+            states_to_visit.push_back(machine.initial_state());
+
+            while (!states_to_visit.empty()) {
+                auto state = states_to_visit.back();
+                states_to_visit.pop_back();
+
+                if (visited[state]) {
+                    continue;
+                }
+
+                visited[state] = true;
+
+                if (state_map.find(state) == state_map.end()) {
+                    bool is_final = machine.is_state_final(state);
+                    bool is_rollback = machine.is_state_rollback(state);
+                    auto new_state = result.add_state(false, is_final, is_rollback, machine_id);
+                    state_map[state] = new_state;
+                }
+
+                auto new_state = state_map[state];
+
+                if (machine.is_state_initial(state)) {
+                    result.add_epson_transition(initial_state, new_state);
+                }
+                auto transitions = machine.get_transitions(state);
+                if (transitions != nullptr) {
+                    for (auto symbol_transition : *transitions) {
+                        auto next_states = symbol_transition.second;
+                        for (auto next_state : *next_states) {
+                            if (visited.find(next_state) == visited.end()) {
+                                states_to_visit.push_back(next_state);
+                            }
+                            if (state_map.find(next_state) == state_map.end()) {
+                                bool is_final = machine.is_state_final(next_state);
+                                bool is_rollback = machine.is_state_rollback(next_state);
+                                auto new_state_dest = result.add_state(false, is_final, is_rollback, machine_id);
+                                state_map[next_state] = new_state_dest;
+                            }
+
+                            result.add_transition(new_state, symbol_transition.first, state_map[next_state]);
+                        }
+                    }
+                }
+            }
+        }
+        return result;
+    }
+
+    static StateMachine determinize_machine(StateMachine &machine) {
+        StateMachine result;
+
+        std::unordered_map<uint64_t, std::unordered_set<uint64_t>> epson_closure;
+        bool has_change = true;
+        while (has_change) {
+            has_change = false;
+            for (uint64_t i = 0; i < machine.get_state_count(); i++) {
+                std::unordered_set<uint64_t> closure;
+                closure.insert(i);
+                auto transitions = machine.get_transitions(i);
+                if (transitions != nullptr) {
+                    auto epson_transitions = transitions->find(StateMachine::epson_symbol());
+                    if (epson_transitions != transitions->end()) {
+                        for (auto next_state : *epson_transitions->second) {
+                            closure.insert(next_state);
+                        }
+                    }
+                }
+                auto current_closure = epson_closure.find(i);
+                if (current_closure == epson_closure.end()) {
+                    epson_closure[i] = closure;
+                    has_change = true;
+                } else {
+                    auto initial_size = current_closure->second.size();
+                    for (auto state : closure) {
+                        current_closure->second.insert(state);
+                    }
+                    if (initial_size != current_closure->second.size()) {
+                        has_change = true;
+                    }
+                }
+            }
+        }
+
+        std::vector<std::unordered_set<uint64_t>> new_states;
+        std::unordered_map<std::size_t, uint64_t> state_map;
+        std::vector<std::size_t> states_to_visit;
+        std::unordered_set<std::size_t> visited;
+
+        auto initial_state = result.add_initial_state();
+        new_states.push_back(epson_closure[machine.initial_state()]);
+        state_map[new_states.size() - 1] = initial_state;
+        states_to_visit.push_back(new_states.size() - 1);
+
+        while (!states_to_visit.empty()) {
+            auto state = states_to_visit.back();
+            states_to_visit.pop_back();
+            if (visited.find(state) != visited.end()) {
+                continue;
+            }
+            visited.insert(state);
+
+            std::unordered_set<uint64_t> closure;
+            for (auto state : new_states[state]) {
+                for (auto next_state : epson_closure[state]) {
+                    closure.insert(next_state);
+                }
+            }
+
+            std::unordered_map<uint64_t, std::unordered_set<uint64_t> *> current_transitions;
+            for (auto state : closure) {
+                auto transitions = machine.get_transitions(state);
+                if (transitions != nullptr) {
+                    for (auto symbol_transition : *transitions) {
+                        if (symbol_transition.first == StateMachine::epson_symbol()) {
+                            continue;
+                        }
+
+                        auto set_it = current_transitions.find(symbol_transition.first);
+                        if (set_it == current_transitions.end()) {
+                            auto new_set = new std::unordered_set<uint64_t>();
+                            current_transitions[symbol_transition.first] = new_set;
+                            set_it = current_transitions.find(symbol_transition.first);
+                        }
+                        for (auto next_state : *symbol_transition.second) {
+                            for (auto next_state_closure : epson_closure[next_state]) {
+                                set_it->second->insert(next_state_closure);
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (auto it : current_transitions) {
+                auto next_state = it.second;
+                std::size_t next_state_index = 0;
+                bool found = false;
+
+                for (std::size_t i = 0; i < new_states.size(); i++) {
+                    if (new_states[i] == *next_state) {
+                        next_state_index = i;
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (!found) {
+                    new_states.push_back(*next_state);
+                    next_state_index = new_states.size() - 1;
+
+                    bool is_rollback = false;
+                    for (auto state : *next_state) {
+                        if (machine.is_state_rollback(state)) {
+                            is_rollback = true;
+                            break;
+                        }
+                    }
+
+                    auto new_state = result.add_state(false, false, is_rollback);
+                    state_map[next_state_index] = new_state;
+                    for (auto state : *next_state) {
+                        if (machine.is_state_final(state)) {
+                            auto ids = machine.get_final_state_ids(state);
+                            for (auto id : ids) {
+                                result.add_final_state_id(new_state, id);
+                            }
+                        }
+                    }
+                    states_to_visit.push_back(next_state_index);
+                }
+
+                result.add_transition(state_map[state], it.first, state_map[next_state_index]);
+            }
+
+            for (auto it : current_transitions) {
+                delete it.second;
+            }
+        }
+        return result;
     }
 
    private:
-    unsigned int initial_state;
-    unsigned int state_count;
-    std::unordered_set<unsigned int> final_states;
-    std::unordered_set<unsigned int> rollback_states;
-    std::unordered_map<unsigned int, std::unordered_map<char, unsigned int> *> transitions;
+    uint64_t initial_state_;
+    uint64_t state_count;
+    std::unordered_map<uint64_t, std::unordered_set<uint64_t>> final_states;
+    std::unordered_set<uint64_t> rollback_states;
+    std::unordered_map<uint64_t, std::unordered_map<uint64_t, std::unordered_set<uint64_t> *> *> transitions;
+};
+
+StateMachine::StateMachine() { this->initial_state_ = UINT_MAX; }
+
+StateMachine::~StateMachine() {
+    for (auto transition : this->transitions) {
+        for (auto symbol_transition : *transition.second) {
+            delete symbol_transition.second;
+        }
+        delete transition.second;
+    }
 }
 
-StateMachine::StateMachine() {
-    this->initial_state = UINT_MAX;
-}
-
-unsigned int StateMachine::add_state(bool is_initial, bool is_final, bool is_rollback) {
-    unsigned int state = this->state_count++;
+uint64_t StateMachine::add_state(bool is_initial, bool is_final, bool is_rollback, uint64_t id) {
+    uint64_t state = this->state_count++;
     if (is_initial) {
-        if (this->initial_state != UINT_MAX) {
+        if (this->initial_state_ != UINT_MAX) {
             throw std::invalid_argument("Initial state already exists");
         }
-        this->initial_state = state;
+        this->initial_state_ = state;
     }
     if (is_final) {
-        this->final_states.insert(state);
+        if (this->final_states.find(state) == this->final_states.end()) {
+            std::unordered_set<uint64_t> final_states;
+            final_states.insert(id);
+            this->final_states.insert({state, final_states});
+        } else {
+            this->final_states[state].insert(id);
+        }
     }
 
     if (is_rollback) {
@@ -71,39 +442,205 @@ unsigned int StateMachine::add_state(bool is_initial, bool is_final, bool is_rol
     return state;
 }
 
-unsigned int StateMachine::add_state() { return this->add_state(false, false, false); }
+StateMachine::StateMachine(const char *str) {
+    this->initial_state_ = UINT_MAX;
+    const char *p = str;
 
-unsigned int StateMachine::add_initial_state() { return this->add_state(true, false, false); }
+    if (p == nullptr) {
+        return;
+    }
 
-unsigned int StateMachine::add_final_state() { return this->add_state(false, true, false); }
+    const char *p_next = p + 1;
 
-unsigned int StateMachine::add_rollback_state() { return this->add_state(false, false, true); }
+    auto state = this->add_initial_state();
 
-void StateMachine::add_transition(unsigned int state, const std::unordered_set<char> &symbols,
-                                  unsigned int next_state) {
+    while (p != nullptr && p_next != nullptr && *p_next != '\0' && *p != '\0') {
+        auto new_state = this->add_state();
+        this->add_transition(state, StateMachine::convert_symbol_to_map(*p), new_state);
+        state = new_state;
+        p = p_next;
+        p_next++;
+    }
+
+    if (p != nullptr) {
+        this->add_transition(state, StateMachine::convert_symbol_to_map(*p), this->add_final_state());
+    }
+}
+
+StateMachine::StateMachine(const StateMachine &other) {
+    this->initial_state_ = other.initial_state_;
+    this->state_count = other.state_count;
+    this->final_states = other.final_states;
+
+    this->rollback_states = other.rollback_states;
+
+    for (auto transition : other.transitions) {
+        auto transition_map = new std::unordered_map<uint64_t, std::unordered_set<uint64_t> *>();
+        for (auto symbol_transition : *transition.second) {
+            auto next_states = new std::unordered_set<uint64_t>();
+            for (auto next_state : *symbol_transition.second) {
+                next_states->insert(next_state);
+            }
+            transition_map->insert({symbol_transition.first, next_states});
+        }
+        this->transitions[transition.first] = transition_map;
+    }
+}
+
+uint64_t StateMachine::add_initial_state() { return this->add_state(true, false, false); }
+
+uint64_t StateMachine::add_final_state(uint64_t id) { return this->add_state(false, true, false, id); }
+
+uint64_t StateMachine::add_rollback_state() { return this->add_state(false, false, true); }
+
+void StateMachine::add_transition(uint64_t state, uint64_t symbol, uint64_t next_state) {
     auto transition_map_iterator = transitions.find(state);
-    std::unordered_map<char, unsigned int> *transition_map = nullptr;
+
+    std::unordered_map<uint64_t, std::unordered_set<uint64_t> *> *transition_map;
+
     if (transition_map_iterator == transitions.end()) {
-        transition_map = new std::unordered_map<char, unsigned int>();
+        transition_map = new std::unordered_map<uint64_t, std::unordered_set<uint64_t> *>();
         transitions[state] = transition_map;
     } else {
         transition_map = transition_map_iterator->second;
     }
 
+    std::unordered_set<uint64_t> *next_states = nullptr;
+    auto next_states_iterator = transition_map->find(symbol);
+    if (next_states_iterator == transition_map->end()) {
+        next_states = new std::unordered_set<uint64_t>();
+        transition_map->insert({symbol, next_states});
+    } else {
+        next_states = next_states_iterator->second;
+    }
+    next_states->insert(next_state);
+}
+
+void StateMachine::add_transition_set(uint64_t state, const std::unordered_set<char> &symbols,
+                                      uint64_t next_state) {
     for (auto symbol : symbols) {
-        transition_map->insert({symbol, next_state});
+        add_transition(state, StateMachine::convert_symbol_to_map(symbol), next_state);
     }
 }
 
-int main() {
-    StateMachine ident();
+void StateMachine::add_epson_transition(uint64_t state, uint64_t next_state) {
+    add_transition(state, StateMachine::epson_symbol(), next_state);
+}
 
-    auto state_0 = ident.add_initial_state();
-    auto state_1 = ident.add_state();
-    auto state_2 = ident.add_state(false, true, true);
-    ident.add_transition(state_0, StateMachine.lowercase_letter_set, state_1);
-    ident.add_transition(state_1, StateMachine.lowercase_letter_set, state_1);
-    
+void StateMachine::add_transition(uint64_t state, uint64_t next_state) {
+    add_transition(state, StateMachine::default_symbol(), next_state);
+}
+
+int main() {
+    StateMachine ident;
+
+    auto ident_state_0 = ident.add_initial_state();
+    auto ident_state_1 = ident.add_state();
+    auto ident_state_2 = ident.add_state(false, true, true);
+
+    ident.add_transition(ident_state_0, StateMachine::letter_set(), ident_state_1);
+    ident.add_transition(ident_state_1, StateMachine::alphanumeric_set(), ident_state_1);
+    ident.add_transition(ident_state_1, ident_state_2);
+
+    StateMachine int_constant;
+
+    auto int_constant_state_0 = int_constant.add_initial_state();
+    auto int_constant_state_1 = int_constant.add_state();
+    auto int_constant_state_2 = int_constant.add_state(false, true, true);
+
+    int_constant.add_transition(int_constant_state_0, StateMachine::digit_set(), int_constant_state_1);
+    int_constant.add_transition(int_constant_state_1, StateMachine::digit_set(), int_constant_state_1);
+    int_constant.add_transition(int_constant_state_1, int_constant_state_2);
+
+    StateMachine float_constant;
+
+    auto float_constant_state_0 = float_constant.add_initial_state();
+    auto float_constant_state_1 = float_constant.add_state();
+    auto float_constant_state_2 = float_constant.add_state();
+    auto float_constant_state_3 = float_constant.add_state();
+    auto float_constant_state_4 = float_constant.add_state(false, true, true);
+
+    float_constant.add_transition(float_constant_state_0, StateMachine::digit_set(), float_constant_state_1);
+    float_constant.add_transition(float_constant_state_1, StateMachine::digit_set(), float_constant_state_1);
+    float_constant.add_transition_set(float_constant_state_1, {'.'}, float_constant_state_2);
+    float_constant.add_transition(float_constant_state_2, StateMachine::digit_set(), float_constant_state_3);
+    float_constant.add_transition(float_constant_state_3, StateMachine::digit_set(), float_constant_state_3);
+    float_constant.add_transition(float_constant_state_3, float_constant_state_4);
+
+    StateMachine string_constant;
+
+    auto string_constant_state_0 = string_constant.add_initial_state();
+    auto string_constant_state_1 = string_constant.add_state();
+    auto string_constant_state_2 = string_constant.add_state(false, true, false);
+
+    string_constant.add_transition_set(string_constant_state_0, {'"'}, string_constant_state_1);
+    string_constant.add_transition(string_constant_state_1, StateMachine::alphanumeric_set(), string_constant_state_1);
+    string_constant.add_transition_set(string_constant_state_1, {'"'}, string_constant_state_2);
+
+    StateMachine comparator;
+    auto comparator_state_0 = comparator.add_initial_state();
+    auto comparator_state_1 = comparator.add_state();
+    auto comparator_state_2 = comparator.add_final_state();
+    auto comparator_state_3 = comparator.add_state();
+    auto comparator_state_4 = comparator.add_final_state();
+    auto comparator_state_5 = comparator.add_state();
+    auto comparator_state_6 = comparator.add_final_state();
+    auto comparator_state_7 = comparator.add_state(false, true, true);
+    auto comparator_state_8 = comparator.add_final_state();
+    auto comparator_state_9 = comparator.add_state();
+    auto comparator_state_10 = comparator.add_state(false, true, true);
+
+    comparator.add_transition_set(comparator_state_0, {'!'}, comparator_state_1);
+    comparator.add_transition_set(comparator_state_1, {'='}, comparator_state_2);
+
+    comparator.add_transition_set(comparator_state_0, {'='}, comparator_state_3);
+    comparator.add_transition_set(comparator_state_3, {'='}, comparator_state_4);
+
+    comparator.add_transition_set(comparator_state_0, {'<'}, comparator_state_5);
+    comparator.add_transition_set(comparator_state_5, {'='}, comparator_state_6);
+    comparator.add_transition(comparator_state_5, comparator_state_7);
+
+    comparator.add_transition_set(comparator_state_0, {'>'}, comparator_state_8);
+    comparator.add_transition_set(comparator_state_8, {'='}, comparator_state_9);
+    comparator.add_transition(comparator_state_8, comparator_state_10);
+
+    StateMachine high_priority_op;
+
+    auto high_priority_op_state_0 = high_priority_op.add_initial_state();
+    auto high_priority_op_state_1 = high_priority_op.add_final_state();
+
+    high_priority_op.add_transition_set(high_priority_op_state_0, {'*', '/', '%'}, high_priority_op_state_1);
+
+    StateMachine low_priority_op;
+    auto low_priority_op_state_0 = low_priority_op.add_initial_state();
+    auto low_priority_op_state_1 = low_priority_op.add_final_state();
+
+    low_priority_op.add_transition_set(low_priority_op_state_0, {'+', '-'}, low_priority_op_state_1);
+
+    StateMachine semicolon(";");
+
+    StateMachine assignment("=");
+
+    StateMachine comma(",");
+
+    StateMachine open_curly_brace("{");
+
+    StateMachine close_curly_brace("}");
+
+    StateMachine open_square_bracket("[");
+
+    StateMachine close_square_bracket("]");
+
+    StateMachine open_parenthesis("(");
+
+    StateMachine close_parenthesis(")");
+
+    StateMachine union_machine = StateMachine::union_machine({ident, int_constant, float_constant, string_constant, comparator,
+                                                              high_priority_op, low_priority_op, semicolon, assignment, comma,
+                                                              open_curly_brace, close_curly_brace, open_square_bracket, close_square_bracket,
+                                                              open_parenthesis, close_parenthesis});
+
+    StateMachine::determinize_machine(union_machine).print();
 
     return 0;
 }
