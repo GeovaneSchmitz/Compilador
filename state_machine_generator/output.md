@@ -1,226 +1,406 @@
-# State Machine
+## State: 0 { Initial }
+### Transitions:
+- **s** -> State 26
+- **r** -> State 25
+- **p** -> State 23
+- **[** -> State 22
+- **n** -> State 21
+- **=** -> State 9
+- **e** -> State 20
+- **f** -> State 15
+- **+ -** -> State 7
+- **,** -> State 10
+- **>** -> State 6
+- **!** -> State 4
+- **(** -> State 3
+- **A-Z a c g-h j-m o q t-z** -> State 13
+- **)** -> State 18
+- **<** -> State 5
+- **d** -> State 19
+- **0-9** -> State 14
+- **"** -> State 1
+- **% * /** -> State 8
+- **;** -> State 12
+- **{** -> State 11
+- **]** -> State 24
+- **}** -> State 2
+- **i** -> State 17
+- **b** -> State 16
 
-## State: 0 (Initial)
-- **Transition on:** `*`, `/`, `%`  
-  **Next State:** 4 (Final, id: High priority operator)
-- **Transition on:** `,`  
-  **Next State:** 17 (Final, id: Comma)
-- **Transition on:** `)`  
-  **Next State:** 16 (Final, id: Close parenthesis)
-- **Transition on:** `(`  
-  **Next State:** 15 (Final, id: Open parenthesis)
-- **Transition on:** `!`  
-  **Next State:** 14
-- **Transition on:** `>`  
-  **Next State:** 13 (Final, id: Comparator)
-- **Transition on:** `[`  
-  **Next State:** 12 (Final, id: Open square bracket)
-- **Transition on:** `"`  
-  **Next State:** 1
-- **Transition on:** `<`  
-  **Next State:** 8
-- **Transition on:** `;`  
-  **Next State:** 2 (Final, id: Semicolon)
-- **Transition on:** `]`  
-  **Next State:** 3 (Final, id: Close square bracket)
-- **Transition on:** `Letter`  
-  **Next State:** 5
-- **Transition on:** `+`, `-`  
-  **Next State:** 6 (Final, id: Low priority operator)
-- **Transition on:** `{`  
-  **Next State:** 7 (Final, id: Open curly brace)
-- **Transition on:** `}`  
-  **Next State:** 10 (Final, id: Close curly brace)
-- **Transition on:** `Digit`  
-  **Next State:** 9
-- **Transition on:** `=`  
-  **Next State:** 11 (Final, id: Assignment)
+## State: 1 
+### Transitions:
+- **"** -> State 74
+- **0-9 A-Z a-z** -> State 1
 
----
+## State: 2 { Final }
+- **Final ID**: Close curly brace 
 
-## State: 1
-- **Transition on:** `"`  
-  **Next State:** 29 (Final, id: String constant)
-- **Transition on:** `Alphanumeric`  
-  **Next State:** 1 (Loop)
+## State: 3 { Final }
+- **Final ID**: Open parenthesis 
 
----
+## State: 4 
+### Transitions:
+- **=** -> State 73
 
-## State: 2 (Final)
-Final id: Semicolon  
-No transitions
+## State: 5 
+### Transitions:
+- **=** -> State 71
+- **Default** -> State 72
 
----
+## State: 6 { Final }
+- **Final ID**: Comparator 
+### Transitions:
+- **=** -> State 69
+- **Default** -> State 70
 
-## State: 3 (Final)
-Final id: Close square bracket  
-No transitions
+## State: 7 { Final }
+- **Final ID**: Low priority operator 
 
----
+## State: 8 { Final }
+- **Final ID**: High priority operator 
 
-## State: 4 (Final)
-Final id: High priority operator  
-No transitions
+## State: 9 { Final }
+- **Final ID**: Assignment 
+### Transitions:
+- **=** -> State 68
 
----
+## State: 10 { Final }
+- **Final ID**: Comma 
 
-## State: 5
-- **Transition on:** `Default`  
-  **Next State:** 28 (Rollback Final, id: Ident)
-- **Transition on:** `Alphanumeric`  
-  **Next State:** 5 (Loop)
+## State: 11 { Final }
+- **Final ID**: Open curly brace 
 
----
+## State: 12 { Final }
+- **Final ID**: Semicolon 
 
-## State: 6 (Final)
-Final id: Low priority operator  
-No transitions
+## State: 13 
+### Transitions:
+- **Default** -> State 27
+- **0-9 A-Z a-z** -> State 13
 
----
+## State: 14 
+### Transitions:
+- **.** -> State 64
+- **0-9** -> State 14
+- **Default** -> State 65
 
-## State: 7 (Final)
-Final id: Open curly brace  
-No transitions
+## State: 15 
+### Transitions:
+- **Default** -> State 27
+- **o** -> State 58
+- **l** -> State 59
+- **0-9 A-Z a-k m-n p-z** -> State 13
 
----
+## State: 16 
+### Transitions:
+- **Default** -> State 27
+- **r** -> State 54
+- **0-9 A-Z a-q s-z** -> State 13
 
-## State: 8
-- **Transition on:** `Default`  
-  **Next State:** 27 (Rollback Final, id: Comparator)
-- **Transition on:** `=`  
-  **Next State:** 26 (Final, id: Comparator)
+## State: 17 
+### Transitions:
+- **Default** -> State 27
+- **f** -> State 51
+- **n** -> State 52
+- **0-9 A-Z a-e g-m o-z** -> State 13
 
----
+## State: 18 { Final }
+- **Final ID**: Close parenthesis 
 
-## State: 9
-- **Transition on:** `.`  
-  **Next State:** 23
-- **Transition on:** `Digit`  
-  **Next State:** 9 (Loop)
-- **Transition on:** `Default`  
-  **Next State:** 22 (Rollback Final, id: Int constant)
+## State: 19 
+### Transitions:
+- **Default** -> State 27
+- **e** -> State 49
+- **0-9 A-Z a-d f-z** -> State 13
 
----
+## State: 20 
+### Transitions:
+- **Default** -> State 27
+- **l** -> State 46
+- **0-9 A-Z a-k m-z** -> State 13
 
-## State: 10 (Final)
-Final id: Close curly brace  
-No transitions
+## State: 21 
+### Transitions:
+- **Default** -> State 27
+- **e** -> State 44
+- **0-9 A-Z a-d f-z** -> State 13
 
----
+## State: 22 { Final }
+- **Final ID**: Open square bracket 
 
-## State: 11 (Final)
-Final id: Assignment  
-- **Transition on:** `=`  
-  **Next State:** 21 (Final, id: Comparator)
+## State: 23 
+### Transitions:
+- **Default** -> State 27
+- **r** -> State 40
+- **0-9 A-Z a-q s-z** -> State 13
 
----
+## State: 24 { Final }
+- **Final ID**: Close square bracket 
 
-## State: 12 (Final)
-Final id: Open square bracket  
-No transitions
+## State: 25 
+### Transitions:
+- **Default** -> State 27
+- **e** -> State 33
+- **0-9 A-Z a-d f-z** -> State 13
 
----
+## State: 26 
+### Transitions:
+- **t** -> State 28
+- **Default** -> State 27
+- **0-9 A-Z a-s u-z** -> State 13
 
-## State: 13 (Final)
-Final id: Comparator  
-- **Transition on:** `Default`  
-  **Next State:** 20 (Rollback Final, id: Comparator)
-- **Transition on:** `=`  
-  **Next State:** 19
+## State: 27 { Rollback Final }
+- **Final ID**: Ident 
 
----
+## State: 28 
+### Transitions:
+- **Default** -> State 27
+- **r** -> State 29
+- **0-9 A-Z a-q s-z** -> State 13
 
-## State: 14
-- **Transition on:** `=`  
-  **Next State:** 18 (Final, id: Comparator)
+## State: 29 
+### Transitions:
+- **Default** -> State 27
+- **i** -> State 30
+- **0-9 A-Z a-h j-z** -> State 13
 
----
+## State: 30 
+### Transitions:
+- **Default** -> State 27
+- **n** -> State 31
+- **0-9 A-Z a-m o-z** -> State 13
 
-## State: 15 (Final)
-Final id: Open parenthesis  
-No transitions
+## State: 31 
+### Transitions:
+- **Default** -> State 27
+- **0-9 A-Z a-f h-z** -> State 13
+- **g** -> State 32
 
----
+## State: 32 { Rollback Final }
+- **Final ID**: Reserved word string 
+### Transitions:
+- **Default** -> State 27
+- **0-9 A-Z a-z** -> State 13
 
-## State: 16 (Final)
-Final id: Close parenthesis  
-No transitions
+## State: 33 
+### Transitions:
+- **Default** -> State 27
+- **t** -> State 34
+- **a** -> State 35
+- **0-9 A-Z b-s u-z** -> State 13
 
----
+## State: 34 
+### Transitions:
+- **Default** -> State 27
+- **u** -> State 37
+- **0-9 A-Z a-t v-z** -> State 13
 
-## State: 17 (Final)
-Final id: Comma  
-No transitions
+## State: 35 
+### Transitions:
+- **Default** -> State 27
+- **d** -> State 36
+- **0-9 A-Z a-c e-z** -> State 13
 
----
+## State: 36 { Rollback Final }
+- **Final ID**: Reserved word read 
+### Transitions:
+- **Default** -> State 27
+- **0-9 A-Z a-z** -> State 13
 
-## State: 18 (Final)
-Final id: Comparator  
-No transitions
+## State: 37 
+### Transitions:
+- **Default** -> State 27
+- **r** -> State 38
+- **0-9 A-Z a-q s-z** -> State 13
 
----
+## State: 38 
+### Transitions:
+- **Default** -> State 27
+- **n** -> State 39
+- **0-9 A-Z a-m o-z** -> State 13
 
-## State: 19
-No transitions
+## State: 39 { Rollback Final }
+- **Final ID**: Reserved word return 
+### Transitions:
+- **Default** -> State 27
+- **0-9 A-Z a-z** -> State 13
 
----
+## State: 40 
+### Transitions:
+- **Default** -> State 27
+- **i** -> State 41
+- **0-9 A-Z a-h j-z** -> State 13
 
-## State: 20 (Rollback Final)
-Final id: Comparator  
-No transitions
+## State: 41 
+### Transitions:
+- **Default** -> State 27
+- **n** -> State 42
+- **0-9 A-Z a-m o-z** -> State 13
 
----
+## State: 42 
+### Transitions:
+- **Default** -> State 27
+- **t** -> State 43
+- **0-9 A-Z a-s u-z** -> State 13
 
-## State: 21 (Final)
-Final id: Comparator  
-No transitions
+## State: 43 { Rollback Final }
+- **Final ID**: Reserved word print 
+### Transitions:
+- **Default** -> State 27
+- **0-9 A-Z a-z** -> State 13
 
----
+## State: 44 
+### Transitions:
+- **Default** -> State 27
+- **w** -> State 45
+- **0-9 A-Z a-v x-z** -> State 13
 
-## State: 22 (Rollback Final)
-Final id: Int constant  
-No transitions
+## State: 45 { Rollback Final }
+- **Final ID**: Reserved word new 
+### Transitions:
+- **Default** -> State 27
+- **0-9 A-Z a-z** -> State 13
 
----
+## State: 46 
+### Transitions:
+- **Default** -> State 27
+- **s** -> State 47
+- **0-9 A-Z a-r t-z** -> State 13
 
-## State: 23
-- **Transition on:** `Digit`  
-  **Next State:** 24
+## State: 47 
+### Transitions:
+- **Default** -> State 27
+- **e** -> State 48
+- **0-9 A-Z a-d f-z** -> State 13
 
----
+## State: 48 { Rollback Final }
+- **Final ID**: Reserved word else 
+### Transitions:
+- **Default** -> State 27
+- **0-9 A-Z a-z** -> State 13
 
-## State: 24
-- **Transition on:** `Default`  
-  **Next State:** 25 (Rollback Final, id: Float constant)
-- **Transition on:** `Digit`  
-  **Next State:** 24 (Loop)
+## State: 49 
+### Transitions:
+- **Default** -> State 27
+- **f** -> State 50
+- **0-9 A-Z a-e g-z** -> State 13
 
----
+## State: 50 { Rollback Final }
+- **Final ID**: Reserved word def 
+### Transitions:
+- **Default** -> State 27
+- **0-9 A-Z a-z** -> State 13
 
-## State: 25 (Rollback Final)
-Final id: Float constant  
-No transitions
+## State: 51 { Rollback Final }
+- **Final ID**: Reserved word if 
+### Transitions:
+- **Default** -> State 27
+- **0-9 A-Z a-z** -> State 13
 
----
+## State: 52 
+### Transitions:
+- **t** -> State 53
+- **Default** -> State 27
+- **0-9 A-Z a-s u-z** -> State 13
 
-## State: 26 (Final)
-Final id: Comparator  
-No transitions
+## State: 53 { Rollback Final }
+- **Final ID**: Reserved word int 
+### Transitions:
+- **Default** -> State 27
+- **0-9 A-Z a-z** -> State 13
 
----
+## State: 54 
+### Transitions:
+- **Default** -> State 27
+- **e** -> State 55
+- **0-9 A-Z a-d f-z** -> State 13
 
-## State: 27 (Rollback Final)
-Final id: Comparator  
-No transitions
+## State: 55 
+### Transitions:
+- **Default** -> State 27
+- **a** -> State 56
+- **0-9 A-Z b-z** -> State 13
 
----
+## State: 56 
+### Transitions:
+- **Default** -> State 27
+- **k** -> State 57
+- **0-9 A-Z a-j l-z** -> State 13
 
-## State: 28 (Rollback Final)
-Final id: Ident  
-No transitions
+## State: 57 { Rollback Final }
+- **Final ID**: Reserved word break 
+### Transitions:
+- **Default** -> State 27
+- **0-9 A-Z a-z** -> State 13
 
----
+## State: 58 
+### Transitions:
+- **Default** -> State 27
+- **r** -> State 63
+- **0-9 A-Z a-q s-z** -> State 13
 
-## State: 29 (Final)
-Final id: String constant  
-No transitions
+## State: 59 
+### Transitions:
+- **Default** -> State 27
+- **o** -> State 60
+- **0-9 A-Z a-n p-z** -> State 13
+
+## State: 60 
+### Transitions:
+- **a** -> State 61
+- **Default** -> State 27
+- **0-9 A-Z b-z** -> State 13
+
+## State: 61 
+### Transitions:
+- **t** -> State 62
+- **Default** -> State 27
+- **0-9 A-Z a-s u-z** -> State 13
+
+## State: 62 { Rollback Final }
+- **Final ID**: Reserved word float 
+### Transitions:
+- **Default** -> State 27
+- **0-9 A-Z a-z** -> State 13
+
+## State: 63 { Rollback Final }
+- **Final ID**: Reserved word for 
+### Transitions:
+- **Default** -> State 27
+- **0-9 A-Z a-z** -> State 13
+
+## State: 64 
+### Transitions:
+- **0-9** -> State 66
+
+## State: 65 { Rollback Final }
+- **Final ID**: Int constant 
+
+## State: 66 
+### Transitions:
+- **0-9** -> State 66
+- **Default** -> State 67
+
+## State: 67 { Rollback Final }
+- **Final ID**: Float constant 
+
+## State: 68 { Final }
+- **Final ID**: Comparator 
+
+## State: 69 
+
+## State: 70 { Rollback Final }
+- **Final ID**: Comparator 
+
+## State: 71 { Final }
+- **Final ID**: Comparator 
+
+## State: 72 { Rollback Final }
+- **Final ID**: Comparator 
+
+## State: 73 { Final }
+- **Final ID**: Comparator 
+
+## State: 74 { Final }
+- **Final ID**: String constant 
+

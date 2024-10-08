@@ -8,8 +8,7 @@
             "type": "lldb-dap",
             "request": "launch",
             "name": "Debug",
-            "program": "${workspaceRoot}/state_machine1",
-            "args": ["3123123213 123213213123"],
+            "program": "${workspaceRoot}/state_machine_generator/state_machine",
             "env": [],
             "cwd": "${workspaceRoot}"
         }

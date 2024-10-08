@@ -1,4 +1,5 @@
 
+#include <bits/stdc++.h>
 #include <limits.h>
 
 #include <cstdint>
@@ -9,7 +10,6 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
-
 std::unordered_map<uint64_t, std::string> state_to_string = {
     {1, "Ident"},
     {2, "Int constant"},
@@ -27,17 +27,31 @@ std::unordered_map<uint64_t, std::string> state_to_string = {
     {14, "Close square bracket"},
     {15, "Open parenthesis"},
     {16, "Close parenthesis"},
+    {17, "Reserved word def"},
+    {18, "Reserved word break"},
+    {19, "Reserved word new"},
+    {20, "Reserved word return"},
+    {21, "Reserved word read"},
+    {22, "Reserved word print"},
+    {23, "Reserved word else"},
+    {24, "Reserved word if"},
+    {25, "Reserved word for"},
+    {26, "Reserved word int"},
+    {27, "Reserved word float"},
+    {28, "Reserved word string"},
+
 };
 
 class StateMachine {
    public:
     explicit StateMachine();
-    StateMachine(const char *str);
     StateMachine(const StateMachine &other);
     StateMachine(const std::vector<StateMachine> &machines);
+    StateMachine(std::string str, bool is_rollback);
     ~StateMachine();
-    uint64_t add_state(bool is_initial = false, bool is_final = false,
-                       bool is_rollback = false, uint64_t id = UINT_MAX);
+    uint64_t add_state(bool is_initial = false, bool is_final = false, bool is_rollback = false,
+                       uint64_t id = UINT_MAX);
+    static StateMachine state_machine_rollback(std::string str);
 
     uint64_t add_initial_state();
     uint64_t add_final_state(uint64_t id = UINT_MAX);
@@ -61,7 +75,9 @@ class StateMachine {
 
     bool is_state_initial(uint64_t state) { return state == initial_state_; }
     bool is_state_final(uint64_t state) { return final_states.find(state) != final_states.end(); }
-    bool is_state_rollback(uint64_t state) { return rollback_states.find(state) != rollback_states.end(); }
+    bool is_state_rollback(uint64_t state) {
+        return rollback_states.find(state) != rollback_states.end();
+    }
 
     std::unordered_set<uint64_t> get_final_state_ids(uint64_t state) {
         auto it = final_states.find(state);
@@ -82,40 +98,30 @@ class StateMachine {
         }
     }
 
-    static uint64_t convert_symbol_to_map(char symbol) {
-        return static_cast<uint64_t>(symbol);
+    static uint64_t convert_symbol_to_map(char symbol) { return static_cast<uint64_t>(symbol); }
+
+    static char convert_map_to_symbol(uint64_t symbol) { return static_cast<char>(symbol); }
+
+    static uint64_t default_symbol() { return 1 << 8; }
+
+    static uint64_t epson_symbol() { return 1 << 9; }
+
+    static std::unordered_set<char> digit_set() { return char_to_set("0123456789"); }
+
+    static std::unordered_set<char> lowercase_letter_set() {
+        return char_to_set("abcdefghijklmnopqrstuvwxyz");
     }
 
-    static char convert_map_to_symbol(uint64_t symbol) {
-        return static_cast<char>(symbol);
+    static std::unordered_set<char> uppercase_letter_set() {
+        return char_to_set("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
     }
 
-    static uint64_t default_symbol() {
-        return 1 << 8;
+    static std::unordered_set<char> letter_set() {
+        return char_to_set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
     }
 
-    static uint64_t epson_symbol() {
-        return 1 << 9;
-    }
-
-    static uint64_t digit_set() {
-        return 1 << 10;
-    }
-
-    static uint64_t lowercase_letter_set() {
-        return 1 << 11;
-    }
-
-    static uint64_t uppercase_letter_set() {
-        return 1 << 12;
-    }
-
-    static uint64_t letter_set() {
-        return 1 << 13;
-    }
-
-    static uint64_t alphanumeric_set() {
-        return 1 << 14;
+    static std::unordered_set<char> alphanumeric_set() {
+        return char_to_set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789");
     }
 
     static const std::unordered_set<char> char_to_set(const char *str) {
@@ -128,9 +134,7 @@ class StateMachine {
         return set;
     }
 
-    const uint64_t initial_state() const {
-        return this->initial_state_;
-    }
+    const uint64_t initial_state() const { return this->initial_state_; }
 
     void print_state_props(uint64_t state) {
         bool open_bracket = false;
@@ -161,43 +165,93 @@ class StateMachine {
     }
 
     void print_state(uint64_t state) {
-        std::cout << std::setw(10) << "State: " << state << " ";
+        std::cout << "## State: " << state << " ";
         print_state_props(state);
         std::cout << std::endl;
         if (is_state_final(state)) {
-            std::cout << std::setw(10) << "Final id: ";
+            std::cout << "- **Final ID**: ";
             for (auto id : final_states[state]) {
                 std::cout << state_to_string[id] << " ";
             }
             std::cout << std::endl;
         }
         auto transitions = get_transitions(state);
-        std::cout << std::setw(10) << "Transitions: " << std::endl;
         if (transitions != nullptr) {
+            std::cout << std::setw(15) << "### Transitions:" << std::endl;
+            std::unordered_map<uint64_t, std::vector<std::uint64_t>> transition_state_to_symbol;
+
             for (auto transition : *transitions) {
-                if (transition.first == default_symbol()) {
-                    std::cout << std::setw(10) << "Symbol: " << "Default" << std::endl;
-                } else if (transition.first == epson_symbol()) {
-                    std::cout << std::setw(10) << "Symbol: " << "Epson" << std::endl;
-                } else if (transition.first == digit_set()) {
-                    std::cout << std::setw(10) << "Symbol: " << "Digit" << std::endl;
-                } else if (transition.first == lowercase_letter_set()) {
-                    std::cout << std::setw(10) << "Symbol: " << "Lowercase letter" << std::endl;
-                } else if (transition.first == uppercase_letter_set()) {
-                    std::cout << std::setw(10) << "Symbol: " << "Uppercase letter" << std::endl;
-                } else if (transition.first == letter_set()) {
-                    std::cout << std::setw(10) << "Symbol: " << "Letter" << std::endl;
-                } else if (transition.first == alphanumeric_set()) {
-                    std::cout << std::setw(10) << "Symbol: " << "Alphanumeric" << std::endl;
-                } else {
-                    std::cout << std::setw(10) << "Symbol: " << convert_map_to_symbol(transition.first) << std::endl;
+                for (auto state : *transition.second) {
+                    auto it = transition_state_to_symbol.find(state);
+                    if (it == transition_state_to_symbol.end()) {
+                        transition_state_to_symbol.insert({state, std::vector<uint64_t>()});
+                    }
+                    transition_state_to_symbol[state].push_back(transition.first);
                 }
-                std::cout << std::setw(10) << "Next: ";
-                for (auto next_state : *transition.second) {
-                    std::cout << next_state << " ";
+            }
+            for (auto transition : transition_state_to_symbol) {
+                std::sort(transition.second.begin(), transition.second.end());
+
+                char first_symbol = convert_map_to_symbol(transition.second[0]);
+                char old_symbol = convert_map_to_symbol(transition.second[0]);
+                std::cout << "- **";
+                bool is_first = true;
+                for (auto symbol : transition.second) {
+                    if (symbol == default_symbol()) {
+                        if (!is_first) {
+                            std::cout << " ";
+                        } else {
+                            is_first = false;
+                        }
+                        std::cout << "Default";
+                    } else if (symbol == epson_symbol()) {
+                        if (!is_first) {
+                            std::cout << " ";
+                        } else {
+                            is_first = false;
+                        }
+                        std::cout << "Epson";
+                    } else {
+                        if (symbol - old_symbol > 1) {
+                            if (first_symbol != old_symbol) {
+                                if (!is_first) {
+                                    std::cout << " ";
+                                } else {
+                                    is_first = false;
+                                }
+                                std::cout << first_symbol << "-" << old_symbol;
+                            } else {
+                                if (!is_first) {
+                                    std::cout << " ";
+                                } else {
+                                    is_first = false;
+                                }
+                                std::cout << old_symbol;
+                            }
+                            first_symbol = convert_map_to_symbol(symbol);
+                        }
+                        old_symbol = convert_map_to_symbol(symbol);
+                    }
                 }
-                std::cout << std::endl
-                          << std::endl;
+
+                if (old_symbol != first_symbol) {
+                    if (!is_first) {
+                        std::cout << " ";
+                    } else {
+                        is_first = false;
+                    }
+                    std::cout << first_symbol << "-" << old_symbol;
+                } else if (old_symbol != convert_map_to_symbol(default_symbol()) &&
+                           old_symbol != convert_map_to_symbol(epson_symbol())) {
+                    if (!is_first) {
+                        std::cout << " ";
+                    } else {
+                        is_first = false;
+                    }
+                    std::cout << old_symbol;
+                }
+
+                std::cout << "** -> State " << transition.first << std::endl;
             }
         }
 
@@ -254,11 +308,13 @@ class StateMachine {
                             if (state_map.find(next_state) == state_map.end()) {
                                 bool is_final = machine.is_state_final(next_state);
                                 bool is_rollback = machine.is_state_rollback(next_state);
-                                auto new_state_dest = result.add_state(false, is_final, is_rollback, machine_id);
+                                auto new_state_dest =
+                                    result.add_state(false, is_final, is_rollback, machine_id);
                                 state_map[next_state] = new_state_dest;
                             }
 
-                            result.add_transition(new_state, symbol_transition.first, state_map[next_state]);
+                            result.add_transition(new_state, symbol_transition.first,
+                                                  state_map[next_state]);
                         }
                     }
                 }
@@ -404,7 +460,8 @@ class StateMachine {
     uint64_t state_count;
     std::unordered_map<uint64_t, std::unordered_set<uint64_t>> final_states;
     std::unordered_set<uint64_t> rollback_states;
-    std::unordered_map<uint64_t, std::unordered_map<uint64_t, std::unordered_set<uint64_t> *> *> transitions;
+    std::unordered_map<uint64_t, std::unordered_map<uint64_t, std::unordered_set<uint64_t> *> *>
+        transitions;
 };
 
 StateMachine::StateMachine() { this->initial_state_ = UINT_MAX; }
@@ -442,31 +499,6 @@ uint64_t StateMachine::add_state(bool is_initial, bool is_final, bool is_rollbac
     return state;
 }
 
-StateMachine::StateMachine(const char *str) {
-    this->initial_state_ = UINT_MAX;
-    const char *p = str;
-
-    if (p == nullptr) {
-        return;
-    }
-
-    const char *p_next = p + 1;
-
-    auto state = this->add_initial_state();
-
-    while (p != nullptr && p_next != nullptr && *p_next != '\0' && *p != '\0') {
-        auto new_state = this->add_state();
-        this->add_transition(state, StateMachine::convert_symbol_to_map(*p), new_state);
-        state = new_state;
-        p = p_next;
-        p_next++;
-    }
-
-    if (p != nullptr) {
-        this->add_transition(state, StateMachine::convert_symbol_to_map(*p), this->add_final_state());
-    }
-}
-
 StateMachine::StateMachine(const StateMachine &other) {
     this->initial_state_ = other.initial_state_;
     this->state_count = other.state_count;
@@ -489,7 +521,9 @@ StateMachine::StateMachine(const StateMachine &other) {
 
 uint64_t StateMachine::add_initial_state() { return this->add_state(true, false, false); }
 
-uint64_t StateMachine::add_final_state(uint64_t id) { return this->add_state(false, true, false, id); }
+uint64_t StateMachine::add_final_state(uint64_t id) {
+    return this->add_state(false, true, false, id);
+}
 
 uint64_t StateMachine::add_rollback_state() { return this->add_state(false, false, true); }
 
@@ -531,6 +565,32 @@ void StateMachine::add_transition(uint64_t state, uint64_t next_state) {
     add_transition(state, StateMachine::default_symbol(), next_state);
 }
 
+StateMachine::StateMachine(std::string str, bool rollback) {
+    this->initial_state_ = UINT_MAX;
+    const char *p = str.c_str();
+
+    if (p == nullptr) {
+        return;
+    }
+
+    const char *p_next = p + 1;
+
+    auto state = this->add_initial_state();
+
+    while (p != nullptr && p_next != nullptr && *p_next != '\0' && *p != '\0') {
+        auto new_state = this->add_state();
+        this->add_transition(state, StateMachine::convert_symbol_to_map(*p), new_state);
+        state = new_state;
+        p = p_next;
+        p_next++;
+    }
+
+    if (p != nullptr) {
+        this->add_transition(state, StateMachine::convert_symbol_to_map(*p),
+                             this->add_state(false, true, rollback));
+    }
+}
+
 int main() {
     StateMachine ident;
 
@@ -538,8 +598,8 @@ int main() {
     auto ident_state_1 = ident.add_state();
     auto ident_state_2 = ident.add_state(false, true, true);
 
-    ident.add_transition(ident_state_0, StateMachine::letter_set(), ident_state_1);
-    ident.add_transition(ident_state_1, StateMachine::alphanumeric_set(), ident_state_1);
+    ident.add_transition_set(ident_state_0, StateMachine::letter_set(), ident_state_1);
+    ident.add_transition_set(ident_state_1, StateMachine::alphanumeric_set(), ident_state_1);
     ident.add_transition(ident_state_1, ident_state_2);
 
     StateMachine int_constant;
@@ -548,8 +608,10 @@ int main() {
     auto int_constant_state_1 = int_constant.add_state();
     auto int_constant_state_2 = int_constant.add_state(false, true, true);
 
-    int_constant.add_transition(int_constant_state_0, StateMachine::digit_set(), int_constant_state_1);
-    int_constant.add_transition(int_constant_state_1, StateMachine::digit_set(), int_constant_state_1);
+    int_constant.add_transition_set(int_constant_state_0, StateMachine::digit_set(),
+                                    int_constant_state_1);
+    int_constant.add_transition_set(int_constant_state_1, StateMachine::digit_set(),
+                                    int_constant_state_1);
     int_constant.add_transition(int_constant_state_1, int_constant_state_2);
 
     StateMachine float_constant;
@@ -560,11 +622,15 @@ int main() {
     auto float_constant_state_3 = float_constant.add_state();
     auto float_constant_state_4 = float_constant.add_state(false, true, true);
 
-    float_constant.add_transition(float_constant_state_0, StateMachine::digit_set(), float_constant_state_1);
-    float_constant.add_transition(float_constant_state_1, StateMachine::digit_set(), float_constant_state_1);
+    float_constant.add_transition_set(float_constant_state_0, StateMachine::digit_set(),
+                                      float_constant_state_1);
+    float_constant.add_transition_set(float_constant_state_1, StateMachine::digit_set(),
+                                      float_constant_state_1);
     float_constant.add_transition_set(float_constant_state_1, {'.'}, float_constant_state_2);
-    float_constant.add_transition(float_constant_state_2, StateMachine::digit_set(), float_constant_state_3);
-    float_constant.add_transition(float_constant_state_3, StateMachine::digit_set(), float_constant_state_3);
+    float_constant.add_transition_set(float_constant_state_2, StateMachine::digit_set(),
+                                      float_constant_state_3);
+    float_constant.add_transition_set(float_constant_state_3, StateMachine::digit_set(),
+                                      float_constant_state_3);
     float_constant.add_transition(float_constant_state_3, float_constant_state_4);
 
     StateMachine string_constant;
@@ -574,7 +640,8 @@ int main() {
     auto string_constant_state_2 = string_constant.add_state(false, true, false);
 
     string_constant.add_transition_set(string_constant_state_0, {'"'}, string_constant_state_1);
-    string_constant.add_transition(string_constant_state_1, StateMachine::alphanumeric_set(), string_constant_state_1);
+    string_constant.add_transition_set(string_constant_state_1, StateMachine::alphanumeric_set(),
+                                       string_constant_state_1);
     string_constant.add_transition_set(string_constant_state_1, {'"'}, string_constant_state_2);
 
     StateMachine comparator;
@@ -609,39 +676,63 @@ int main() {
     auto high_priority_op_state_0 = high_priority_op.add_initial_state();
     auto high_priority_op_state_1 = high_priority_op.add_final_state();
 
-    high_priority_op.add_transition_set(high_priority_op_state_0, {'*', '/', '%'}, high_priority_op_state_1);
+    high_priority_op.add_transition_set(high_priority_op_state_0, {'*', '/', '%'},
+                                        high_priority_op_state_1);
 
     StateMachine low_priority_op;
     auto low_priority_op_state_0 = low_priority_op.add_initial_state();
     auto low_priority_op_state_1 = low_priority_op.add_final_state();
 
-    low_priority_op.add_transition_set(low_priority_op_state_0, {'+', '-'}, low_priority_op_state_1);
+    low_priority_op.add_transition_set(low_priority_op_state_0, {'+', '-'},
+                                       low_priority_op_state_1);
 
-    StateMachine semicolon(";");
+    StateMachine semicolon(";", false);
 
-    StateMachine assignment("=");
+    StateMachine assignment("=", false);
 
-    StateMachine comma(",");
+    StateMachine comma(",", false);
 
-    StateMachine open_curly_brace("{");
+    StateMachine open_curly_brace("{", false);
 
-    StateMachine close_curly_brace("}");
+    StateMachine close_curly_brace("}", false);
 
-    StateMachine open_square_bracket("[");
+    StateMachine open_square_bracket("[", false);
 
-    StateMachine close_square_bracket("]");
+    StateMachine close_square_bracket("]", false);
 
-    StateMachine open_parenthesis("(");
+    StateMachine open_parenthesis("(", false);
 
-    StateMachine close_parenthesis(")");
+    StateMachine close_parenthesis(")", false);
 
-    StateMachine union_machine = StateMachine::union_machine({ident, int_constant, float_constant,
-                                                              string_constant, comparator,
-                                                              high_priority_op, low_priority_op,
-                                                              semicolon, assignment, comma,
-                                                              open_curly_brace, close_curly_brace,
-                                                              open_square_bracket, close_square_bracket,
-                                                              open_parenthesis, close_parenthesis});
+    std::vector<std::string> reserved_words = {"def",  "break", "new", "return", "read",  "print",
+                                               "else", "if",    "for", "int",    "float", "string"};
+    std::vector<StateMachine> reserved_words_machines;
+    for (auto word : reserved_words) {
+        reserved_words_machines.push_back(StateMachine(word, true));
+    }
+
+    std::vector<StateMachine> machines = {ident,
+                                          int_constant,
+                                          float_constant,
+                                          string_constant,
+                                          comparator,
+                                          high_priority_op,
+                                          low_priority_op,
+                                          semicolon,
+                                          assignment,
+                                          comma,
+                                          open_curly_brace,
+                                          close_curly_brace,
+                                          open_square_bracket,
+                                          close_square_bracket,
+                                          open_parenthesis,
+                                          close_parenthesis};
+
+    std::vector<StateMachine> all_machines;
+    all_machines.insert(all_machines.end(), machines.begin(), machines.end());
+    all_machines.insert(all_machines.end(), reserved_words_machines.begin(),
+                        reserved_words_machines.end());
+    StateMachine union_machine = StateMachine::union_machine(all_machines);
 
     StateMachine::determinize_machine(union_machine).print();
 
