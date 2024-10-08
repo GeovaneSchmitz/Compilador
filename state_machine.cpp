@@ -1,6 +1,8 @@
 #include <cstdint>
 #include <cstring>
 #include <iostream>
+#include <list>
+
 class Token {
    public:
     enum class TokenType {
@@ -219,17 +221,35 @@ StateMachine::~StateMachine() {
 }
 
 int main(int argc, char *argv[]) {
-    std::string str = "int main() { return 0; }";
+    std::string str = "int main() {\n\treturn 0;\n}";
     StateMachine state_machine(str);
     
+    std::list<std::string> reserved_words = {
+        "def", "ident", "break", "new", "return", "read", "print",
+        "else", "if", "for", "int", "float", "string", "null"
+    };
+
     std::cout << "Input: " << str << std::endl << std::endl;
+                bool is_reserved = false;
 
     Token *token;
+    std::string *token_value;
+    bool is_reserved = false;
 
     while ((token = state_machine.getNextToken()) != nullptr) {
         switch (token->type()) {
             case Token::TokenType::kIdent:
-                std::cout << "Ident: " << token->value() << std::endl;
+                is_reserved = false;
+                token_value = new std::string(token->value());
+                for (auto rw : reserved_words) {
+                    if (rw == *token_value) {
+                        std::cout << "Reserved Word: " << *token_value << std::endl;
+                        is_reserved = true;
+                    }
+                }
+                if (!is_reserved)
+                    std::cout << "Ident: " << token->value() << std::endl;
+                delete token_value;
                 break;
             case Token::TokenType::kIntConstant:
                 std::cout << "Int Constant: " << token->value() << std::endl;
