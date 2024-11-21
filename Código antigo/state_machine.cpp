@@ -23,7 +23,6 @@ class Token {
         kOpenParenthesis,
         kCloseParenthesis
     };
-
     Token(TokenType type, char *start, char *end) {
         std::size_t len = end - start;
         this->p = new char[len + 1];
