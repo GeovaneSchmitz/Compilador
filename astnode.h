@@ -3,7 +3,7 @@
 #include <list>
 #include <string>
 #include "symbol.h"
-#include "context.h"
+#include "scope.h"
 class ASTNode
 {
 public:
@@ -11,8 +11,8 @@ public:
     virtual ~ASTNode() = 0;
 
 
-    virtual Symbol* gen_code(std::list<const std::string>*code, Context*context);
-    virtual Symbol* eval(Context*context);
+    virtual Symbol* gen_code(std::list<const std::string>*code, Context*scope);
+    virtual Symbol* eval(Context*scope);
 
 };
 

@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(Compiler main.cpp
-    context.h context.cpp
+    scope.h scope.cpp
     symbol.h symbol.cpp
     astnode.h astnode.cpp
     parser.h parser.cpp
