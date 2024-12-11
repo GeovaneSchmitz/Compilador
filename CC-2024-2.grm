@@ -1,0 +1,49 @@
+Gramática CC-2024-2 que servirá de base para o compilador.
+
+Terminais:
+    ident int_constant float_constant string_constant
+    def ( ) { } break ; int float string null
+    print read return if else for new 
+    [ ] + - * / % < > <= >= == !=
+
+NOTAS:
+    Na derivação de FUNCDEF, os parênteses NÃO são da BNF. São terminais.
+    Na derivação de FUNCCALL, os parênteses NÃO são da BNF. São terminais.
+    Na derivação de IFSTAT, a EXPRESSION está entre os terminais ( e ). Não são parênteses da BNF.
+    Na derivação de ALLOCEXPRESSION, o último + é da BNF e não um terminal.
+    Na derivação de FACTOR, NUMEXPRESSION está entre os terminais ( e ). Não são parênteses da BNF.
+
+####################################################################################################
+
+PROGRAM → (STATEMENT | FUNCLIST)?
+FUNCLIST → FUNCDEF FUNCLIST | FUNCDEF
+FUNCDEF → def ident(PARAMLIST) {STATELIST}
+PARAMLIST → ((int | float | string) ident, PARAMLIST | (int | float | string) ident)?
+
+STATEMENT → (VARDECL; | ATRIBSTAT; | PRINTSTAT; | READSTAT; | RETURNSTAT; |
+             IFSTAT | FORSTAT | {STATELIST} | break; | ;)
+
+VARDECL → (int | float | string) ident ([int_constant])*
+ATRIBSTAT → LVALUE = (EXPRESSION | ALLOCEXPRESSION | FUNCCALL)
+
+FUNCCALL → ident(PARAMLISTCALL)
+PARAMLISTCALL → (ident, PARAMLISTCALL | ident)?
+PRINTSTAT → print EXPRESSION
+READSTAT → read LVALUE
+RETURNSTAT → return
+IFSTAT → if (EXPRESSION) STATEMENT (else STATEMENT)?
+FORSTAT → for (ATRIBSTAT; EXPRESSION; ATRIBSTAT) STATEMENT
+
+STATELIST → STATEMENT (STATELIST)?
+ALLOCEXPRESSION → new (int | float | string) ([NUMEXPRESSION])+
+EXPRESSION → NUMEXPRESSION ((< | > | <= | >= | == | !=) NUMEXPRESSION)?
+
+NUMEXPRESSION → TERM ((+ | -) TERM)*
+TERM → UNARYEXPR ((* | / | %) UNARYEXPR)*
+UNARYEXPR → ((+ | -)?) FACTOR
+FACTOR → (int_constant | float_constant | string_constant | null |
+           LVALUE | (NUMEXPRESSION))
+
+LVALUE → ident ([NUMEXPRESSION])*
+
+####################################################################################################

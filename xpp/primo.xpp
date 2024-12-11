@@ -1,0 +1,13 @@
+print "Digite um número: ";
+read x;
+is_prime = 0;
+
+for (i = 0; i < x; i = i + 1){
+	if x % i == 0:
+		is_prime = 1;
+}
+
+if (is_prime == 1)
+	print "É primo";
+else
+	print "Não é primo";
