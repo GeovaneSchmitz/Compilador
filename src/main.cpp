@@ -3,7 +3,9 @@
 #include <iostream>
 #include <stdexcept>
 #include <string>
+
 #include "lexical_analyser.hpp"
+#include "syntactic_analyser.hpp"
 #include "log.hpp"
 
 /**
@@ -53,6 +55,16 @@ int main(int argc, char** argv) {
     main_log.write("Análise léxica completa.");
 
     main_log.write("Encerrando.");
+
+    syntactic_analyser::Grammar grammar;
+
+    syntactic_analyser::SyntacticAnalyser analyser(grammar);
+
+    std::string entrada = "def ident ( float ident , float ident , float ident , float ident ) { ident = ident + ident * ident + ( ident * ident * ident ) / ident ; print ident ; }";
+    analyser.analyse(entrada);
+
+    std::string entrada2 = "def ident ( float ident , float ident ) { if ( ident > ident ) print ident ; else print ident ; }";
+    analyser.analyse(entrada2);
 
     delete source;
     return EXIT_SUCCESS;

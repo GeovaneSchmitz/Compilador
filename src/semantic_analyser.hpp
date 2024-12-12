@@ -9,12 +9,11 @@ using lexical_analyser::Symbol;
 
 namespace semantic_analyser {
 
-    class Context {
+    class Scope {
         public:
             
-            Context() : global_scope_(this), parent_scope_(nullptr) {}
-
-            Context(Context *global_scope, Context *parent_scope) : global_scope_(global_scope), parent_scope_(parent_scope) {}
+            Scope() : global_scope_(this), parent_scope_(nullptr) {}
+            Scope(Scope *global_scope, Scope *parent_scope) : global_scope_(global_scope), parent_scope_(parent_scope) {}
 
             Symbol* resolve_symbol(const std::string symbol_name) const {
                 auto it = symbol_map_.find(symbol_name);
@@ -28,15 +27,15 @@ namespace semantic_analyser {
             }
 
 
-            Context* get_new_scope(){
-                return new Context(global_scope_, this);
+            Scope* get_new_scope(){
+                return new Scope(global_scope_, this);
             }
 
 
         private:
             bool is_global_;
-            Context* parent_scope_;
-            Context* global_scope_;
+            Scope* parent_scope_;
+            Scope* global_scope_;
             std::map<const std::string, Symbol*> symbol_map_;
         };
 
@@ -46,8 +45,8 @@ namespace semantic_analyser {
             ASTNode();
             virtual ~ASTNode() = 0;
 
-            virtual Symbol* gen_code(std::list<const std::string>*code, Context*scope);
-            virtual Symbol* eval(Context*scope);
+            virtual Symbol* gen_code(std::list<const std::string>*code, Scope*scope);
+            virtual Symbol* eval(Scope*scope);
 
     };
 
