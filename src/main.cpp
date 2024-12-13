@@ -60,10 +60,18 @@ int main(int argc, char** argv) {
 
     syntactic_analyser::SyntacticAnalyser analyser(grammar);
 
-    std::string entrada = "def ident ( float ident , float ident , float ident , float ident ) { ident = ident + ident * ident + ( ident * ident * ident ) / ident ; print ident ; }";
+    std::string entrada = "def ident(float ident, float ident, float ident, float ident) {\
+        ident = ident + ident*ident + (ident*ident*ident)/int_constant;\
+        print ident;\
+    }";
     analyser.analyse(entrada);
 
-    std::string entrada2 = "def ident ( float ident , float ident ) { if ( ident > ident ) print ident ; else print ident ; }";
+    std::string entrada2 = "def ident(float ident, float ident) {\
+        if (ident > ident)\
+            print string_constant;\
+        else\
+            print string_constant;\
+    }";
     analyser.analyse(entrada2);
 
     delete source;
