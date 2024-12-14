@@ -10,12 +10,14 @@ namespace lexical_analyser {
 LexicalAnalyser::LexicalAnalyser(std::string *str)
     : source_code{str},
       current_position{str->begin()},
-      reserved_words{{"def", TokenType::DEF},       {"break", TokenType::BREAK}, {"new", TokenType::NEW},
-                     {"return", TokenType::RETURN}, {"read", TokenType::READ},   {"print", TokenType::PRINT},
-                     {"else", TokenType::ELSE},     {"if", TokenType::IF},       {"for", TokenType::FOR},
-                     {"int", TokenType::INT},       {"float", TokenType::FLOAT}, {"string", TokenType::STRING},
-                     {"null", TokenType::NULL_TYPE}} {}
-
+      reserved_words{{"def", TokenType::RESERVED_WORD_DEF},       {"break", TokenType::RESERVED_WORD_BREAK},
+                     {"new", TokenType::RESERVED_WORD_NEW},       {"call", TokenType::RESERVED_WORD_CALL},
+                     {"null", TokenType::RESERVED_WORD_NULL},     {"return", TokenType::RESERVED_WORD_RETURN},
+                     {"read", TokenType::RESERVED_WORD_READ},     {"print", TokenType::RESERVED_WORD_PRINT},
+                     {"else", TokenType::RESERVED_WORD_ELSE},     {"if", TokenType::RESERVED_WORD_IF},
+                     {"for", TokenType::RESERVED_WORD_FOR},       {"int", TokenType::RESERVED_WORD_INT},
+                     {"float", TokenType::RESERVED_WORD_FLOAT},   {"string", TokenType::RESERVED_WORD_STRING},
+                     {"null", TokenType::RESERVED_WORD_NULL_TYPE}} {}
 LexicalAnalyser::~LexicalAnalyser() {}
 
 /**
@@ -157,7 +159,7 @@ Token *LexicalAnalyser::getNextToken() {
                 state = 4;
                 break;
             case '=':
-                state = 11;
+                state = 8;
                 break;
             default:
                 start = current_position;
@@ -169,71 +171,8 @@ Token *LexicalAnalyser::getNextToken() {
             case '"':
                 return new Token(TokenType::STRING_CONSTANT, start, current_position);
                 break;
-            case 'a':
-            case 'b':
-            case 'c':
-            case 'd':
-            case 'e':
-            case 'f':
-            case 'g':
-            case 'h':
-            case 'i':
-            case 'j':
-            case 'k':
-            case 'l':
-            case 'm':
-            case 'n':
-            case 'o':
-            case 'p':
-            case 'q':
-            case 'r':
-            case 's':
-            case 't':
-            case 'u':
-            case 'v':
-            case 'w':
-            case 'x':
-            case 'y':
-            case 'z':
-            case 'A':
-            case 'B':
-            case 'C':
-            case 'D':
-            case 'E':
-            case 'F':
-            case 'G':
-            case 'H':
-            case 'I':
-            case 'J':
-            case 'K':
-            case 'L':
-            case 'M':
-            case 'N':
-            case 'O':
-            case 'P':
-            case 'Q':
-            case 'R':
-            case 'S':
-            case 'T':
-            case 'U':
-            case 'V':
-            case 'W':
-            case 'X':
-            case 'Y':
-            case 'Z':
-            case '0':
-            case '1':
-            case '2':
-            case '3':
-            case '4':
-            case '5':
-            case '6':
-            case '7':
-            case '8':
-            case '9':
-                break;
             default:
-                return nullptr;
+                break;
             }
             break;
         case 2:
@@ -301,10 +240,16 @@ Token *LexicalAnalyser::getNextToken() {
             case '8':
             case '9':
                 break;
-            default:
+            default: {
                 current_position--;
+                std::string word(start, current_position);
+                auto it = reserved_words.find(word);
+                if (it != reserved_words.end()) {
+                    return new Token(it->second, start, current_position);
+                }
                 return new Token(TokenType::IDENT, start, current_position);
                 break;
+            }
             }
             break;
         case 3:
@@ -384,6 +329,16 @@ Token *LexicalAnalyser::getNextToken() {
             default:
                 current_position--;
                 return new Token(TokenType::FLOAT_CONSTANT, start, current_position);
+                break;
+            }
+        case 8:
+            switch (*current_position++) {
+            case '=':
+                return new Token(TokenType::COMPARATOR, start, current_position);
+                break;
+            default:
+                current_position--;
+                return new Token(TokenType::ASSIGNMENT, start, current_position);
                 break;
             }
         default:

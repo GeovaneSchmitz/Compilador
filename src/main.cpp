@@ -4,6 +4,7 @@
 #include <string>
 
 #include "lexical_analyser/lexical_analyser.hpp"
+#include "lexical_analyser/token.hpp"
 #include "log/log.hpp"
 #include "syntactic_analyser/syntactic_analyser.hpp"
 
@@ -39,29 +40,16 @@ int main(int argc, char **argv) {
     main_log.write("Fazendo análise léxica...");
 
     lexical_analyser::LexicalAnalyser lexis(&source_str);
+    lexis.getNextToken();
+    lexis.getNextToken();
 
     main_log.write("Análise léxica completa.");
 
     main_log.write("Encerrando.");
 
-    syntactic_analyser::Grammar grammar;
+    syntactic_analyser::SyntacticAnalyser analyser;
 
-    syntactic_analyser::SyntacticAnalyser analyser(grammar);
-
-    std::string entrada = "def ident(float ident, float ident, float ident, float ident) {\
-        ident = ident + ident*ident + (ident*ident*ident)/int_constant;\
-        print ident;\
-    }";
-
-    analyser.analyse(entrada);
-
-    std::string entrada2 = "def ident(float ident, float ident) {\
-        if (ident > ident)\
-            print string_constant;\
-        else\
-            print string_constant;\
-    }";
-    analyser.analyse(entrada2);
+    analyser.analyse(lexis);
 
     return EXIT_SUCCESS;
 }

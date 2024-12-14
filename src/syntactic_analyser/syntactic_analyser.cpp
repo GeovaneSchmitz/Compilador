@@ -1,332 +1,376 @@
 #include "syntactic_analyser.hpp"
-#include "grammar.hpp"
+#include "lexical_analyser/token_type.hpp"
+#include "syntactic_analyser/non_terminal.hpp"
+#include "syntactic_analyser/term.hpp"
 #include <iostream>
 #include <map>
-#include <string>
 #include <vector>
+
+using lexical_analyser::LexicalAnalyser;
+using lexical_analyser::Token;
+using lexical_analyser::TokenType;
 
 namespace syntactic_analyser {
 
-void SyntacticAnalyser::push(std::string &str) { this->stack_.push_back(str); }
-
-const std::string SyntacticAnalyser::pop() {
-    std::string back = this->stack_.back();
-    this->stack_.pop_back();
-    return back;
-}
-
-const std::vector<std::string> &SyntacticAnalyser::stack() const { return stack_; }
-
-const std::map<std::pair<std::string, std::string>, std::vector<std::string>> &SyntacticAnalyser::table() const {
+const std::map<std::pair<NonTerminal, TokenType>, std::vector<Term>> &SyntacticAnalyser::table() const {
     return table_;
 }
 
-SyntacticAnalyser::SyntacticAnalyser(const Grammar &grammar)
-    : log_("log/syntactic_analyser.log"),
-      grammar_(grammar) {
-    stack_.push_back("$");
-    stack_.push_back(grammar.non_terminals[0]);
+SyntacticAnalyser::SyntacticAnalyser()
+    : log_("log/syntactic_analyser.log") {
 
-    table_[std::make_pair("PROGRAM", "def")] = {"FUNCLIST"};
-    table_[std::make_pair("PROGRAM", "ident")] = {"STATEMENT"};
-    table_[std::make_pair("PROGRAM", "}")] = {"STATEMENT"};
-    table_[std::make_pair("PROGRAM", "int")] = {"STATEMENT"};
-    table_[std::make_pair("PROGRAM", "float")] = {"STATEMENT"};
-    table_[std::make_pair("PROGRAM", "string")] = {"STATEMENT"};
-    table_[std::make_pair("PROGRAM", ";")] = {"STATEMENT"};
-    table_[std::make_pair("PROGRAM", "break")] = {"STATEMENT"};
-    table_[std::make_pair("PROGRAM", "print")] = {"STATEMENT"};
-    table_[std::make_pair("PROGRAM", "read")] = {"STATEMENT"};
-    table_[std::make_pair("PROGRAM", "return")] = {"STATEMENT"};
-    table_[std::make_pair("PROGRAM", "for")] = {"STATEMENT"};
-    table_[std::make_pair("PROGRAM", "$")] = {""};
+    table_[std::make_pair(NonTerminal::PROGRAM, TokenType::RESERVED_WORD_DEF)] = {Term(NonTerminal::FUNCLIST)};
+    table_[std::make_pair(NonTerminal::PROGRAM, TokenType::IDENT)] = {Term(NonTerminal::STATEMENT)};
+    table_[std::make_pair(NonTerminal::PROGRAM, TokenType::CLOSE_CURLY_BRACE)] = {Term(NonTerminal::STATEMENT)};
+    table_[std::make_pair(NonTerminal::PROGRAM, TokenType::RESERVED_WORD_INT)] = {Term(NonTerminal::STATEMENT)};
+    table_[std::make_pair(NonTerminal::PROGRAM, TokenType::RESERVED_WORD_FLOAT)] = {Term(NonTerminal::STATEMENT)};
+    table_[std::make_pair(NonTerminal::PROGRAM, TokenType::RESERVED_WORD_STRING)] = {Term(NonTerminal::STATEMENT)};
+    table_[std::make_pair(NonTerminal::PROGRAM, TokenType::SEMICOLON)] = {Term(NonTerminal::STATEMENT)};
+    table_[std::make_pair(NonTerminal::PROGRAM, TokenType::RESERVED_WORD_BREAK)] = {Term(NonTerminal::STATEMENT)};
+    table_[std::make_pair(NonTerminal::PROGRAM, TokenType::RESERVED_WORD_PRINT)] = {Term(NonTerminal::STATEMENT)};
+    table_[std::make_pair(NonTerminal::PROGRAM, TokenType::RESERVED_WORD_READ)] = {Term(NonTerminal::STATEMENT)};
+    table_[std::make_pair(NonTerminal::PROGRAM, TokenType::RESERVED_WORD_RETURN)] = {Term(NonTerminal::STATEMENT)};
+    table_[std::make_pair(NonTerminal::PROGRAM, TokenType::RESERVED_WORD_FOR)] = {Term(NonTerminal::STATEMENT)};
+    table_[std::make_pair(NonTerminal::PROGRAM, TokenType::END_OF_FILE)] = {};
 
-    table_[std::make_pair("FUNCLIST", "def")] = {"FUNCDEF", "FUNCLIST'"};
+    table_[std::make_pair(NonTerminal::FUNCLIST, TokenType::RESERVED_WORD_DEF)] = {Term(NonTerminal::FUNCDEF),
+                                                                                   Term(NonTerminal::FUNCLIST_)};
 
-    table_[std::make_pair("FUNCLIST'", "def")] = {"FUNCDEF", "FUNCLIST'"};
-    table_[std::make_pair("FUNCLIST'", "$")] = {""};
+    table_[std::make_pair(NonTerminal::FUNCLIST_, TokenType::RESERVED_WORD_DEF)] = {Term(NonTerminal::FUNCDEF),
+                                                                                    Term(NonTerminal::FUNCLIST_)};
+    table_[std::make_pair(NonTerminal::FUNCLIST_, TokenType::END_OF_FILE)] = {};
 
-    table_[std::make_pair("FUNCDEF", "def")] = {"def", "ident", "(", "PARAMLIST", ")", "{", "STATELIST", "}"};
+    table_[std::make_pair(NonTerminal::FUNCDEF, TokenType::RESERVED_WORD_DEF)] = {
+        Term(TokenType::RESERVED_WORD_DEF), Term(TokenType::IDENT),
+        Term(TokenType::OPEN_PARENTHESIS),  Term(NonTerminal::PARAMLIST),
+        Term(TokenType::CLOSE_PARENTHESIS), Term(TokenType::OPEN_CURLY_BRACE),
+        Term(NonTerminal::STATELIST),       Term(TokenType::CLOSE_CURLY_BRACE)};
 
-    table_[std::make_pair("PARAMLIST", "int")] = {"int", "ident", "PARAMLIST'"};
-    table_[std::make_pair("PARAMLIST", "float")] = {"float", "ident", "PARAMLIST'"};
-    table_[std::make_pair("PARAMLIST", "string")] = {"string", "ident", "PARAMLIST'"};
+    table_[std::make_pair(NonTerminal::PARAMLIST, TokenType::RESERVED_WORD_INT)] = {
+        Term(TokenType::RESERVED_WORD_INT), Term(TokenType::IDENT), Term(NonTerminal::PARAMLIST_)};
+    table_[std::make_pair(NonTerminal::PARAMLIST, TokenType::RESERVED_WORD_FLOAT)] = {
+        Term(TokenType::RESERVED_WORD_FLOAT), Term(TokenType::IDENT), Term(NonTerminal::PARAMLIST_)};
+    table_[std::make_pair(NonTerminal::PARAMLIST, TokenType::RESERVED_WORD_STRING)] = {
+        Term(TokenType::RESERVED_WORD_STRING), Term(TokenType::IDENT), Term(NonTerminal::PARAMLIST_)};
 
-    table_[std::make_pair("PARAMLIST'", ")")] = {""};
-    table_[std::make_pair("PARAMLIST'", "int")] = {"PARAMLIST"};
-    table_[std::make_pair("PARAMLIST'", "float")] = {"PARAMLIST"};
-    table_[std::make_pair("PARAMLIST'", "string")] = {"PARAMLIST"};
-    table_[std::make_pair("PARAMLIST'", ",")] = {",", "PARAMLIST"};
+    table_[std::make_pair(NonTerminal::PARAMLIST_, TokenType::CLOSE_PARENTHESIS)] = {};
+    table_[std::make_pair(NonTerminal::PARAMLIST_, TokenType::RESERVED_WORD_INT)] = {Term(NonTerminal::PARAMLIST)};
+    table_[std::make_pair(NonTerminal::PARAMLIST_, TokenType::RESERVED_WORD_FLOAT)] = {Term(NonTerminal::PARAMLIST)};
+    table_[std::make_pair(NonTerminal::PARAMLIST_, TokenType::RESERVED_WORD_STRING)] = {Term(NonTerminal::PARAMLIST)};
+    table_[std::make_pair(NonTerminal::PARAMLIST_, TokenType::COMMA)] = {Term(TokenType::COMMA),
+                                                                         Term(NonTerminal::PARAMLIST)};
 
-    table_[std::make_pair("STATEMENT", "ident")] = {"ATRIBSTAT", ";"};
-    table_[std::make_pair("STATEMENT", "{")] = {"{", "STATELIST", "}"};
-    table_[std::make_pair("STATEMENT", "int")] = {"VARDECL", ";"};
-    table_[std::make_pair("STATEMENT", "float")] = {"VARDECL", ";"};
-    table_[std::make_pair("STATEMENT", "string")] = {"VARDECL", ";"};
-    table_[std::make_pair("STATEMENT", ";")] = {";"};
-    table_[std::make_pair("STATEMENT", "break")] = {"break", ";"};
-    table_[std::make_pair("STATEMENT", "print")] = {"PRINTSTAT", ";"};
-    table_[std::make_pair("STATEMENT", "read")] = {"READSTAT", ";"};
-    table_[std::make_pair("STATEMENT", "return")] = {"RETURNSTAT", ";"};
-    table_[std::make_pair("STATEMENT", "if")] = {"IFSTAT"};
-    table_[std::make_pair("STATEMENT", "for")] = {"FORSTAT"};
+    table_[std::make_pair(NonTerminal::STATEMENT, TokenType::IDENT)] = {Term(NonTerminal::ATRIBSTAT),
+                                                                        Term(TokenType::SEMICOLON)};
+    table_[std::make_pair(NonTerminal::STATEMENT, TokenType::OPEN_CURLY_BRACE)] = {
+        Term(TokenType::OPEN_CURLY_BRACE), Term(NonTerminal::STATELIST), Term(TokenType::CLOSE_CURLY_BRACE)};
+    table_[std::make_pair(NonTerminal::STATEMENT, TokenType::RESERVED_WORD_INT)] = {Term(NonTerminal::VARDECL),
+                                                                                    Term(TokenType::SEMICOLON)};
+    table_[std::make_pair(NonTerminal::STATEMENT, TokenType::RESERVED_WORD_FLOAT)] = {Term(NonTerminal::VARDECL),
+                                                                                      Term(TokenType::SEMICOLON)};
+    table_[std::make_pair(NonTerminal::STATEMENT, TokenType::RESERVED_WORD_STRING)] = {Term(NonTerminal::VARDECL),
+                                                                                       Term(TokenType::SEMICOLON)};
+    table_[std::make_pair(NonTerminal::STATEMENT, TokenType::SEMICOLON)] = {Term(TokenType::SEMICOLON)};
+    table_[std::make_pair(NonTerminal::STATEMENT, TokenType::RESERVED_WORD_BREAK)] = {
+        Term(TokenType::RESERVED_WORD_BREAK), Term(TokenType::SEMICOLON)};
+    table_[std::make_pair(NonTerminal::STATEMENT, TokenType::RESERVED_WORD_PRINT)] = {Term(NonTerminal::PRINTSTAT),
+                                                                                      Term(TokenType::SEMICOLON)};
+    table_[std::make_pair(NonTerminal::STATEMENT, TokenType::RESERVED_WORD_READ)] = {Term(NonTerminal::READSTAT),
+                                                                                     Term(TokenType::SEMICOLON)};
+    table_[std::make_pair(NonTerminal::STATEMENT, TokenType::RESERVED_WORD_RETURN)] = {Term(NonTerminal::RETURNSTAT),
+                                                                                       Term(TokenType::SEMICOLON)};
+    table_[std::make_pair(NonTerminal::STATEMENT, TokenType::RESERVED_WORD_IF)] = {Term(NonTerminal::IFSTAT)};
+    table_[std::make_pair(NonTerminal::STATEMENT, TokenType::RESERVED_WORD_FOR)] = {Term(NonTerminal::FORSTAT)};
 
-    table_[std::make_pair("VARDECL", "int")] = {"int", "ident", "OPVARDECL"};
-    table_[std::make_pair("VARDECL", "float")] = {"float", "ident", "OPVARDECL"};
-    table_[std::make_pair("VARDECL", "string")] = {"string", "ident", "OPVARDECL"};
+    table_[std::make_pair(NonTerminal::VARDECL, TokenType::RESERVED_WORD_INT)] = {
+        Term(TokenType::RESERVED_WORD_INT), Term(TokenType::IDENT), Term(NonTerminal::OPVARDECL)};
+    table_[std::make_pair(NonTerminal::VARDECL, TokenType::RESERVED_WORD_FLOAT)] = {
+        Term(TokenType::RESERVED_WORD_FLOAT), Term(TokenType::IDENT), Term(NonTerminal::OPVARDECL)};
+    table_[std::make_pair(NonTerminal::VARDECL, TokenType::RESERVED_WORD_STRING)] = {
+        Term(TokenType::RESERVED_WORD_STRING), Term(TokenType::IDENT), Term(NonTerminal::OPVARDECL)};
 
-    table_[std::make_pair("OPVARDECL", ";")] = {""};
-    table_[std::make_pair("OPVARDECL", "[")] = {"[", "int_constant", "]", ";"};
+    table_[std::make_pair(NonTerminal::OPVARDECL, TokenType::SEMICOLON)] = {};
+    table_[std::make_pair(NonTerminal::OPVARDECL, TokenType::OPEN_SQUARE_BRACKET)] = {
+        Term(TokenType::OPEN_SQUARE_BRACKET), Term(TokenType::INT_CONSTANT), Term(TokenType::CLOSE_SQUARE_BRACKET),
+        Term(TokenType::SEMICOLON)};
 
-    table_[std::make_pair("ATRIBSTAT", "ident")] = {"LVALUE", "=", "ATRIBSTAT'"};
+    table_[std::make_pair(NonTerminal::ATRIBSTAT, TokenType::IDENT)] = {
+        Term(NonTerminal::LVALUE), Term(TokenType::ASSIGNMENT), Term(NonTerminal::ATRIBSTAT_)};
 
-    table_[std::make_pair("ATRIBSTAT'", "ident")] = {"EXPRESSION"};
-    table_[std::make_pair("ATRIBSTAT'", "(")] = {"EXPRESSION"};
-    table_[std::make_pair("ATRIBSTAT'", "int_constant")] = {"EXPRESSION"};
-    table_[std::make_pair("ATRIBSTAT'", "call")] = {"FUNCCALL"};
-    table_[std::make_pair("ATRIBSTAT'", "new")] = {"ALLOCEXPRESSION"};
-    table_[std::make_pair("ATRIBSTAT'", "-")] = {"EXPRESSION"};
-    table_[std::make_pair("ATRIBSTAT'", "+")] = {"EXPRESSION"};
-    table_[std::make_pair("ATRIBSTAT'", "float_constant")] = {"EXPRESSION"};
-    table_[std::make_pair("ATRIBSTAT'", "string_constant")] = {"EXPRESSION"};
-    table_[std::make_pair("ATRIBSTAT'", "null")] = {"EXPRESSION"};
+    table_[std::make_pair(NonTerminal::ATRIBSTAT_, TokenType::IDENT)] = {Term(NonTerminal::EXPRESSION)};
+    table_[std::make_pair(NonTerminal::ATRIBSTAT_, TokenType::OPEN_PARENTHESIS)] = {Term(NonTerminal::EXPRESSION)};
+    table_[std::make_pair(NonTerminal::ATRIBSTAT_, TokenType::INT_CONSTANT)] = {Term(NonTerminal::EXPRESSION)};
 
-    table_[std::make_pair("FUNCCALL", "call")] = {"call", "ident", "(", "PARAMLISTCALL", ")"};
+    table_[std::make_pair(NonTerminal::ATRIBSTAT_, TokenType::RESERVED_WORD_CALL)] = {Term(NonTerminal::FUNCCALL)};
 
-    table_[std::make_pair("PARAMLISTCALL", "ident")] = {"ident", "PARAMLISTCALL'"};
-    table_[std::make_pair("PARAMLISTCALL", ")")] = {""};
+    table_[std::make_pair(NonTerminal::ATRIBSTAT_, TokenType::RESERVED_WORD_NEW)] = {
+        Term(NonTerminal::ALLOCEXPRESSION)};
+    table_[std::make_pair(NonTerminal::ATRIBSTAT_, TokenType::LOW_PRIORITY_OPERATOR)] = {Term(NonTerminal::EXPRESSION)};
+    table_[std::make_pair(NonTerminal::ATRIBSTAT_, TokenType::FLOAT_CONSTANT)] = {Term(NonTerminal::EXPRESSION)};
+    table_[std::make_pair(NonTerminal::ATRIBSTAT_, TokenType::STRING_CONSTANT)] = {Term(NonTerminal::EXPRESSION)};
+    table_[std::make_pair(NonTerminal::ATRIBSTAT_, TokenType::RESERVED_WORD_NULL)] = {Term(NonTerminal::EXPRESSION)};
+    table_[std::make_pair(NonTerminal::FUNCCALL, TokenType::RESERVED_WORD_CALL)] = {
+        Term(TokenType::RESERVED_WORD_CALL), Term(TokenType::IDENT), Term(TokenType::OPEN_PARENTHESIS),
+        Term(NonTerminal::PARAMLISTCALL), Term(TokenType::CLOSE_PARENTHESIS)};
 
-    table_[std::make_pair("PARAMLISTCALL'", ")")] = {""};
-    table_[std::make_pair("PARAMLISTCALL'", ",")] = {",", "PARAMLISTCALL"};
+    table_[std::make_pair(NonTerminal::PARAMLISTCALL, TokenType::IDENT)] = {Term(TokenType::IDENT),
+                                                                            Term(NonTerminal::PARAMLISTCALL_)};
+    table_[std::make_pair(NonTerminal::PARAMLISTCALL, TokenType::CLOSE_PARENTHESIS)] = {};
 
-    table_[std::make_pair("PRINTSTAT", "print")] = {"print", "EXPRESSION"};
+    table_[std::make_pair(NonTerminal::PARAMLISTCALL_, TokenType::CLOSE_PARENTHESIS)] = {};
+    table_[std::make_pair(NonTerminal::PARAMLISTCALL_, TokenType::COMMA)] = {Term(TokenType::COMMA),
+                                                                             Term(NonTerminal::PARAMLISTCALL)};
 
-    table_[std::make_pair("READSTAT", "read")] = {"read", "LVALUE"};
+    table_[std::make_pair(NonTerminal::PRINTSTAT, TokenType::RESERVED_WORD_PRINT)] = {
+        Term(TokenType::RESERVED_WORD_PRINT), Term(NonTerminal::EXPRESSION)};
 
-    table_[std::make_pair("RETURNSTAT", "return")] = {"return"};
+    table_[std::make_pair(NonTerminal::READSTAT, TokenType::RESERVED_WORD_READ)] = {Term(TokenType::RESERVED_WORD_READ),
+                                                                                    Term(NonTerminal::LVALUE)};
 
-    table_[std::make_pair("IFSTAT", "if")] = {"if", "(", "EXPRESSION", ")", "STATEMENT", "IFSTAT'"};
+    table_[std::make_pair(NonTerminal::RETURNSTAT, TokenType::RESERVED_WORD_RETURN)] = {
+        Term(TokenType::RESERVED_WORD_RETURN)};
 
-    table_[std::make_pair("IFSTAT'", "ident")] = {""};
-    table_[std::make_pair("IFSTAT'", "{")] = {""};
-    table_[std::make_pair("IFSTAT'", "}")] = {""};
-    table_[std::make_pair("IFSTAT'", "int")] = {""};
-    table_[std::make_pair("IFSTAT'", "float")] = {""};
-    table_[std::make_pair("IFSTAT'", "string")] = {""};
-    table_[std::make_pair("IFSTAT'", ";")] = {""};
-    table_[std::make_pair("IFSTAT'", "break")] = {""};
-    table_[std::make_pair("IFSTAT'", "print")] = {""};
-    table_[std::make_pair("IFSTAT'", "read")] = {""};
-    table_[std::make_pair("IFSTAT'", "return")] = {""};
-    table_[std::make_pair("IFSTAT'", "if")] = {""};
-    table_[std::make_pair("IFSTAT'", "else")] = {"else", "STATEMENT"};
-    table_[std::make_pair("IFSTAT'", "$")] = {""};
+    table_[std::make_pair(NonTerminal::IFSTAT, TokenType::RESERVED_WORD_IF)] = {
+        Term(TokenType::RESERVED_WORD_IF),  Term(TokenType::OPEN_PARENTHESIS), Term(NonTerminal::EXPRESSION),
+        Term(TokenType::CLOSE_PARENTHESIS), Term(NonTerminal::STATEMENT),      Term(NonTerminal::IFSTAT_)};
 
-    table_[std::make_pair("FORSTAT", "for")] = {"for", "(",         "ATRIBSTAT", ";",        "EXPRESSION",
-                                                ";",   "ATRIBSTAT", ")",         "STATEMENT"};
+    table_[std::make_pair(NonTerminal::IFSTAT_, TokenType::IDENT)] = {};
+    table_[std::make_pair(NonTerminal::IFSTAT_, TokenType::OPEN_CURLY_BRACE)] = {};
+    table_[std::make_pair(NonTerminal::IFSTAT_, TokenType::CLOSE_CURLY_BRACE)] = {};
+    table_[std::make_pair(NonTerminal::IFSTAT_, TokenType::RESERVED_WORD_INT)] = {};
+    table_[std::make_pair(NonTerminal::IFSTAT_, TokenType::RESERVED_WORD_FLOAT)] = {};
+    table_[std::make_pair(NonTerminal::IFSTAT_, TokenType::RESERVED_WORD_STRING)] = {};
+    table_[std::make_pair(NonTerminal::IFSTAT_, TokenType::SEMICOLON)] = {};
+    table_[std::make_pair(NonTerminal::IFSTAT_, TokenType::RESERVED_WORD_BREAK)] = {};
+    table_[std::make_pair(NonTerminal::IFSTAT_, TokenType::RESERVED_WORD_PRINT)] = {};
+    table_[std::make_pair(NonTerminal::IFSTAT_, TokenType::RESERVED_WORD_READ)] = {};
+    table_[std::make_pair(NonTerminal::IFSTAT_, TokenType::RESERVED_WORD_RETURN)] = {};
+    table_[std::make_pair(NonTerminal::IFSTAT_, TokenType::RESERVED_WORD_IF)] = {};
+    table_[std::make_pair(NonTerminal::IFSTAT_, TokenType::RESERVED_WORD_ELSE)] = {Term(TokenType::RESERVED_WORD_ELSE),
+                                                                                   Term(NonTerminal::STATEMENT)};
+    table_[std::make_pair(NonTerminal::IFSTAT_, TokenType::END_OF_FILE)] = {};
 
-    table_[std::make_pair("STATELIST", "ident")] = {"STATEMENT", "STATELIST'"};
-    table_[std::make_pair("STATELIST", "{")] = {"STATEMENT", "STATELIST'"};
-    table_[std::make_pair("STATELIST", "int")] = {"STATEMENT", "STATELIST'"};
-    table_[std::make_pair("STATELIST", "float")] = {"STATEMENT", "STATELIST'"};
-    table_[std::make_pair("STATELIST", "string")] = {"STATEMENT", "STATELIST'"};
-    table_[std::make_pair("STATELIST", ";")] = {"STATEMENT", "STATELIST'"};
-    table_[std::make_pair("STATELIST", "break")] = {"STATEMENT", "STATELIST'"};
-    table_[std::make_pair("STATELIST", "print")] = {"STATEMENT", "STATELIST'"};
-    table_[std::make_pair("STATELIST", "read")] = {"STATEMENT", "STATELIST'"};
-    table_[std::make_pair("STATELIST", "return")] = {"STATEMENT", "STATELIST'"};
-    table_[std::make_pair("STATELIST", "if")] = {"STATEMENT", "STATELIST'"};
-    table_[std::make_pair("STATELIST", "for")] = {"STATEMENT", "STATELIST'"};
+    table_[std::make_pair(NonTerminal::FORSTAT, TokenType::RESERVED_WORD_FOR)] = {
+        Term(TokenType::RESERVED_WORD_FOR), Term(TokenType::OPEN_PARENTHESIS),  Term(NonTerminal::ATRIBSTAT),
+        Term(TokenType::SEMICOLON),         Term(NonTerminal::EXPRESSION),      Term(TokenType::SEMICOLON),
+        Term(NonTerminal::ATRIBSTAT),       Term(TokenType::CLOSE_PARENTHESIS), Term(NonTerminal::STATEMENT)};
 
-    table_[std::make_pair("STATELIST'", "ident")] = {"STATELIST"};
-    table_[std::make_pair("STATELIST'", "{")] = {"STATELIST"};
-    table_[std::make_pair("STATELIST'", "}")] = {""};
-    table_[std::make_pair("STATELIST'", "int")] = {"STATELIST"};
-    table_[std::make_pair("STATELIST'", "float")] = {"STATELIST"};
-    table_[std::make_pair("STATELIST'", "string")] = {"STATELIST"};
-    table_[std::make_pair("STATELIST'", ";")] = {"STATELIST"};
-    table_[std::make_pair("STATELIST'", "break")] = {"STATELIST"};
-    table_[std::make_pair("STATELIST'", "print")] = {"STATELIST"};
-    table_[std::make_pair("STATELIST'", "read")] = {"STATELIST"};
-    table_[std::make_pair("STATELIST'", "return")] = {"STATELIST"};
-    table_[std::make_pair("STATELIST'", "if")] = {"STATELIST"};
-    table_[std::make_pair("STATELIST'", "for")] = {"STATELIST"};
+    table_[std::make_pair(NonTerminal::STATELIST, TokenType::IDENT)] = {Term(NonTerminal::STATEMENT),
+                                                                        Term(NonTerminal::STATELIST_)};
+    table_[std::make_pair(NonTerminal::STATELIST, TokenType::OPEN_CURLY_BRACE)] = {Term(NonTerminal::STATEMENT),
+                                                                                   Term(NonTerminal::STATELIST_)};
+    table_[std::make_pair(NonTerminal::STATELIST, TokenType::RESERVED_WORD_INT)] = {Term(NonTerminal::STATEMENT),
+                                                                                    Term(NonTerminal::STATELIST_)};
+    table_[std::make_pair(NonTerminal::STATELIST, TokenType::RESERVED_WORD_FLOAT)] = {Term(NonTerminal::STATEMENT),
+                                                                                      Term(NonTerminal::STATELIST_)};
+    table_[std::make_pair(NonTerminal::STATELIST, TokenType::RESERVED_WORD_STRING)] = {Term(NonTerminal::STATEMENT),
+                                                                                       Term(NonTerminal::STATELIST_)};
+    table_[std::make_pair(NonTerminal::STATELIST, TokenType::SEMICOLON)] = {Term(NonTerminal::STATEMENT),
+                                                                            Term(NonTerminal::STATELIST_)};
+    table_[std::make_pair(NonTerminal::STATELIST, TokenType::RESERVED_WORD_BREAK)] = {Term(NonTerminal::STATEMENT),
+                                                                                      Term(NonTerminal::STATELIST_)};
+    table_[std::make_pair(NonTerminal::STATELIST, TokenType::RESERVED_WORD_PRINT)] = {Term(NonTerminal::STATEMENT),
+                                                                                      Term(NonTerminal::STATELIST_)};
+    table_[std::make_pair(NonTerminal::STATELIST, TokenType::RESERVED_WORD_READ)] = {Term(NonTerminal::STATEMENT),
+                                                                                     Term(NonTerminal::STATELIST_)};
+    table_[std::make_pair(NonTerminal::STATELIST, TokenType::RESERVED_WORD_RETURN)] = {Term(NonTerminal::STATEMENT),
+                                                                                       Term(NonTerminal::STATELIST_)};
+    table_[std::make_pair(NonTerminal::STATELIST, TokenType::RESERVED_WORD_IF)] = {Term(NonTerminal::STATEMENT),
+                                                                                   Term(NonTerminal::STATELIST_)};
+    table_[std::make_pair(NonTerminal::STATELIST, TokenType::RESERVED_WORD_FOR)] = {Term(NonTerminal::STATEMENT),
+                                                                                    Term(NonTerminal::STATELIST_)};
 
-    table_[std::make_pair("ALLOCEXPRESSION", "new")] = {"new", "ALLOCEXPRESSION'"};
+    table_[std::make_pair(NonTerminal::STATELIST_, TokenType::IDENT)] = {Term(NonTerminal::STATELIST)};
+    table_[std::make_pair(NonTerminal::STATELIST_, TokenType::OPEN_CURLY_BRACE)] = {Term(NonTerminal::STATELIST)};
+    table_[std::make_pair(NonTerminal::STATELIST_, TokenType::CLOSE_CURLY_BRACE)] = {};
+    table_[std::make_pair(NonTerminal::STATELIST_, TokenType::RESERVED_WORD_INT)] = {Term(NonTerminal::STATELIST)};
+    table_[std::make_pair(NonTerminal::STATELIST_, TokenType::RESERVED_WORD_FLOAT)] = {Term(NonTerminal::STATELIST)};
+    table_[std::make_pair(NonTerminal::STATELIST_, TokenType::RESERVED_WORD_STRING)] = {Term(NonTerminal::STATELIST)};
+    table_[std::make_pair(NonTerminal::STATELIST_, TokenType::SEMICOLON)] = {Term(NonTerminal::STATELIST)};
+    table_[std::make_pair(NonTerminal::STATELIST_, TokenType::RESERVED_WORD_BREAK)] = {Term(NonTerminal::STATELIST)};
+    table_[std::make_pair(NonTerminal::STATELIST_, TokenType::RESERVED_WORD_PRINT)] = {Term(NonTerminal::STATELIST)};
+    table_[std::make_pair(NonTerminal::STATELIST_, TokenType::RESERVED_WORD_READ)] = {Term(NonTerminal::STATELIST)};
+    table_[std::make_pair(NonTerminal::STATELIST_, TokenType::RESERVED_WORD_RETURN)] = {Term(NonTerminal::STATELIST)};
+    table_[std::make_pair(NonTerminal::STATELIST_, TokenType::RESERVED_WORD_IF)] = {Term(NonTerminal::STATELIST)};
+    table_[std::make_pair(NonTerminal::STATELIST_, TokenType::RESERVED_WORD_FOR)] = {Term(NonTerminal::STATELIST)};
 
-    table_[std::make_pair("ALLOCEXPRESSION'", "int")] = {"int", "NUMEXPR1"};
-    table_[std::make_pair("ALLOCEXPRESSION'", "float")] = {"float", "NUMEXPR1"};
-    table_[std::make_pair("ALLOCEXPRESSION'", "string")] = {"string", "NUMEXPR1"};
+    table_[std::make_pair(NonTerminal::ALLOCEXPRESSION, TokenType::RESERVED_WORD_NEW)] = {
+        Term(TokenType::RESERVED_WORD_NEW), Term(NonTerminal::ALLOCEXPRESSION_)};
 
-    table_[std::make_pair("NUMEXPR1", "int")] = {"[", "NUMEXPRESSION ", "]", "NUMEXPRLIST"};
+    table_[std::make_pair(NonTerminal::ALLOCEXPRESSION_, TokenType::RESERVED_WORD_INT)] = {
+        Term(TokenType::RESERVED_WORD_INT), Term(NonTerminal::NUMEXPR1)};
+    table_[std::make_pair(NonTerminal::ALLOCEXPRESSION_, TokenType::RESERVED_WORD_FLOAT)] = {
+        Term(TokenType::RESERVED_WORD_FLOAT), Term(NonTerminal::NUMEXPR1)};
+    table_[std::make_pair(NonTerminal::ALLOCEXPRESSION_, TokenType::RESERVED_WORD_STRING)] = {
+        Term(TokenType::RESERVED_WORD_STRING), Term(NonTerminal::NUMEXPR1)};
+    table_[std::make_pair(NonTerminal::NUMEXPR1, TokenType::RESERVED_WORD_INT)] = {
+        Term(TokenType::OPEN_SQUARE_BRACKET), Term(NonTerminal::NUMEXPRESSION), Term(TokenType::CLOSE_SQUARE_BRACKET),
+        Term(NonTerminal::NUMEXPRLIST)};
 
-    table_[std::make_pair("NUMEXPRLIST", ")")] = {""};
-    table_[std::make_pair("NUMEXPRLIST", ";")] = {""};
-    table_[std::make_pair("NUMEXPRLIST", "[")] = {"[", "NUMEXPRESSION ", "]", "NUMEXPRLIST"};
-    table_[std::make_pair("NUMEXPRLIST", "]")] = {""};
-    table_[std::make_pair("NUMEXPRLIST", "=")] = {""};
-    table_[std::make_pair("NUMEXPRLIST", "<")] = {""};
-    table_[std::make_pair("NUMEXPRLIST", ">")] = {""};
-    table_[std::make_pair("NUMEXPRLIST", "-")] = {""};
-    table_[std::make_pair("NUMEXPRLIST", "+")] = {""};
-    table_[std::make_pair("NUMEXPRLIST", "*")] = {""};
-    table_[std::make_pair("NUMEXPRLIST", "/")] = {""};
-    table_[std::make_pair("NUMEXPRLIST", "%")] = {""};
+    table_[std::make_pair(NonTerminal::NUMEXPRLIST, TokenType::CLOSE_PARENTHESIS)] = {};
+    table_[std::make_pair(NonTerminal::NUMEXPRLIST, TokenType::SEMICOLON)] = {};
+    table_[std::make_pair(NonTerminal::NUMEXPRLIST, TokenType::OPEN_SQUARE_BRACKET)] = {
+        Term(TokenType::OPEN_SQUARE_BRACKET), Term(NonTerminal::NUMEXPRESSION), Term(TokenType::CLOSE_SQUARE_BRACKET),
+        Term(NonTerminal::NUMEXPRLIST)};
+    table_[std::make_pair(NonTerminal::NUMEXPRLIST, TokenType::CLOSE_SQUARE_BRACKET)] = {};
+    table_[std::make_pair(NonTerminal::NUMEXPRLIST, TokenType::ASSIGNMENT)] = {};
+    table_[std::make_pair(NonTerminal::NUMEXPRLIST, TokenType::COMPARATOR)] = {};
+    table_[std::make_pair(NonTerminal::NUMEXPRLIST, TokenType::LOW_PRIORITY_OPERATOR)] = {};
+    table_[std::make_pair(NonTerminal::NUMEXPRLIST, TokenType::HIGH_PRIORITY_OPERATOR)] = {};
 
-    table_[std::make_pair("EXPRESSION", "ident")] = {"NUMEXPRESSION", "EXPRESSION'"};
-    table_[std::make_pair("EXPRESSION", "(")] = {"NUMEXPRESSION", "EXPRESSION'"};
-    table_[std::make_pair("EXPRESSION", "int_constant")] = {"NUMEXPRESSION", "EXPRESSION'"};
-    table_[std::make_pair("EXPRESSION", "-")] = {"NUMEXPRESSION", "EXPRESSION'"};
-    table_[std::make_pair("EXPRESSION", "+")] = {"NUMEXPRESSION", "EXPRESSION'"};
-    table_[std::make_pair("EXPRESSION", "float_constant")] = {"NUMEXPRESSION", "EXPRESSION'"};
-    table_[std::make_pair("EXPRESSION", "string_constant")] = {"NUMEXPRESSION", "EXPRESSION'"};
-    table_[std::make_pair("EXPRESSION", "null")] = {"NUMEXPRESSION", "EXPRESSION'"};
+    table_[std::make_pair(NonTerminal::EXPRESSION, TokenType::IDENT)] = {Term(NonTerminal::NUMEXPRESSION),
+                                                                         Term(NonTerminal::EXPRESSION_)};
+    table_[std::make_pair(NonTerminal::EXPRESSION, TokenType::OPEN_PARENTHESIS)] = {Term(NonTerminal::NUMEXPRESSION),
+                                                                                    Term(NonTerminal::EXPRESSION_)};
+    table_[std::make_pair(NonTerminal::EXPRESSION, TokenType::INT_CONSTANT)] = {Term(NonTerminal::NUMEXPRESSION),
+                                                                                Term(NonTerminal::EXPRESSION_)};
+    table_[std::make_pair(NonTerminal::EXPRESSION, TokenType::LOW_PRIORITY_OPERATOR)] = {
+        Term(NonTerminal::NUMEXPRESSION), Term(NonTerminal::EXPRESSION_)};
+    table_[std::make_pair(NonTerminal::EXPRESSION, TokenType::FLOAT_CONSTANT)] = {Term(NonTerminal::NUMEXPRESSION),
+                                                                                  Term(NonTerminal::EXPRESSION_)};
+    table_[std::make_pair(NonTerminal::EXPRESSION, TokenType::STRING_CONSTANT)] = {Term(NonTerminal::NUMEXPRESSION),
+                                                                                   Term(NonTerminal::EXPRESSION_)};
+    table_[std::make_pair(NonTerminal::EXPRESSION, TokenType::RESERVED_WORD_NULL)] = {Term(NonTerminal::NUMEXPRESSION),
+                                                                                      Term(NonTerminal::EXPRESSION_)};
 
-    table_[std::make_pair("EXPRESSION'", ")")] = {""};
-    table_[std::make_pair("EXPRESSION'", ";")] = {""};
-    table_[std::make_pair("EXPRESSION'", "=")] = {"=", "EXPRESSION''", "NUMEXPRESSION"};
-    table_[std::make_pair("EXPRESSION'", "<")] = {"<", "EXPRESSION''", "NUMEXPRESSION"};
-    table_[std::make_pair("EXPRESSION'", ">")] = {">", "EXPRESSION''", "NUMEXPRESSION"};
+    table_[std::make_pair(NonTerminal::EXPRESSION_, TokenType::CLOSE_PARENTHESIS)] = {};
+    table_[std::make_pair(NonTerminal::EXPRESSION_, TokenType::SEMICOLON)] = {};
+    table_[std::make_pair(NonTerminal::EXPRESSION_, TokenType::ASSIGNMENT)] = {
+        Term(TokenType::ASSIGNMENT), Term(NonTerminal::EXPRESSION__), Term(NonTerminal::NUMEXPRESSION)};
+    table_[std::make_pair(NonTerminal::EXPRESSION_, TokenType::COMPARATOR)] = {
+        Term(TokenType::COMPARATOR), Term(NonTerminal::EXPRESSION__), Term(NonTerminal::NUMEXPRESSION)};
 
-    table_[std::make_pair("EXPRESSION''", "ident")] = {""};
-    table_[std::make_pair("EXPRESSION''", "(")] = {""};
-    table_[std::make_pair("EXPRESSION''", "int_constant")] = {""};
-    table_[std::make_pair("EXPRESSION''", "=")] = {""};
-    table_[std::make_pair("EXPRESSION''", "-")] = {""};
-    table_[std::make_pair("EXPRESSION''", "+")] = {""};
-    table_[std::make_pair("EXPRESSION''", "float_constant")] = {""};
-    table_[std::make_pair("EXPRESSION''", "string_constant")] = {""};
-    table_[std::make_pair("EXPRESSION''", "null")] = {""};
+    table_[std::make_pair(NonTerminal::EXPRESSION__, TokenType::IDENT)] = {};
+    table_[std::make_pair(NonTerminal::EXPRESSION__, TokenType::OPEN_PARENTHESIS)] = {};
+    table_[std::make_pair(NonTerminal::EXPRESSION__, TokenType::INT_CONSTANT)] = {};
+    table_[std::make_pair(NonTerminal::EXPRESSION__, TokenType::ASSIGNMENT)] = {};
+    table_[std::make_pair(NonTerminal::EXPRESSION__, TokenType::LOW_PRIORITY_OPERATOR)] = {};
+    table_[std::make_pair(NonTerminal::EXPRESSION__, TokenType::FLOAT_CONSTANT)] = {};
+    table_[std::make_pair(NonTerminal::EXPRESSION__, TokenType::STRING_CONSTANT)] = {};
+    table_[std::make_pair(NonTerminal::EXPRESSION__, TokenType::RESERVED_WORD_NULL)] = {};
 
-    table_[std::make_pair("NUMEXPRESSION", "ident")] = {"TERM", "OPTERM"};
-    table_[std::make_pair("NUMEXPRESSION", "(")] = {"TERM", "OPTERM"};
-    table_[std::make_pair("NUMEXPRESSION", "int_constant")] = {"TERM", "OPTERM"};
-    table_[std::make_pair("NUMEXPRESSION", "-")] = {"TERM", "OPTERM"};
-    table_[std::make_pair("NUMEXPRESSION", "+")] = {"TERM", "OPTERM"};
-    table_[std::make_pair("NUMEXPRESSION", "float_constant")] = {"TERM", "OPTERM"};
-    table_[std::make_pair("NUMEXPRESSION", "string_constant")] = {"TERM", "OPTERM"};
-    table_[std::make_pair("NUMEXPRESSION", "null")] = {"TERM", "OPTERM"};
+    table_[std::make_pair(NonTerminal::NUMEXPRESSION, TokenType::IDENT)] = {Term(NonTerminal::TERM),
+                                                                            Term(NonTerminal::OPTERM)};
+    table_[std::make_pair(NonTerminal::NUMEXPRESSION, TokenType::OPEN_PARENTHESIS)] = {Term(NonTerminal::TERM),
+                                                                                       Term(NonTerminal::OPTERM)};
+    table_[std::make_pair(NonTerminal::NUMEXPRESSION, TokenType::INT_CONSTANT)] = {Term(NonTerminal::TERM),
+                                                                                   Term(NonTerminal::OPTERM)};
+    table_[std::make_pair(NonTerminal::NUMEXPRESSION, TokenType::LOW_PRIORITY_OPERATOR)] = {Term(NonTerminal::TERM),
+                                                                                            Term(NonTerminal::OPTERM)};
+    table_[std::make_pair(NonTerminal::NUMEXPRESSION, TokenType::FLOAT_CONSTANT)] = {Term(NonTerminal::TERM),
+                                                                                     Term(NonTerminal::OPTERM)};
+    table_[std::make_pair(NonTerminal::NUMEXPRESSION, TokenType::STRING_CONSTANT)] = {Term(NonTerminal::TERM),
+                                                                                      Term(NonTerminal::OPTERM)};
+    table_[std::make_pair(NonTerminal::NUMEXPRESSION, TokenType::RESERVED_WORD_NULL)] = {Term(NonTerminal::TERM),
+                                                                                         Term(NonTerminal::OPTERM)};
 
-    table_[std::make_pair("OPTERM", ")")] = {""};
-    table_[std::make_pair("OPTERM", ";")] = {""};
-    table_[std::make_pair("OPTERM", "]")] = {""};
-    table_[std::make_pair("OPTERM", "=")] = {""};
-    table_[std::make_pair("OPTERM", "<")] = {""};
-    table_[std::make_pair("OPTERM", ">")] = {""};
-    table_[std::make_pair("OPTERM", "-")] = {"-", "TERM", "OPTERM"};
-    table_[std::make_pair("OPTERM", "+")] = {"+", "TERM", "OPTERM"};
+    table_[std::make_pair(NonTerminal::OPTERM, TokenType::CLOSE_PARENTHESIS)] = {};
+    table_[std::make_pair(NonTerminal::OPTERM, TokenType::SEMICOLON)] = {};
+    table_[std::make_pair(NonTerminal::OPTERM, TokenType::CLOSE_SQUARE_BRACKET)] = {};
+    table_[std::make_pair(NonTerminal::OPTERM, TokenType::ASSIGNMENT)] = {};
+    table_[std::make_pair(NonTerminal::OPTERM, TokenType::COMPARATOR)] = {};
+    table_[std::make_pair(NonTerminal::OPTERM, TokenType::LOW_PRIORITY_OPERATOR)] = {
+        Term(TokenType::LOW_PRIORITY_OPERATOR), Term(NonTerminal::TERM), Term(NonTerminal::OPTERM)};
 
-    table_[std::make_pair("TERM", "ident")] = {"UNARYEXPR", "UNARYTERM"};
-    table_[std::make_pair("TERM", "(")] = {"UNARYEXPR", "UNARYTERM"};
-    table_[std::make_pair("TERM", "int_constant")] = {"UNARYEXPR", "UNARYTERM"};
-    table_[std::make_pair("TERM", "-")] = {"UNARYEXPR", "UNARYTERM"};
-    table_[std::make_pair("TERM", "+")] = {"UNARYEXPR", "UNARYTERM"};
-    table_[std::make_pair("TERM", "float_constant")] = {"UNARYEXPR", "UNARYTERM"};
-    table_[std::make_pair("TERM", "string_constant")] = {"UNARYEXPR", "UNARYTERM"};
-    table_[std::make_pair("TERM", "null")] = {"UNARYEXPR", "UNARYTERM"};
+    table_[std::make_pair(NonTerminal::TERM, TokenType::IDENT)] = {Term(NonTerminal::UNARYEXPR),
+                                                                   Term(NonTerminal::UNARYTERM)};
+    table_[std::make_pair(NonTerminal::TERM, TokenType::OPEN_PARENTHESIS)] = {Term(NonTerminal::UNARYEXPR),
+                                                                              Term(NonTerminal::UNARYTERM)};
+    table_[std::make_pair(NonTerminal::TERM, TokenType::INT_CONSTANT)] = {Term(NonTerminal::UNARYEXPR),
+                                                                          Term(NonTerminal::UNARYTERM)};
+    table_[std::make_pair(NonTerminal::TERM, TokenType::LOW_PRIORITY_OPERATOR)] = {Term(NonTerminal::UNARYEXPR),
+                                                                                   Term(NonTerminal::UNARYTERM)};
+    table_[std::make_pair(NonTerminal::TERM, TokenType::LOW_PRIORITY_OPERATOR)] = {Term(NonTerminal::UNARYEXPR),
+                                                                                   Term(NonTerminal::UNARYTERM)};
+    table_[std::make_pair(NonTerminal::TERM, TokenType::FLOAT_CONSTANT)] = {Term(NonTerminal::UNARYEXPR),
+                                                                            Term(NonTerminal::UNARYTERM)};
+    table_[std::make_pair(NonTerminal::TERM, TokenType::STRING_CONSTANT)] = {Term(NonTerminal::UNARYEXPR),
+                                                                             Term(NonTerminal::UNARYTERM)};
+    table_[std::make_pair(NonTerminal::TERM, TokenType::RESERVED_WORD_NULL)] = {Term(NonTerminal::UNARYEXPR),
+                                                                                Term(NonTerminal::UNARYTERM)};
 
-    table_[std::make_pair("UNARYTERM", ")")] = {""};
-    table_[std::make_pair("UNARYTERM", ";")] = {""};
-    table_[std::make_pair("UNARYTERM", "]")] = {""};
-    table_[std::make_pair("UNARYTERM", "=")] = {""};
-    table_[std::make_pair("UNARYTERM", "<")] = {""};
-    table_[std::make_pair("UNARYTERM", ">")] = {""};
-    table_[std::make_pair("UNARYTERM", "-")] = {""};
-    table_[std::make_pair("UNARYTERM", "+")] = {""};
-    table_[std::make_pair("UNARYTERM", "*")] = {"*", "UNARYEXPR", "UNARYTERM"};
-    table_[std::make_pair("UNARYTERM", "/")] = {"/", "UNARYEXPR", "UNARYTERM"};
-    table_[std::make_pair("UNARYTERM", "%")] = {"%", "UNARYEXPR", "UNARYTERM"};
+    table_[std::make_pair(NonTerminal::UNARYTERM, TokenType::CLOSE_PARENTHESIS)] = {};
+    table_[std::make_pair(NonTerminal::UNARYTERM, TokenType::SEMICOLON)] = {};
+    table_[std::make_pair(NonTerminal::UNARYTERM, TokenType::CLOSE_SQUARE_BRACKET)] = {};
+    table_[std::make_pair(NonTerminal::UNARYTERM, TokenType::ASSIGNMENT)] = {};
+    table_[std::make_pair(NonTerminal::UNARYTERM, TokenType::COMPARATOR)] = {};
+    table_[std::make_pair(NonTerminal::UNARYTERM, TokenType::LOW_PRIORITY_OPERATOR)] = {};
+    table_[std::make_pair(NonTerminal::UNARYTERM, TokenType::HIGH_PRIORITY_OPERATOR)] = {
+        Term(TokenType::HIGH_PRIORITY_OPERATOR), Term(NonTerminal::UNARYEXPR), Term(NonTerminal::UNARYTERM)};
 
-    table_[std::make_pair("UNARYEXPR", "ident")] = {"FACTOR"};
-    table_[std::make_pair("UNARYEXPR", "(")] = {"FACTOR"};
-    table_[std::make_pair("UNARYEXPR", "int_constant")] = {"FACTOR"};
-    table_[std::make_pair("UNARYEXPR", "-")] = {"-", "FACTOR"};
-    table_[std::make_pair("UNARYEXPR", "+")] = {"+", "FACTOR"};
-    table_[std::make_pair("UNARYEXPR", "float_constant")] = {"FACTOR"};
-    table_[std::make_pair("UNARYEXPR", "string_constant")] = {"FACTOR"};
-    table_[std::make_pair("UNARYEXPR", "null")] = {"FACTOR"};
+    table_[std::make_pair(NonTerminal::UNARYEXPR, TokenType::IDENT)] = {Term(NonTerminal::FACTOR)};
+    table_[std::make_pair(NonTerminal::UNARYEXPR, TokenType::OPEN_PARENTHESIS)] = {Term(NonTerminal::FACTOR)};
+    table_[std::make_pair(NonTerminal::UNARYEXPR, TokenType::INT_CONSTANT)] = {Term(NonTerminal::FACTOR)};
+    table_[std::make_pair(NonTerminal::UNARYEXPR, TokenType::LOW_PRIORITY_OPERATOR)] = {
+        Term(TokenType::LOW_PRIORITY_OPERATOR), Term(NonTerminal::FACTOR)};
+    table_[std::make_pair(NonTerminal::UNARYEXPR, TokenType::FLOAT_CONSTANT)] = {Term(NonTerminal::FACTOR)};
+    table_[std::make_pair(NonTerminal::UNARYEXPR, TokenType::STRING_CONSTANT)] = {Term(NonTerminal::FACTOR)};
+    table_[std::make_pair(NonTerminal::UNARYEXPR, TokenType::RESERVED_WORD_NULL)] = {Term(NonTerminal::FACTOR)};
 
-    table_[std::make_pair("FACTOR", "ident")] = {"LVALUE"};
-    table_[std::make_pair("FACTOR", "(")] = {"(", "NUMEXPRESSION", ")"};
-    table_[std::make_pair("FACTOR", "int_constant")] = {"int_constant"};
-    table_[std::make_pair("FACTOR", "float_constant")] = {"float_constant"};
-    table_[std::make_pair("FACTOR", "string_constant")] = {"string_constant"};
-    table_[std::make_pair("FACTOR", "null")] = {"null"};
+    table_[std::make_pair(NonTerminal::FACTOR, TokenType::IDENT)] = {Term(NonTerminal::LVALUE)};
+    table_[std::make_pair(NonTerminal::FACTOR, TokenType::OPEN_PARENTHESIS)] = {
+        Term(TokenType::OPEN_PARENTHESIS), Term(NonTerminal::NUMEXPRESSION), Term(TokenType::CLOSE_PARENTHESIS)};
+    table_[std::make_pair(NonTerminal::FACTOR, TokenType::INT_CONSTANT)] = {Term(TokenType::INT_CONSTANT)};
+    table_[std::make_pair(NonTerminal::FACTOR, TokenType::FLOAT_CONSTANT)] = {Term(TokenType::FLOAT_CONSTANT)};
+    table_[std::make_pair(NonTerminal::FACTOR, TokenType::STRING_CONSTANT)] = {Term(TokenType::STRING_CONSTANT)};
+    table_[std::make_pair(NonTerminal::FACTOR, TokenType::RESERVED_WORD_NULL)] = {Term(TokenType::RESERVED_WORD_NULL)};
 
-    table_[std::make_pair("LVALUE", "ident")] = {"ident", "NUMEXPRLIST"};
+    table_[std::make_pair(NonTerminal::LVALUE, TokenType::IDENT)] = {Term(TokenType::IDENT),
+                                                                     Term(NonTerminal::NUMEXPRLIST)};
 }
 
-bool SyntacticAnalyser::analyse(const std::string &input) {
-    size_t i = 0;
-    std::string x = stack_.back();
-    std::string input_with_end = input + " $";
+bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
+    std::vector<Term> stack_;
+    stack_.push_back(TokenType::END_OF_FILE);
+    stack_.push_back(NonTerminal::PROGRAM);
 
-    while (x != "$") {
-        while (i < input_with_end.size() && input_with_end[i] == ' ') {
-            i++;
-        }
-        if (i >= input_with_end.size())
-            break;
-
-        std::string buffer;
-        size_t j = i;
-        bool found = false;
-
-        while (j < input_with_end.size()) {
-            buffer += input_with_end[j++];
-            auto it = std::find_if(
-                grammar_.terminals.begin(), grammar_.terminals.end(),
-                [&buffer](const std::string &terminal) { return terminal.find(buffer) != std::string::npos; });
-            if (it != grammar_.terminals.end()) {
-                found = true;
-            } else if (found) {
-                buffer.pop_back();
-                break;
-            }
-        }
-
-        std::cout << "Buffer: " << buffer << std::endl;
+    auto current_item = stack_.back();
+    Token *token = nullptr;
+    while ((token = lex.getNextToken()) != nullptr) {
+        std::cout << "Buffer: " << to_string(token->type()) << ":" << token->value() << std::endl;
         std::cout << "Stack: ";
+
         for (const auto &elem : stack_) {
             std::cout << elem << " ";
         }
+
         std::cout << std::endl;
 
-        if (x == buffer) {
-            stack_.pop_back();
-            i += buffer.size();
-        } else if (std::find(grammar_.terminals.begin(), grammar_.terminals.end(), x) != grammar_.terminals.end()) {
-            std::cerr << "Erro: Terminal não corresponde ao buffer\n";
-            return false;
-        } else if (table_.find({x, buffer}) == table_.end()) {
-            std::cerr << "Erro: Produção não encontrada na tabela\n";
-            return false;
+        if (current_item.isTerminal()) {
+            if (current_item.getTerminal() == token->type()) {
+                stack_.pop_back();
+            } else {
+                std::cerr << "Erro: Terminal não corresponde ao buffer\n";
+                return false;
+            }
         } else {
-            const auto &production = table_.at({x, buffer});
-            std::cout << x << " -> ";
-            for (const auto &item : production) {
+            const auto production = table_.find({current_item.getNonTerminal(), token->type()});
+            if (production == table_.end()) {
+                std::cerr << "Erro: Produção não encontrada na tabela\n";
+                return false;
+            }
+
+            std::cout << current_item << " -> ";
+            for (const auto &item : production->second) {
                 std::cout << item << " ";
             }
             std::cout << "\n";
 
             stack_.pop_back();
-            if (!production.empty() && production[0] != "") {
-                stack_.insert(stack_.end(), production.rbegin(), production.rend());
+            if (!production->second.empty()) {
+                stack_.insert(stack_.end(), production->second.rbegin(), production->second.rend());
             }
         }
 
         if (!stack_.empty()) {
-            x = stack_.back();
+            current_item = stack_.back();
         } else {
             break;
         }
     }
 
-    if (x == "$" && i == input_with_end.size() - 1) {
+    if (current_item.isTerminal() && current_item.getTerminal() == TokenType::END_OF_FILE) {
         std::cout << "Análise sintática concluída com sucesso!\n";
-        stack_.clear();
-        stack_.push_back("$");
-        stack_.push_back(grammar_.non_terminals[0]);
         return true;
     }
 

@@ -1,32 +1,29 @@
 #pragma once
-#include "grammar.hpp"
-#include <map>
-#include <string>
-#include <vector>
-
+#include "lexical_analyser/lexical_analyser.hpp"
+#include "lexical_analyser/token_type.hpp"
 #include "log/log.hpp"
+#include "non_terminal.hpp"
+#include "term.hpp"
+#include <map>
 
+#include <vector>
 namespace syntactic_analyser {
 
 class SyntacticAnalyser {
     public:
-    SyntacticAnalyser(const Grammar &grammar);
+    SyntacticAnalyser();
 
-    bool analyse(const std::string &entrada);
+    bool analyse(lexical_analyser::LexicalAnalyser &lex);
 
     private:
     log::Log log_;
-    Grammar grammar_;
-    std::vector<std::string> stack_;
-    std::map<std::pair<std::string, std::string>, std::vector<std::string>> table_;
+    std::map<std::pair<NonTerminal, lexical_analyser::TokenType>, std::vector<Term>> table_;
 
-    void push(std::string &str);
+    Term pop();
 
-    const std::string pop();
+    const std::vector<Term> &stack() const;
 
-    const std::vector<std::string> &stack() const;
-
-    const std::map<std::pair<std::string, std::string>, std::vector<std::string>> &table() const;
+    const std::map<std::pair<NonTerminal, lexical_analyser::TokenType>, std::vector<Term>> &table() const;
 };
 
 } // namespace syntactic_analyser

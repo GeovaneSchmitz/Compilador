@@ -13,12 +13,14 @@ add_executable(main
     src/lexical_analyser/lexical_analyser.cpp
     src/lexical_analyser/token.cpp
     src/lexical_analyser/token_property.cpp
+    src/lexical_analyser/token_type.cpp
     src/main.cpp
     src/semantic_analyser/scope.cpp
     src/log/log.cpp
     src/log/log_thread_safe.cpp
-    src/syntactic_analyser/grammar.cpp
     src/syntactic_analyser/syntactic_analyser.cpp
+    src/syntactic_analyser/term.cpp
+    src/syntactic_analyser/non_terminal.cpp
 )
 
 install(TARGETS main
