@@ -229,7 +229,6 @@ int main(int argc, char *argv[]) {
     };
 
     std::cout << "Input: " << str << std::endl << std::endl;
-                bool is_reserved = false;
 
     Token *token;
     std::string *token_value;

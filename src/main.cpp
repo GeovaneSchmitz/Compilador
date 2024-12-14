@@ -64,6 +64,8 @@ int main(int argc, char** argv) {
         ident = ident + ident*ident + (ident*ident*ident)/int_constant;\
         print ident;\
     }";
+
+
     analyser.analyse(entrada);
 
     std::string entrada2 = "def ident(float ident, float ident) {\

@@ -1,0 +1,5 @@
+IndentWidth: 4
+AccessModifierOffset: 0
+ColumnLimit: 120
+ConstructorInitializerIndentWidth: 4
+PackConstructorInitializers: Never
