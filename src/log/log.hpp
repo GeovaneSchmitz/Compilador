@@ -3,9 +3,11 @@
 
 #include <ctime>
 #include <fstream>
+#include <iomanip>
+#include <ostream>
 #include <string>
 
-namespace log {
+namespace cmp_log {
 
 class Log {
     public:

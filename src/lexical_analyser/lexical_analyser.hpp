@@ -1,6 +1,7 @@
 #pragma once
 
 #include "token.hpp"
+#include "../log/log.hpp"
 #include <cstdlib>
 #include <cstring>
 #include <string>
@@ -35,7 +36,11 @@ class LexicalAnalyser {
     private:
     std::string *source_code;
     std::string::iterator current_position;
+    cmp_log::Log log_;
     std::unordered_map<std::string, TokenType> reserved_words;
+    // FIXME: Implementar tabela de símbolos. Ver TODO.
+    // Linha é <quantidade de \n>+1
+    // Coluna é <qtd de chars lidos nessa linha>+1
 };
 
 } // namespace lexical_analyser

@@ -4,7 +4,7 @@
 #include <mutex>
 #include <string>
 
-namespace log {
+namespace cmp_log {
 
 ThreadSafeLog::ThreadSafeLog(std::string &file_name)
     : Log(file_name) {}

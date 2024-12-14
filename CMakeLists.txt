@@ -29,7 +29,7 @@ install(TARGETS main
 )
 
 
-set(CMAKE_CXX_FLAGS_DEBUG "-g -glldb")
+set(CMAKE_CXX_FLAGS_DEBUG "-g")
 
 # Include directories for headers
 target_include_directories(main PRIVATE src)

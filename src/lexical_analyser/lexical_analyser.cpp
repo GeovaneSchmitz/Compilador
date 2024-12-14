@@ -10,6 +10,7 @@ namespace lexical_analyser {
 LexicalAnalyser::LexicalAnalyser(std::string *str)
     : source_code{str},
       current_position{str->begin()},
+      log_("log/lexical_analyser.log"),
       reserved_words{{"def", TokenType::RESERVED_WORD_DEF},       {"break", TokenType::RESERVED_WORD_BREAK},
                      {"new", TokenType::RESERVED_WORD_NEW},       {"call", TokenType::RESERVED_WORD_CALL},
                      {"null", TokenType::RESERVED_WORD_NULL},     {"return", TokenType::RESERVED_WORD_RETURN},
@@ -40,6 +41,7 @@ LexicalAnalyser::~LexicalAnalyser() {}
 Token *LexicalAnalyser::getNextToken() {
     int state = 0;
     std::string::iterator start = current_position;
+    this->log_.write("Pegando próximo token.");
     /**
      * O current_position é um ponteiro para um caractere no código-fonte atual, nesta função nós percorremos
      * caractere por caractere até conseguir montar um token válido.
@@ -134,6 +136,7 @@ Token *LexicalAnalyser::getNextToken() {
             case 'X':
             case 'Y':
             case 'Z':
+            case '_':
                 state = 2;
                 break;
             case '+':
@@ -239,6 +242,7 @@ Token *LexicalAnalyser::getNextToken() {
             case '7':
             case '8':
             case '9':
+            case '_':
                 break;
             default: {
                 current_position--;
@@ -331,6 +335,7 @@ Token *LexicalAnalyser::getNextToken() {
                 return new Token(TokenType::FLOAT_CONSTANT, start, current_position);
                 break;
             }
+            break;
         case 8:
             switch (*current_position++) {
             case '=':
@@ -341,6 +346,7 @@ Token *LexicalAnalyser::getNextToken() {
                 return new Token(TokenType::ASSIGNMENT, start, current_position);
                 break;
             }
+            break;
         default:
             break;
         }

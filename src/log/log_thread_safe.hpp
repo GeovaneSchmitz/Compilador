@@ -5,7 +5,7 @@
 #include <mutex>
 #include <string>
 
-namespace log {
+namespace cmp_log {
 
 class ThreadSafeLog : public Log {
     public:

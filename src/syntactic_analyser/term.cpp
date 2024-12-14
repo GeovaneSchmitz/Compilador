@@ -34,6 +34,14 @@ NonTerminal Term::getNonTerminal() const {
     return non_terminal_;
 }
 
+std::string Term::get_string() const {
+    if (this->isTerminal()) {
+        return lexical_analyser::to_string(this->getTerminal());
+    } else {
+        return to_string(this->getNonTerminal());
+    }
+}
+
 std::ostream &operator<<(std::ostream &os, Term const &m) {
     if (m.isTerminal()) {
         os << lexical_analyser::to_string(m.getTerminal());

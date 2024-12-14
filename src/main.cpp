@@ -15,7 +15,7 @@ int main(int argc, char **argv) {
         return EXIT_FAILURE;
     }
 
-    log::Log main_log("log/main.log");
+    cmp_log::Log main_log("log/main.log");
     main_log.write("Log da main() iniciado.");
 
     std::string reading_file("Lendo arquivo: ");

@@ -1,20 +1,106 @@
-[2024-12-12 13:01:19] Iniciando análise léxica.
-def mruv(float s0, float v0, float t, float a) {
-	s = s0 + v0*t + (a*t*t)/2;
-	print s;
-}
-
-def factorial(int n) {
-	x0 = 1;
-	for (i = 1; i <= n; i = i + 1) {
-		x0 = x0 * i;
-	}
-	print x0;
-} 
-
-def greater_then(float a, float b) {
-	if (a > b)
-		print "é maior";
-	else 
-		print "é menor ou igual";
-}
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.
+[2024-12-14 12:04:08] Pegando próximo token.

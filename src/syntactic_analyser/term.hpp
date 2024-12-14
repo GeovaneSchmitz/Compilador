@@ -1,6 +1,6 @@
 #pragma once
 
-#include "lexical_analyser/token_type.hpp"
+#include "../lexical_analyser/token_type.hpp"
 #include "non_terminal.hpp"
 
 namespace syntactic_analyser {
@@ -15,6 +15,8 @@ class Term {
 
     bool isTerminal() const;
     bool isNonTerminal() const;
+
+    std::string get_string() const;
 
     lexical_analyser::TokenType getTerminal() const;
     NonTerminal getNonTerminal() const;

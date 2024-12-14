@@ -6,7 +6,7 @@
 #include <iomanip>
 #include <string>
 
-namespace log {
+namespace cmp_log {
 
 Log::Log(std::string &file_name)
     : file_stream{file_name, std::ios::trunc} {}
