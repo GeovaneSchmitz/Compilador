@@ -11,7 +11,6 @@ int main(int argc, char **argv) {
 
     if (argc < 2) {
         std::cerr << "Uso: main arquivo_a_compilar.xpp" << std::endl;
-        std::cout << "Segmentation fault (core dumped)." << std::endl;
         return EXIT_FAILURE;
     }
 
@@ -40,13 +39,16 @@ int main(int argc, char **argv) {
 
     lexical_analyser::LexicalAnalyser lexis(&source_str);
 
-    main_log.write("Análise léxica completa.");
+    main_log.write("Análise léxica completa!");
 
-    main_log.write("Encerrando.");
+
+    main_log.write("Fazendo análise sintática...");
 
     syntactic_analyser::SyntacticAnalyser analyser;
 
     analyser.analyse(lexis);
+    main_log.write("Análise sintática concluída!");
 
+    main_log.write("Encerrando compilação.");
     return EXIT_SUCCESS;
 }

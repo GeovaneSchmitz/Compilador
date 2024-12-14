@@ -1,6 +1,8 @@
-[2024-12-14 12:04:08] Log da main() iniciado.
-[2024-12-14 12:04:08] Lendo arquivo: xpp/funcoes.xpp
-[2024-12-14 12:04:08] Arquivo lido.
-[2024-12-14 12:04:08] Fazendo análise léxica...
-[2024-12-14 12:04:08] Análise léxica completa.
-[2024-12-14 12:04:08] Encerrando.
+[2024-12-14 20:07:04] Log da main() iniciado.
+[2024-12-14 20:07:04] Lendo arquivo: xpp/funcoes.xpp
+[2024-12-14 20:07:04] Arquivo lido.
+[2024-12-14 20:07:04] Fazendo análise léxica...
+[2024-12-14 20:07:04] Análise léxica completa!
+[2024-12-14 20:07:04] Fazendo análise sintática...
+[2024-12-14 20:07:04] Análise sintática concluída!
+[2024-12-14 20:07:04] Encerrando compilação.

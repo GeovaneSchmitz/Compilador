@@ -1,9 +1,13 @@
 def mruv(float s0, float v0, float t, float a) {
+	int s;
 	s = s0 + v0*t + (a*t*t)/2;
 	print s;
 }
 
 def factorial(int n) {
+	int i;
+	int x0;
+
 	x0 = 1;
 	for (i = 1; i <= n; i = i + 1) {
 		x0 = x0 * i;
@@ -17,4 +21,85 @@ def greater_then(float a, float b) {
 	} else {
 		print "é menor ou igual";
 	} 
+}
+
+def bubble_sort(int array, int size) {
+	int i;
+	int j;
+	int temp;
+
+	for (i = 0; i < n - 1; i = i + 1) {
+		for (j = 0; j < n - i - 1; i = i + 1) {
+			if (array[i] > array[i+1]) {
+				temp = array[i];
+				array[i] = array[i+1];
+				array[i+1] = temp;
+			}
+		}
+	}
+
+	for (i = 0; i < n - 1; i = i + 1) {
+		print array[i];
+	}
+}
+
+def concat_string(string x, int size_x, string y, int size_y) {
+	string result_concat;
+	result_concat = newstring[size_x+size_y];
+	int i;
+	for (i = 0; i < size_x; i = i + 1) {
+		result_concat[i] = x[i];
+	}
+	for (i = size_x; i < size_x+size_y; i = i + 1) {
+		result_concat[i] = y[i];
+	}
+
+	print result_concat;
+}
+
+def main(int dumb) {
+	int array[5];
+	int size;
+	size = 5;
+	array = newint[5];
+
+	array[0] = 15;
+	array[1] = 9;
+	array[2] = 23;
+	array[3] = 12;
+	array[4] = 0;
+
+	string result;
+	result = call bubble_sort(array, size);
+
+	int a;
+	int b;
+	a = 25;
+	b = 23;
+	result = call greater_then(a, b);
+
+	int n;
+	n = 10;
+	result = call factorial(n);
+
+	float s0;
+	float v0;
+	float time;
+	float a;
+
+	s0 = 15.5;
+	v0 = 80.3;
+	time = 50;
+	a = 6.35;
+	result = call mruv(s0, v0, time, a);
+
+	string string_x;
+	string string_y;
+	int size_x;
+	int size_y;
+	x = "Arroz ";
+	size_x = 6;
+	y = "com Frango";
+	size_y = 10;
+	result = call concat_string(string_x, size_x, string_y, size_y);
 }
