@@ -4,7 +4,6 @@
 #include <string>
 
 #include "lexical_analyser/lexical_analyser.hpp"
-#include "lexical_analyser/token.hpp"
 #include "log/log.hpp"
 #include "syntactic_analyser/syntactic_analyser.hpp"
 
@@ -40,8 +39,6 @@ int main(int argc, char **argv) {
     main_log.write("Fazendo análise léxica...");
 
     lexical_analyser::LexicalAnalyser lexis(&source_str);
-    lexis.getNextToken();
-    lexis.getNextToken();
 
     main_log.write("Análise léxica completa.");
 

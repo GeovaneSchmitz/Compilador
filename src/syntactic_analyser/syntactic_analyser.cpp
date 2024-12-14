@@ -344,6 +344,7 @@ bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
                 return false;
             }
         } else {
+            std::cout << "Procurando produção para " << current_item << " e " << to_string(token->type()) << std::endl;
             const auto production = table_.find({current_item.getNonTerminal(), token->type()});
             if (production == table_.end()) {
                 std::cerr << "Erro: Produção não encontrada na tabela\n";
