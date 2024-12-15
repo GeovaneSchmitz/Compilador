@@ -1,0 +1,107 @@
+def mult_matrix(float A, int mA, int nA, float B, int mB, int nB) {
+    if (nA != mB) {
+        print "Error: número de colunas de A é diferente do número de linhas de B";
+        return;
+    }
+    
+    float C;
+    C = new float[mA][nB];
+
+    int i;
+    int j;
+    int k;
+    for (i = 0; i < mA; i = i + 1) {
+        for (j = 0; j < nB; j = j + 1) {
+            for (k = 0; k < nA; k = k + 1) {
+                C[i][j] = C[i][j] + A[i][k] * B[k][j];
+            }
+        }
+    }
+    
+    for (i = 0; i < mA; i = i + 1) {
+        print C[i];
+    }
+}
+
+def transpose_matrix(float A, int m, int n) {
+    int i;
+    int j;
+
+    float At;
+    At = new float[m][n];
+
+    for (i = 0; i < m; i = i + 1) {
+        for (j = 0; j < n; j = j + 1) {
+            At[i][j] = At[j][i];
+        }
+    }
+    for (i = 0; i < m; i = i + 1) {
+        print At[i];
+    }
+}
+
+def aprox_raiz_quadrada(float x, int iterations) {
+    int i;
+    int r;
+    r = 50;
+    for (i = 0; i < iterations; i = i + 1) {
+        r = (r + (x / r) ) / 2;   
+    }
+
+    print r;
+}
+
+def potencia(float x, int exp) {
+    int i;
+    int prod;
+    prod = 1;
+    for (i = 0; i < exp; i = i + 1) {
+        prod = prod * x;
+    }
+    print x;
+}
+
+def main() {
+
+    print "Operações com matrizes";
+
+    float A[3][3];
+    float B[3][3];
+    int mA;
+    int nA;
+    int mB;
+    int nB;
+    mA = 3;
+    nA = 3;
+    mB = 3;
+    nB = 3;
+
+    A[0][0] = 5; A[0][2] = 7; A[0][3] = -5;
+    A[0][0] = 12; A[0][2] = -5.53; A[0][3] = -25.3;
+    A[0][0] = 5.3; A[0][2] = 0.12; A[0][3] = 49.98;
+
+    B[0][0] = 6; B[0][2] = -32.4; B[0][3] = 76.4;
+    B[0][0] = 16.4; B[0][2] = 0.7; B[0][3] = 12.5;
+    B[0][0] = 13.1; B[0][2] = 7; B[0][3] = 12;
+
+    string result;
+
+    result = call mult_matrix(A, mA, nA, B, mB, nB);
+    result = call transpose_matrix(A, mA, nA);
+
+    print "Aproximação de uma raiz quadrática";
+
+    float value;
+    value = 131;
+    int iterations;
+    iterations = 1000;
+    result = call aprox_raiz_quadrada(value, iterations);
+
+    print "Potenciação";
+
+    float x;
+    int exp;
+    x = 9.3;
+    exp = 5;
+    result = call potencia(x, exp);
+}
