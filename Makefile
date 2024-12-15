@@ -1,5 +1,5 @@
 # Define variables
-BUILD_DIR = build
+BUILD_DIR = bin
 CMAKE = cmake
 BUILD_TYPE = Debug
 CC = clang 

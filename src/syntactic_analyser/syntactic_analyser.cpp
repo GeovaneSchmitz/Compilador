@@ -1,14 +1,17 @@
 #include "syntactic_analyser.hpp"
-#include "../lexical_analyser/token_type.hpp"
-#include "../syntactic_analyser/non_terminal.hpp"
-#include "../syntactic_analyser/term.hpp"
-#include <iostream>
+#include "lexical_analyser/token_type.hpp"
+#include "semantic_analyser/ast_node.hpp"
+#include "syntactic_analyser/non_terminal.hpp"
+#include "syntactic_analyser/term.hpp"
+#include <list>
 #include <map>
 #include <string>
 #include <vector>
 
 using lexical_analyser::LexicalAnalyser;
+using lexical_analyser::Token;
 using lexical_analyser::TokenType;
+using semantic_analyser::ASTNode;
 
 namespace syntactic_analyser {
 
@@ -16,57 +19,72 @@ const std::map<std::pair<NonTerminal, TokenType>, std::vector<Term>> &SyntacticA
     return table_;
 }
 
-SyntacticAnalyser::SyntacticAnalyser() : log_("log/syntactic_analyser.log") {}
+SyntacticAnalyser::SyntacticAnalyser()
+    : log("log/syntactic_analyser.log") {}
 
 bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
-    std::vector<Term> stack_;
-    stack_.push_back(TokenType::END_OF_FILE);
-    stack_.push_back(NonTerminal::PROGRAM);
+    std::list<Term> stack_;
+
+    ASTNode root = ASTNode(Term(NonTerminal::PROGRAM));
+
+    ASTNode *current_node = &root;
+
+    stack_.push_back(Term(TokenType::END_OF_FILE));
+    stack_.push_back(Term(NonTerminal::PROGRAM));
 
     std::string buffer_log;
     std::string stack_log;
     std::string prod_log;
 
     auto current_item = stack_.back();
-    TokenType token_type = lex.next_token();
+    Token token = lex.nextToken();
 
-    while (token_type != TokenType::END_OF_FILE) {
-        buffer_log = "Buffer: " + to_string(token_type);
-        this->log_.write(buffer_log);
+    while (token.type() != TokenType::END_OF_FILE) {
+        buffer_log = "Buffer: " + to_string(token.type());
+        this->log.write(buffer_log);
         stack_log = "Stack: ";
 
         for (const auto &elem : stack_) {
-            stack_log += elem.get_string() + " ";
+            stack_log += elem.toString() + " ";
         }
 
-        this->log_.write(stack_log);
+        this->log.write(stack_log);
+
+        if (current_item.isTerminal() && current_item.getTerminal().type() == TokenType::END_OF_FILE) {
+            if (stack_.size() == 1) {
+                break;
+            }
+        }
 
         if (current_item.isTerminal()) {
-            if (current_item.getTerminal() == token_type) {
+            if (current_item.getTerminal().type() == token.type()) {
+
                 stack_.pop_back();
-                token_type = lex.next_token();
+                token = lex.nextToken();
             } else {
                 std::string item_token_error_str("Erro: Token lido (");
-                item_token_error_str += lexical_analyser::to_string(token_type) + ") não corresponde ao topo da pilha (" + current_item.get_string() + ")";
-                this->log_.write(item_token_error_str);
+                item_token_error_str += lexical_analyser::to_string(token.type()) +
+                                        ") não corresponde ao topo da pilha (" + current_item.toString() + ")";
+                this->log.write(item_token_error_str);
                 return false;
             }
         } else {
-            prod_log = "Procurando produção para " + current_item.get_string() + " e " + lexical_analyser::to_string(token_type);
-            this->log_.write(prod_log);
-            const auto production = table_.find({current_item.getNonTerminal(), token_type});
+            prod_log = "Procurando produção para " + current_item.toString() + " e " +
+                       lexical_analyser::to_string(token.type());
+            this->log.write(prod_log);
+            const auto production = table_.find({current_item.getNonTerminal(), token.type()});
             if (production == table_.end()) {
-                this->log_.write("Erro: Produção não encontrada na tabela.");
+                this->log.write("Erro: Produção não encontrada na tabela.");
                 return false;
             }
 
             std::string prods;
 
-            prods += current_item.get_string() + " -> ";
+            prods += current_item.toString() + " -> ";
             for (const auto &item : production->second) {
-                prods += item.get_string() + " ";
+                prods += item.toString() + " ";
             }
-            this->log_.write(prods);
+            this->log.write(prods);
 
             stack_.pop_back();
             if (!production->second.empty()) {
@@ -74,14 +92,16 @@ bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
             }
         }
 
-        // FIXME: Esse if aqui não deveria existir, temos que repensar a condição do while(token != TokenTi) da linha 36. 
-        if (token_type == TokenType::END_OF_FILE) {
+        // FIXME: Esse if aqui não deveria existir, temos que repensar a condição do while(token != TokenTi) da
+        // linha 36.
+        if (token.type() == TokenType::END_OF_FILE) {
             if (stack_.back().isTerminal()) {
                 std::string error("Erro: token é END_OF_FILE mas há um terminal no topo da pilha: ");
-                error += stack_.back().get_string() + "!";
-                this->log_.write(error);
+                error += stack_.back().toString() + "!";
+                this->log.write(error);
             } else {
-                bool quick_fix = stack_.back().getNonTerminal() == NonTerminal::FUNCLIST_ || stack_.back().getNonTerminal() == NonTerminal::IFSTAT_;
+                bool quick_fix = stack_.back().getNonTerminal() == NonTerminal::FUNCLIST_ ||
+                                 stack_.back().getNonTerminal() == NonTerminal::IFSTAT_;
                 if (quick_fix) {
                     stack_.pop_back();
                 }
@@ -95,12 +115,12 @@ bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
         }
     }
 
-    if (current_item.isTerminal() && current_item.getTerminal() == TokenType::END_OF_FILE) {
-        this->log_.write("Análise sintática concluída com sucesso!");
+    if (current_item.isTerminal() && current_item.getTerminal().type() == TokenType::END_OF_FILE) {
+        this->log.write("Análise sintática concluída com sucesso!");
         return true;
     }
 
-    this->log_.write("Erro: Análise sintática falhou.");
+    this->log.write("Erro: Análise sintática falhou.");
     return false;
 }
 
@@ -123,10 +143,9 @@ void SyntacticAnalyser::initialize_table() {
     table_[std::make_pair(NonTerminal::PROGRAM, TokenType::END_OF_FILE)] = {}; // Se END_OF_FILE = $, tudo certo
 
     // FUNCLIST
-    table_[std::make_pair(NonTerminal::FUNCLIST, TokenType::RESERVED_WORD_DEF)] = {
-        Term(NonTerminal::FUNCDEF), Term(NonTerminal::FUNCLIST_)
-    };
-    
+    table_[std::make_pair(NonTerminal::FUNCLIST, TokenType::RESERVED_WORD_DEF)] = {Term(NonTerminal::FUNCDEF),
+                                                                                   Term(NonTerminal::FUNCLIST_)};
+
     // FUNCLIST'
     table_[std::make_pair(NonTerminal::FUNCLIST_, TokenType::RESERVED_WORD_DEF)] = {Term(NonTerminal::FUNCLIST)};
     table_[std::make_pair(NonTerminal::FUNCLIST_, TokenType::END_OF_FILE)] = {};
@@ -136,8 +155,7 @@ void SyntacticAnalyser::initialize_table() {
         Term(TokenType::RESERVED_WORD_DEF), Term(TokenType::IDENT),
         Term(TokenType::OPEN_PARENTHESIS),  Term(NonTerminal::PARAMLIST),
         Term(TokenType::CLOSE_PARENTHESIS), Term(TokenType::OPEN_CURLY_BRACE),
-        Term(NonTerminal::STATELIST),       Term(TokenType::CLOSE_CURLY_BRACE)
-    };
+        Term(NonTerminal::STATELIST),       Term(TokenType::CLOSE_CURLY_BRACE)};
 
     // PARAMLIST
     table_[std::make_pair(NonTerminal::PARAMLIST, TokenType::RESERVED_WORD_INT)] = {
@@ -146,26 +164,20 @@ void SyntacticAnalyser::initialize_table() {
         Term(TokenType::RESERVED_WORD_FLOAT), Term(TokenType::IDENT), Term(NonTerminal::PARAMLIST_)};
     table_[std::make_pair(NonTerminal::PARAMLIST, TokenType::RESERVED_WORD_STRING)] = {
         Term(TokenType::RESERVED_WORD_STRING), Term(TokenType::IDENT), Term(NonTerminal::PARAMLIST_)};
-    table_[std::make_pair(NonTerminal::PARAMLIST, TokenType::CLOSE_PARENTHESIS)] = {
-        Term(NonTerminal::PARAMLIST_)};
-
+    table_[std::make_pair(NonTerminal::PARAMLIST, TokenType::CLOSE_PARENTHESIS)] = {Term(NonTerminal::PARAMLIST_)};
 
     // PARAMLIST'
     table_[std::make_pair(NonTerminal::PARAMLIST_, TokenType::CLOSE_PARENTHESIS)] = {};
-    table_[std::make_pair(NonTerminal::PARAMLIST_, TokenType::COMMA)] = {
-        Term(TokenType::COMMA), Term(NonTerminal::PARAMLIST)
-    };
+    table_[std::make_pair(NonTerminal::PARAMLIST_, TokenType::COMMA)] = {Term(TokenType::COMMA),
+                                                                         Term(NonTerminal::PARAMLIST)};
 
     // STATEMENT
-    table_[std::make_pair(NonTerminal::STATEMENT, TokenType::IDENT)] = {
-        Term(NonTerminal::ATRIBSTAT), Term(TokenType::SEMICOLON)
-    };
+    table_[std::make_pair(NonTerminal::STATEMENT, TokenType::IDENT)] = {Term(NonTerminal::ATRIBSTAT),
+                                                                        Term(TokenType::SEMICOLON)};
     table_[std::make_pair(NonTerminal::STATEMENT, TokenType::OPEN_CURLY_BRACE)] = {
-        Term(TokenType::OPEN_CURLY_BRACE), Term(NonTerminal::STATELIST), Term(TokenType::CLOSE_CURLY_BRACE)
-    };
-    table_[std::make_pair(NonTerminal::STATEMENT, TokenType::RESERVED_WORD_INT)] = {
-        Term(NonTerminal::VARDECL), Term(TokenType::SEMICOLON)
-    };
+        Term(TokenType::OPEN_CURLY_BRACE), Term(NonTerminal::STATELIST), Term(TokenType::CLOSE_CURLY_BRACE)};
+    table_[std::make_pair(NonTerminal::STATEMENT, TokenType::RESERVED_WORD_INT)] = {Term(NonTerminal::VARDECL),
+                                                                                    Term(TokenType::SEMICOLON)};
     table_[std::make_pair(NonTerminal::STATEMENT, TokenType::RESERVED_WORD_FLOAT)] = {Term(NonTerminal::VARDECL),
                                                                                       Term(TokenType::SEMICOLON)};
     table_[std::make_pair(NonTerminal::STATEMENT, TokenType::RESERVED_WORD_STRING)] = {Term(NonTerminal::VARDECL),
@@ -211,7 +223,7 @@ void SyntacticAnalyser::initialize_table() {
     table_[std::make_pair(NonTerminal::ATRIBSTAT_, TokenType::FLOAT_CONSTANT)] = {Term(NonTerminal::EXPRESSION)};
     table_[std::make_pair(NonTerminal::ATRIBSTAT_, TokenType::STRING_CONSTANT)] = {Term(NonTerminal::EXPRESSION)};
     table_[std::make_pair(NonTerminal::ATRIBSTAT_, TokenType::RESERVED_WORD_NULL)] = {Term(NonTerminal::EXPRESSION)};
-    
+
     // FUNCCALL
     table_[std::make_pair(NonTerminal::FUNCCALL, TokenType::RESERVED_WORD_CALL)] = {
         Term(TokenType::RESERVED_WORD_CALL), Term(TokenType::IDENT), Term(TokenType::OPEN_PARENTHESIS),
@@ -257,8 +269,8 @@ void SyntacticAnalyser::initialize_table() {
     table_[std::make_pair(NonTerminal::IFSTAT_, TokenType::RESERVED_WORD_READ)] = {};
     table_[std::make_pair(NonTerminal::IFSTAT_, TokenType::RESERVED_WORD_RETURN)] = {};
     table_[std::make_pair(NonTerminal::IFSTAT_, TokenType::RESERVED_WORD_IF)] = {};
-    table_[std::make_pair(NonTerminal::IFSTAT_, TokenType::RESERVED_WORD_ELSE)] = {
-        Term(TokenType::RESERVED_WORD_ELSE), Term(NonTerminal::STATEMENT)};
+    table_[std::make_pair(NonTerminal::IFSTAT_, TokenType::RESERVED_WORD_ELSE)] = {Term(TokenType::RESERVED_WORD_ELSE),
+                                                                                   Term(NonTerminal::STATEMENT)};
     table_[std::make_pair(NonTerminal::IFSTAT_, TokenType::RESERVED_WORD_FOR)] = {};
     table_[std::make_pair(NonTerminal::IFSTAT_, TokenType::END_OF_FILE)] = {};
 
@@ -318,12 +330,11 @@ void SyntacticAnalyser::initialize_table() {
         Term(TokenType::RESERVED_WORD_STRING), Term(NonTerminal::NUMEXPR1)};
 
     table_[std::make_pair(NonTerminal::NUMEXPR1, TokenType::OPEN_SQUARE_BRACKET)] = {
-        Term(TokenType::OPEN_SQUARE_BRACKET), Term(NonTerminal::NUMEXPRESSION),
-        Term(TokenType::CLOSE_SQUARE_BRACKET), Term(NonTerminal::NUMEXPRLIST)
+        Term(TokenType::OPEN_SQUARE_BRACKET), Term(NonTerminal::NUMEXPRESSION), Term(TokenType::CLOSE_SQUARE_BRACKET),
+        Term(NonTerminal::NUMEXPRLIST)
 
     };
     table_[std::make_pair(NonTerminal::NUMEXPR1, TokenType::SEMICOLON)] = {};
-
 
     table_[std::make_pair(NonTerminal::NUMEXPRLIST, TokenType::CLOSE_PARENTHESIS)] = {};
     table_[std::make_pair(NonTerminal::NUMEXPRLIST, TokenType::SEMICOLON)] = {};

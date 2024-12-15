@@ -1,14 +1,14 @@
 #pragma once
 
-#include "token.hpp"
 #include "../log/log.hpp"
+#include "token.hpp"
 #include "token_type.hpp"
 #include <cstdlib>
 #include <cstring>
+#include <list>
 #include <string>
 #include <sys/types.h>
 #include <unordered_map>
-#include <list>
 
 namespace lexical_analyser {
 
@@ -18,10 +18,10 @@ class LexicalAnalyser {
     ~LexicalAnalyser();
 
     const std::unordered_map<std::string, std::list<std::pair<uint, uint>>> symbol_table() const;
-    const std::vector<Token*> token_list() const;
-    bool in_token_list(const std::string& value) const;
+    const std::vector<Token *> token_list() const;
+    bool inTokenList(const std::string &value) const;
     const std::pair<uint, uint> coordinates() const;
-    void append_token_list(TokenType type, std::string::iterator start);
+    void appendTokenList(TokenType type, std::string::iterator start);
 
     /**
      * @brief Recupera o próximo token do código-fonte.
@@ -40,7 +40,7 @@ class LexicalAnalyser {
      *         se nenhum token válido puder ser construído.
      */
 
-    TokenType next_token();
+    Token nextToken();
 
     private:
     std::string *source_code;
@@ -48,7 +48,7 @@ class LexicalAnalyser {
     cmp_log::Log log_;
     uint row = 1, col = 1;
     std::unordered_map<std::string, std::list<std::pair<uint, uint>>> symbol_table_;
-    std::vector<Token*> token_list_;
+    std::vector<Token *> token_list_;
     std::unordered_map<std::string, TokenType> reserved_words;
 };
 

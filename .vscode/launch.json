@@ -8,7 +8,7 @@
       "type": "lldb-dap",
       "request": "launch",
       "name": "Debug",
-      "program": "${workspaceRoot}/build/bin/main",
+      "program": "${workspaceRoot}/bin/bin/main",
       "args": ["xpp/primo.xpp"],
       "env": [],
       "cwd": "${workspaceRoot}"

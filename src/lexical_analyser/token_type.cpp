@@ -68,8 +68,6 @@ std::string to_string(TokenType tt) {
         return "RESERVED_WORD_FLOAT";
     case TokenType::RESERVED_WORD_STRING:
         return "RESERVED_WORD_STRING";
-    case TokenType::RESERVED_WORD_NULL_TYPE:
-        return "RESERVED_WORD_NULL_TYPE";
     case TokenType::END_OF_FILE:
         return "END_OF_FILE";
     default:

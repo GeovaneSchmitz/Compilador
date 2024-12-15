@@ -10,6 +10,7 @@ namespace lexical_analyser {
 class Token {
     public:
     Token(TokenType type, std::string::iterator start, std::string::iterator end);
+    Token(TokenType type);
     Token(TokenType type, std::string& value);
     ~Token();
 

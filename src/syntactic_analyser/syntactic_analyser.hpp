@@ -4,10 +4,8 @@
 #include "../log/log.hpp"
 #include "non_terminal.hpp"
 #include "term.hpp"
-#include "../binary_tree/binary_tree.hpp"
-#include <vector>
 #include <map>
-#include <string>
+#include <vector>
 
 namespace syntactic_analyser {
 
@@ -19,7 +17,7 @@ class SyntacticAnalyser {
     void initialize_table();
 
     private:
-    cmp_log::Log log_;
+    cmp_log::Log log;
     std::map<std::pair<NonTerminal, lexical_analyser::TokenType>, std::vector<Term>> table_;
 
     Term pop();

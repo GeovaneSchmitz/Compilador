@@ -7,7 +7,13 @@ Token::Token(TokenType type, std::string::iterator start, std::string::iterator 
     : type_{type},
       value_{start, end} {}
 
-Token::Token(TokenType type, std::string& value) : type_(type), value_(value) {}
+Token::Token(TokenType type, std::string &value)
+    : type_(type),
+      value_(value) {}
+
+Token::Token(TokenType type)
+    : type_{type},
+      value_{""} {}
 
 Token::~Token() {
     for (auto prop : this->properties_) {
