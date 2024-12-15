@@ -31,12 +31,12 @@ Então faça:
 
 Para executar o compilador, deve-se fazer o seguinte:
 ```bash
-    ./bin/main filepath/file.xpp
+    ./main filepath/file.xpp
 ```
 
 Os arquivos prontos para testes estão na pasta xpp, segue um exemplo de comando:
 ```bash
-   ./bin/main xpp/funcoes.xpp
+   ./main xpp/funcoes.xpp
 ```
 
 ## Resultados
