@@ -9,6 +9,7 @@ FUNCLIST' -> ''
 
 FUNCDEF -> def ident ( PARAMLIST ) { STATELIST }
 
+PARAMLIST -> PARAMLIST'
 PARAMLIST -> int ident PARAMLIST'
 PARAMLIST -> float ident PARAMLIST' 
 PARAMLIST -> string ident PARAMLIST'

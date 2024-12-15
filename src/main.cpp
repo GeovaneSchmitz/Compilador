@@ -37,17 +37,27 @@ int main(int argc, char **argv) {
 
     main_log.write("Fazendo análise léxica...");
 
-    lexical_analyser::LexicalAnalyser lexis(&source_str);
+    lexical_analyser::LexicalAnalyser lexical_analyser(&source_str);
 
     main_log.write("Análise léxica completa!");
 
 
     main_log.write("Fazendo análise sintática...");
 
-    syntactic_analyser::SyntacticAnalyser analyser;
+    syntactic_analyser::SyntacticAnalyser syntactic_analyser;
 
-    analyser.analyse(lexis);
+    syntactic_analyser.analyse(lexical_analyser);
     main_log.write("Análise sintática concluída!");
+
+    std::string symbol_log_msg = "";
+    for (auto symbol : lexical_analyser.symbol_table()) {
+        symbol_log_msg += symbol.first + ": ";
+        for (auto coord : symbol.second) {
+            symbol_log_msg += "(" + std::to_string(coord.first) + ", " + std::to_string(coord.second) + ") ";
+        }
+        main_log.write(symbol_log_msg);
+        symbol_log_msg.clear();
+    }
 
     main_log.write("Encerrando compilação.");
     return EXIT_SUCCESS;

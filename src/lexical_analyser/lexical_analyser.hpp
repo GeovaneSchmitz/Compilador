@@ -7,12 +7,18 @@
 #include <string>
 #include <sys/types.h>
 #include <unordered_map>
+#include <list>
+
 namespace lexical_analyser {
 
 class LexicalAnalyser {
     public:
     LexicalAnalyser(std::string *str);
     ~LexicalAnalyser();
+
+    const std::unordered_map<std::string, std::list<std::pair<uint, uint>>> symbol_table() const;
+    const std::vector<Token*> token_list() const;
+    void append_token_list(Token* token);
 
     /**
      * @brief Recupera o próximo token do código-fonte.
@@ -37,10 +43,10 @@ class LexicalAnalyser {
     std::string *source_code;
     std::string::iterator current_position;
     cmp_log::Log log_;
+    uint row = 1, col = 1;
+    std::unordered_map<std::string, std::list<std::pair<uint, uint>>> symbol_table_;
+    std::vector<Token*> token_list_;
     std::unordered_map<std::string, TokenType> reserved_words;
-    // FIXME: Implementar tabela de símbolos. Ver TODO.
-    // Linha é <quantidade de \n>+1
-    // Coluna é <qtd de chars lidos nessa linha>+1
 };
 
 } // namespace lexical_analyser

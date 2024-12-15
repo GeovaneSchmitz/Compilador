@@ -4,6 +4,7 @@
 #include "../log/log.hpp"
 #include "non_terminal.hpp"
 #include "term.hpp"
+#include "../binary_tree/binary_tree.hpp"
 #include <vector>
 #include <map>
 #include <string>
@@ -21,8 +22,6 @@ class SyntacticAnalyser {
     std::map<std::pair<NonTerminal, lexical_analyser::TokenType>, std::vector<Term>> table_;
 
     Term pop();
-
-    void delete_tokens(std::vector<lexical_analyser::Token*> &list);
 
     const std::vector<Term> &stack() const;
     void initialize_table();

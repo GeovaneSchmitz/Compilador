@@ -45,7 +45,7 @@ def bubble_sort(int array, int size) {
 
 def concat_string(string x, int size_x, string y, int size_y) {
 	string result_concat;
-	result_concat = newstring[size_x+size_y];
+	result_concat = new string[size_x+size_y];
 	int i;
 	for (i = 0; i < size_x; i = i + 1) {
 		result_concat[i] = x[i];
@@ -57,11 +57,11 @@ def concat_string(string x, int size_x, string y, int size_y) {
 	print result_concat;
 }
 
-def main(int dumb) {
+def main() {
 	int array[5];
 	int size;
 	size = 5;
-	array = newint[5];
+	array = ABABA[5];
 
 	array[0] = 15;
 	array[1] = 9;

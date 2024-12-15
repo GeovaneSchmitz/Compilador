@@ -34,7 +34,7 @@ bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
 
     auto current_item = stack_.back();
     Token *token = lex.getNextToken();
-    token_list.push_back(token);
+    lex.append_token_list(token);
 
     while (token != nullptr) {
         buffer_log = "Buffer: " + to_string(token->type()) + ":" + token->value();
@@ -51,12 +51,11 @@ bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
             if (current_item.getTerminal() == token->type()) {
                 stack_.pop_back();
                 token = lex.getNextToken();
-                token_list.push_back(token);
+                lex.append_token_list(token);
             } else {
                 std::string item_token_error_str("Erro: Token lido (");
                 item_token_error_str += token->value() + ") não corresponde ao topo da pilha (" + current_item.get_string() + ")";
                 this->log_.write(item_token_error_str);
-                this->delete_tokens(token_list);
                 return false;
             }
         } else {
@@ -65,7 +64,6 @@ bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
             const auto production = table_.find({current_item.getNonTerminal(), token->type()});
             if (production == table_.end()) {
                 this->log_.write("Erro: Produção não encontrada na tabela.");
-                this->delete_tokens(token_list);
                 return false;
             }
 
@@ -79,6 +77,7 @@ bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
 
             stack_.pop_back();
             if (!production->second.empty()) {
+                
                 stack_.insert(stack_.end(), production->second.rbegin(), production->second.rend());
             }
         }
@@ -106,20 +105,11 @@ bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
 
     if (current_item.isTerminal() && current_item.getTerminal() == TokenType::END_OF_FILE) {
         this->log_.write("Análise sintática concluída com sucesso!");
-        this->delete_tokens(token_list);
         return true;
     }
 
     this->log_.write("Erro: Análise sintática falhou.");
-    this->delete_tokens(token_list);
     return false;
-}
-
-void SyntacticAnalyser::delete_tokens(std::vector<Token*> &list) {
-    if (list.size() <= 0) return;
-    for (auto t : list) {
-        delete t;
-    }
 }
 
 void SyntacticAnalyser::initialize_table() {
@@ -164,6 +154,9 @@ void SyntacticAnalyser::initialize_table() {
         Term(TokenType::RESERVED_WORD_FLOAT), Term(TokenType::IDENT), Term(NonTerminal::PARAMLIST_)};
     table_[std::make_pair(NonTerminal::PARAMLIST, TokenType::RESERVED_WORD_STRING)] = {
         Term(TokenType::RESERVED_WORD_STRING), Term(TokenType::IDENT), Term(NonTerminal::PARAMLIST_)};
+    table_[std::make_pair(NonTerminal::PARAMLIST, TokenType::CLOSE_PARENTHESIS)] = {
+        Term(NonTerminal::PARAMLIST_)};
+
 
     // PARAMLIST'
     table_[std::make_pair(NonTerminal::PARAMLIST_, TokenType::CLOSE_PARENTHESIS)] = {};
@@ -331,9 +324,14 @@ void SyntacticAnalyser::initialize_table() {
         Term(TokenType::RESERVED_WORD_FLOAT), Term(NonTerminal::NUMEXPR1)};
     table_[std::make_pair(NonTerminal::ALLOCEXPRESSION_, TokenType::RESERVED_WORD_STRING)] = {
         Term(TokenType::RESERVED_WORD_STRING), Term(NonTerminal::NUMEXPR1)};
-    table_[std::make_pair(NonTerminal::NUMEXPR1, TokenType::RESERVED_WORD_INT)] = {
-        Term(TokenType::OPEN_SQUARE_BRACKET), Term(NonTerminal::NUMEXPRESSION), Term(TokenType::CLOSE_SQUARE_BRACKET),
-        Term(NonTerminal::NUMEXPRLIST)};
+
+    table_[std::make_pair(NonTerminal::NUMEXPR1, TokenType::OPEN_SQUARE_BRACKET)] = {
+        Term(TokenType::OPEN_SQUARE_BRACKET), Term(NonTerminal::NUMEXPRESSION),
+        Term(TokenType::CLOSE_SQUARE_BRACKET), Term(NonTerminal::NUMEXPRLIST)
+
+    };
+    table_[std::make_pair(NonTerminal::NUMEXPR1, TokenType::SEMICOLON)] = {};
+
 
     table_[std::make_pair(NonTerminal::NUMEXPRLIST, TokenType::CLOSE_PARENTHESIS)] = {};
     table_[std::make_pair(NonTerminal::NUMEXPRLIST, TokenType::SEMICOLON)] = {};
