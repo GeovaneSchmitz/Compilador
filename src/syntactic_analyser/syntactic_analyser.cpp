@@ -87,32 +87,30 @@ bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
                 if (it->isNonTerminal()) {
                     auto *node = new ASTNode(it->getNonTerminal());
                     current_item->addChild(node);
-
+                    stack_.push_back(node);
                 } else {
                     auto *node = new ASTNode(it->getTerminal());
                     current_item->addChild(node);
+                    stack_.push_back(node);
                 }
             }
         }
 
         // FIXME: Esse if aqui não deveria existir, temos que repensar a condição do while(token != TokenTi) da
         // linha 36.
-        /**if (token.type() == TokenType::END_OF_FILE) {
-            if (stack_.back().isTerminal()) {
+        if (token.type() == TokenType::END_OF_FILE) {
+            if (stack_.back()->isTerminal()) {
                 std::string error("Erro: token é END_OF_FILE mas há um terminal no topo da pilha: ");
-                error += stack_.back().toString() + "!";
+                error += stack_.back()->toString() + "!";
                 this->log.write(error);
             } else {
-                bool quick_fix = stack_.back().getNonTerminal() == NonTerminal::FUNCLIST_ ||
-                                 stack_.back().getNonTerminal() == NonTerminal::IFSTAT_;
+                bool quick_fix = stack_.back()->getNonTerminal() == NonTerminal::FUNCLIST_ ||
+                                 stack_.back()->getNonTerminal() == NonTerminal::IFSTAT_;
                 if (quick_fix) {
                     stack_.pop_back();
                 }
             }
         }
-       */ 
-
-        root->printTree(0);
 
         if (!stack_.empty()) {
             current_item = stack_.back();
@@ -122,6 +120,7 @@ bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
     }
 
     if (current_item->isTerminal() && current_item->getTokenType() == TokenType::END_OF_FILE) {
+        root->printTree(0);
         this->log.write("Análise sintática concluída com sucesso!");
         return true;
     }

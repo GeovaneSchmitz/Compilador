@@ -91,7 +91,7 @@ std::string ASTNode::toString() const {
 void ASTNode::printTree(int level) const {
     std::string indent(static_cast<unsigned long>(level), ' ');
     if (this->isTerminal()) {
-        std::cout << indent << this->getTerminal().value() << std::endl;
+        std::cout << indent << this->toString() << std::endl;
     } else {
         std::cout << indent << to_string(this->getNonTerminal()) << std::endl;
         for (const auto &child : this->children) {
