@@ -30,7 +30,7 @@ def sum_array(float array, int size) {
 
 def prod_array(float array, int size) {
     int prod;
-    prod = 0;
+    prod = 1;
     int i;
     for (i = 0; i < size; i = i + 1) {
         prod = prod * array[i];

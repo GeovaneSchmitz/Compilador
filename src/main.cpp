@@ -5,7 +5,22 @@
 
 #include "lexical_analyser/lexical_analyser.hpp"
 #include "log/log.hpp"
+#include "semantic_analyser/semantic_analyser.hpp"
 #include "syntactic_analyser/syntactic_analyser.hpp"
+#include "compiler/compiler.hpp"
+
+using xpp_compiler::Compiler;
+using lexical_analyser::LexicalAnalyser;
+using syntactic_analyser::SyntacticAnalyser;
+using semantic_analyser::SemanticAnalyser;
+
+/**
+ * GRUPO:
+ * Geovane Schmitz
+ * Gian Carlo Ferrari
+ * Guilherme Adenilson
+ * Gustavo Konescki
+ */
 
 int main(int argc, char **argv) {
 
@@ -34,31 +49,21 @@ int main(int argc, char **argv) {
     }
 
     main_log.write("Arquivo lido.");
+    main_log.write("Compilando...");
 
-    main_log.write("Fazendo análise léxica...");
+    LexicalAnalyser lexical(&source_str);
+    SyntacticAnalyser syntactic;
+    SemanticAnalyser semantic;
+    Compiler compiler(&lexical, &syntactic, &semantic);
 
-    lexical_analyser::LexicalAnalyser lexical_analyser(&source_str);
+    int status = compiler.compile(source_str.c_str());
 
-    main_log.write("Análise léxica completa!");
-
-
-    main_log.write("Fazendo análise sintática...");
-
-    syntactic_analyser::SyntacticAnalyser syntactic_analyser;
-
-    syntactic_analyser.analyse(lexical_analyser);
-    main_log.write("Análise sintática concluída!");
-
-    std::string symbol_log_msg = "";
-    for (auto symbol : lexical_analyser.symbol_table()) {
-        symbol_log_msg += symbol.first + ": ";
-        for (auto coord : symbol.second) {
-            symbol_log_msg += "(" + std::to_string(coord.first) + ", " + std::to_string(coord.second) + ") ";
-        }
-        main_log.write(symbol_log_msg);
-        symbol_log_msg.clear();
+    if (status < 0) {
+        main_log.write("Compilação falhou!");
+        std::cout << "Compilação falhou!" << std::endl;
     }
 
-    main_log.write("Encerrando compilação.");
+    main_log.write("Compilação encerrada.");
+    
     return EXIT_SUCCESS;
 }

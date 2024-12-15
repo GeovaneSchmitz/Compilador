@@ -1,0 +1,27 @@
+NUMEXPRESSION -> TERM {OPTERM.val = TERM.result} OPTERM {NUMEXPRESSION.result = OPTERM.result}
+
+TERM -> UNARYEXPR {UNARYTERM.val = UNARYEXPR.val} UNARYTERM {TERM.result = UNARYTERM.result}
+
+UNARYEXPR -> FACTOR {UNARYEXPR.result = FACTOR.result, UNARYEXPR.val = FACTOR.result}
+UNARYEXPR -> + FACTOR {UNARYEXPR.result = FACTOR.result, UNARYEXPR.val = FACTOR.result}
+UNARYEXPR -> - FACTOR {UNARYEXPR.result = -1 * FACTOR.result, UNARYEXPR.val = -1 * FACTOR.result}
+
+FACTOR -> int_constant {FACTOR.result = int_constant.literal}
+FACTOR -> float_constant {FACTOR.result = float_constant.literal}
+FACTOR -> LVALUE {FACTOR.result = LVALUE.result}
+FACTOR -> ( NUMEXPRESSION ) {FACTOR.result = NUMEXPRESSION.result}
+    
+LVALUE -> ident {NUMEXPRLIST.pointer = ident} NUMEXPRLIST {LVALUE.result = NUMEXPRLIST.result}
+
+NUMEXPRLIST -> [ NUMEXPRESSION ] {NUMEXPRLIST_1.pointer = NUMEXPRLIST.pointer[NUMEXPRESSION.result]} NUMEXPRLIST_1 {NUMEXPRLIST.result = NUMEXPRLIST_1.result}
+NUMEXPRLIST -> '' {NUMEXPRLIST.result = dereference(NUMEXPRLIST.pointer)}
+    
+UNARYTERM -> * UNARYEXPR {UNARYTERM_1.val = UNARYTERM.val * UNARYEXPR.val} UNARYTERM_1 {UNARYTERM.result = UNARYTERM_1.result}
+UNARYTERM -> / UNARYEXPR {UNARYTERM_1.val = UNARYTERM.val / UNARYEXPR.val} UNARYTERM_1 {UNARYTERM.result = UNARYTERM_1.result}
+UNARYTERM -> % UNARYEXPR {UNARYTERM_1.val = UNARYTERM.val % UNARYEXPR.val} UNARYTERM_1 {UNARYTERM.result = UNARYTERM_1.result}
+UNARYTERM ->  '' {UNARYTERM.result = UNARYTERM.val}
+    
+OPTERM -> - TERM {OPTERM_1.val = OPTERM.val - TERM.result} OPTERM_1 {OPTERM.result = OPTERM_1.result}
+OPTERM -> + TERM {OPTERM_1.val = OPTERM.val - TERM.val} OPTERM_1 {OPTERM.result = OPTERM_1.result}
+OPTERM -> '' {OPTERM.result = OPTERM.val}
+    

@@ -77,7 +77,6 @@ bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
 
             stack_.pop_back();
             if (!production->second.empty()) {
-                
                 stack_.insert(stack_.end(), production->second.rbegin(), production->second.rend());
             }
         }

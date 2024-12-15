@@ -1,0 +1,69 @@
+NUMEXPRESSION -> TERM OPTERM 
+    OPTERM.val = TERM.result
+    NUMEXPRESSION.result = OPTERM.result
+
+TERM -> UNARYEXPR UNARYTERM
+    UNARYTERM.val = UNARYEXPR.val
+    TERM.result = UNARYTERM.result
+
+UNARYEXPR -> FACTOR
+    UNARYEXPR.result = FACTOR.result
+    UNARYEXPR.val = FACTOR.result
+UNARYEXPR -> + FACTOR 
+    UNARYEXPR.result = FACTOR.result
+    UNARYEXPR.val = FACTOR.result
+UNARYEXPR -> - FACTOR
+    UNARYEXPR.result = -1 * FACTOR.result
+    UNARYEXPR.val = -1 * FACTOR.result
+
+FACTOR -> int_constant
+    FACTOR.result = int_constant.literal
+FACTOR -> float_constant 
+    FACTOR.result = float_constant.literal
+FACTOR -> LVALUE
+    FACTOR.result = LVALUE.result
+FACTOR -> ( NUMEXPRESSION )
+    FACTOR.result = NUMEXPRESSION.result
+
+LVALUE -> ident NUMEXPRLIST
+    NUMEXPRLIST.pointer = ident
+    LVALUE.result = NUMEXPRLIST.result
+
+NUMEXPRLIST -> [ NUMEXPRESSION ] NUMEXPRLIST_1
+    NUMEXPRLIST_1.pointer = NUMEXPRLIST.pointer[NUMEXPRESSION.result]
+    NUMEXPRLIST.result = NUMEXPRLIST_1.result
+NUMEXPRLIST -> ''
+    NUMEXPRLIST.result = dereference(NUMEXPRLIST.pointer)
+
+UNARYTERM -> * UNARYEXPR UNARYTERM_1 
+    UNARYTERM_1.val = UNARYTERM.val * UNARYEXPR.val
+    UNARYTERM.result = UNARYTERM_1.result
+UNARYTERM -> / UNARYEXPR UNARYTERM_1
+    UNARYTERM_1.val = UNARYTERM.val / UNARYEXPR.val
+    UNARYTERM.result = UNARYTERM_1.result
+UNARYTERM -> % UNARYEXPR UNARYTERM_1
+    UNARYTERM_1.val = UNARYTERM.val % UNARYEXPR.val
+    UNARYTERM.result = UNARYTERM_1.result
+UNARYTERM ->  ''
+    UNARYTERM.result = UNARYTERM.val
+
+OPTERM -> - TERM OPTERM_1
+    OPTERM_1.val = OPTERM.val - TERM.result
+    OPTERM.result = OPTERM_1.result
+OPTERM -> + TERM OPTERM_1
+    OPTERM_1.val = OPTERM.val - TERM.val
+    OPTERM.result = OPTERM_1.result
+OPTERM -> ''
+    OPTERM.result = OPTERM.val
+
+
+Por inspeção, podemos observar que a SDD é de fato L-atribuída, pois
+os atributos da cabeça da produção são sintetizados e os
+atributos herdados advêm de:
+ - símbolos à esquerda de si próprio no corpo da produção; ou
+ - da cabeça da produção; ou
+ - de si próprios porém sem ciclos de dependência.
+
+Empregamos o uso de uma ação semântica de referenciamento à memória representada
+pela pseudo-função "dereference".
+

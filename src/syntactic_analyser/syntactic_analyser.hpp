@@ -16,6 +16,7 @@ class SyntacticAnalyser {
     SyntacticAnalyser();
 
     bool analyse(lexical_analyser::LexicalAnalyser &lex);
+    void initialize_table();
 
     private:
     cmp_log::Log log_;
@@ -24,7 +25,6 @@ class SyntacticAnalyser {
     Term pop();
 
     const std::vector<Term> &stack() const;
-    void initialize_table();
 
     const std::map<std::pair<NonTerminal, lexical_analyser::TokenType>, std::vector<Term>> &table() const;
 };

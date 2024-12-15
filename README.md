@@ -36,7 +36,7 @@ Para executar o compilador, deve-se fazer o seguinte:
 
 Os arquivos prontos para testes estão na pasta xpp, segue um exemplo de comando:
 ```bash
-   ./bin/main filepath/file.xpp
+   ./bin/main xpp/funcoes.xpp
 ```
 
 ## Resultados
