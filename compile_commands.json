@@ -1,1 +1,92 @@
-bin/compile_commands.json
+[
+{
+  "directory": "/root/Compilador",
+  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -Wno-unused-parameter -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/binary_tree/binary_tree.cpp.o -c /root/Compilador/src/binary_tree/binary_tree.cpp",
+  "file": "/root/Compilador/src/binary_tree/binary_tree.cpp"
+},
+{
+  "directory": "/root/Compilador",
+  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -Wno-unused-parameter -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/compiler/compiler.cpp.o -c /root/Compilador/src/compiler/compiler.cpp",
+  "file": "/root/Compilador/src/compiler/compiler.cpp"
+},
+{
+  "directory": "/root/Compilador",
+  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -Wno-unused-parameter -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/lexical_analyser/lexical_analyser.cpp.o -c /root/Compilador/src/lexical_analyser/lexical_analyser.cpp",
+  "file": "/root/Compilador/src/lexical_analyser/lexical_analyser.cpp"
+},
+{
+  "directory": "/root/Compilador",
+  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -Wno-unused-parameter -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/lexical_analyser/token_property.cpp.o -c /root/Compilador/src/lexical_analyser/token_property.cpp",
+  "file": "/root/Compilador/src/lexical_analyser/token_property.cpp"
+},
+{
+  "directory": "/root/Compilador",
+  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -Wno-unused-parameter -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/lexical_analyser/token_type.cpp.o -c /root/Compilador/src/lexical_analyser/token_type.cpp",
+  "file": "/root/Compilador/src/lexical_analyser/token_type.cpp"
+},
+{
+  "directory": "/root/Compilador",
+  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -Wno-unused-parameter -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/lexical_analyser/token.cpp.o -c /root/Compilador/src/lexical_analyser/token.cpp",
+  "file": "/root/Compilador/src/lexical_analyser/token.cpp"
+},
+{
+  "directory": "/root/Compilador",
+  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -Wno-unused-parameter -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/log/log_thread_safe.cpp.o -c /root/Compilador/src/log/log_thread_safe.cpp",
+  "file": "/root/Compilador/src/log/log_thread_safe.cpp"
+},
+{
+  "directory": "/root/Compilador",
+  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -Wno-unused-parameter -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/log/log.cpp.o -c /root/Compilador/src/log/log.cpp",
+  "file": "/root/Compilador/src/log/log.cpp"
+},
+{
+  "directory": "/root/Compilador",
+  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -Wno-unused-parameter -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/main.cpp.o -c /root/Compilador/src/main.cpp",
+  "file": "/root/Compilador/src/main.cpp"
+},
+{
+  "directory": "/root/Compilador",
+  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -Wno-unused-parameter -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/semantic_analyser/return_value.cpp.o -c /root/Compilador/src/semantic_analyser/return_value.cpp",
+  "file": "/root/Compilador/src/semantic_analyser/return_value.cpp"
+},
+{
+  "directory": "/root/Compilador",
+  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -Wno-unused-parameter -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/semantic_analyser/semantic_analyser.cpp.o -c /root/Compilador/src/semantic_analyser/semantic_analyser.cpp",
+  "file": "/root/Compilador/src/semantic_analyser/semantic_analyser.cpp"
+},
+{
+  "directory": "/root/Compilador",
+  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -Wno-unused-parameter -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/semantic_analyser/symbol_table.cpp.o -c /root/Compilador/src/semantic_analyser/symbol_table.cpp",
+  "file": "/root/Compilador/src/semantic_analyser/symbol_table.cpp"
+},
+{
+  "directory": "/root/Compilador",
+  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -Wno-unused-parameter -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/semantic_analyser/symbol_type.cpp.o -c /root/Compilador/src/semantic_analyser/symbol_type.cpp",
+  "file": "/root/Compilador/src/semantic_analyser/symbol_type.cpp"
+},
+{
+  "directory": "/root/Compilador",
+  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -Wno-unused-parameter -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/semantic_analyser/symbol.cpp.o -c /root/Compilador/src/semantic_analyser/symbol.cpp",
+  "file": "/root/Compilador/src/semantic_analyser/symbol.cpp"
+},
+{
+  "directory": "/root/Compilador",
+  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -Wno-unused-parameter -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/syntactic_analyser/ast_node.cpp.o -c /root/Compilador/src/syntactic_analyser/ast_node.cpp",
+  "file": "/root/Compilador/src/syntactic_analyser/ast_node.cpp"
+},
+{
+  "directory": "/root/Compilador",
+  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -Wno-unused-parameter -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/syntactic_analyser/non_terminal.cpp.o -c /root/Compilador/src/syntactic_analyser/non_terminal.cpp",
+  "file": "/root/Compilador/src/syntactic_analyser/non_terminal.cpp"
+},
+{
+  "directory": "/root/Compilador",
+  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -Wno-unused-parameter -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/syntactic_analyser/syntactic_analyser.cpp.o -c /root/Compilador/src/syntactic_analyser/syntactic_analyser.cpp",
+  "file": "/root/Compilador/src/syntactic_analyser/syntactic_analyser.cpp"
+},
+{
+  "directory": "/root/Compilador",
+  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -Wno-unused-parameter -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/syntactic_analyser/term_type.cpp.o -c /root/Compilador/src/syntactic_analyser/term_type.cpp",
+  "file": "/root/Compilador/src/syntactic_analyser/term_type.cpp"
+}
+]

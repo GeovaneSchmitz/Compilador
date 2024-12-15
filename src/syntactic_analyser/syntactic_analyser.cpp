@@ -161,13 +161,13 @@ void SyntacticAnalyser::initialize_table() {
         TermType(NonTerminal::STATELIST),       TermType(TokenType::CLOSE_CURLY_BRACE)};
 
     // PARAMLIST
+    table_[std::make_pair(NonTerminal::PARAMLIST, TokenType::CLOSE_PARENTHESIS)] = {};
     table_[std::make_pair(NonTerminal::PARAMLIST, TokenType::RESERVED_WORD_INT)] = {
         TermType(TokenType::RESERVED_WORD_INT), TermType(TokenType::IDENT), TermType(NonTerminal::PARAMLIST_)};
     table_[std::make_pair(NonTerminal::PARAMLIST, TokenType::RESERVED_WORD_FLOAT)] = {
         TermType(TokenType::RESERVED_WORD_FLOAT), TermType(TokenType::IDENT), TermType(NonTerminal::PARAMLIST_)};
     table_[std::make_pair(NonTerminal::PARAMLIST, TokenType::RESERVED_WORD_STRING)] = {
         TermType(TokenType::RESERVED_WORD_STRING), TermType(TokenType::IDENT), TermType(NonTerminal::PARAMLIST_)};
-    table_[std::make_pair(NonTerminal::PARAMLIST, TokenType::CLOSE_PARENTHESIS)] = {TermType(NonTerminal::PARAMLIST_)};
 
     // PARAMLIST'
     table_[std::make_pair(NonTerminal::PARAMLIST_, TokenType::CLOSE_PARENTHESIS)] = {};

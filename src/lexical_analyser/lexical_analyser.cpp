@@ -196,6 +196,7 @@ Token LexicalAnalyser::nextToken() {
                 break;
             default:
                 start = this->current_position;
+                return Token(TokenType::INVALID, start, current_position, row, col);
                 break;
             }
             break;
