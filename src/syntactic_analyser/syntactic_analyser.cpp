@@ -8,7 +8,6 @@
 #include <vector>
 
 using lexical_analyser::LexicalAnalyser;
-using lexical_analyser::Token;
 using lexical_analyser::TokenType;
 
 namespace syntactic_analyser {
@@ -24,18 +23,15 @@ bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
     stack_.push_back(TokenType::END_OF_FILE);
     stack_.push_back(NonTerminal::PROGRAM);
 
-    std::vector<Token*> token_list;
-
     std::string buffer_log;
     std::string stack_log;
     std::string prod_log;
 
     auto current_item = stack_.back();
-    Token *token = lex.getNextToken();
-    lex.append_token_list(token);
+    TokenType token_type = lex.next_token();
 
-    while (token != nullptr) {
-        buffer_log = "Buffer: " + to_string(token->type()) + ":" + token->value();
+    while (token_type != TokenType::END_OF_FILE) {
+        buffer_log = "Buffer: " + to_string(token_type);
         this->log_.write(buffer_log);
         stack_log = "Stack: ";
 
@@ -46,20 +42,19 @@ bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
         this->log_.write(stack_log);
 
         if (current_item.isTerminal()) {
-            if (current_item.getTerminal() == token->type()) {
+            if (current_item.getTerminal() == token_type) {
                 stack_.pop_back();
-                token = lex.getNextToken();
-                lex.append_token_list(token);
+                token_type = lex.next_token();
             } else {
                 std::string item_token_error_str("Erro: Token lido (");
-                item_token_error_str += token->value() + ") não corresponde ao topo da pilha (" + current_item.get_string() + ")";
+                item_token_error_str += lexical_analyser::to_string(token_type) + ") não corresponde ao topo da pilha (" + current_item.get_string() + ")";
                 this->log_.write(item_token_error_str);
                 return false;
             }
         } else {
-            prod_log = "Procurando produção para " + current_item.get_string() + " e " + to_string(token->type());
+            prod_log = "Procurando produção para " + current_item.get_string() + " e " + lexical_analyser::to_string(token_type);
             this->log_.write(prod_log);
-            const auto production = table_.find({current_item.getNonTerminal(), token->type()});
+            const auto production = table_.find({current_item.getNonTerminal(), token_type});
             if (production == table_.end()) {
                 this->log_.write("Erro: Produção não encontrada na tabela.");
                 return false;
@@ -79,10 +74,10 @@ bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
             }
         }
 
-        // FIXME: Esse if aqui não deveria existir, temos que repensar a condição do while(token != nullptr) da linha 39. 
-        if (token == nullptr) {
+        // FIXME: Esse if aqui não deveria existir, temos que repensar a condição do while(token != TokenTi) da linha 36. 
+        if (token_type == TokenType::END_OF_FILE) {
             if (stack_.back().isTerminal()) {
-                std::string error("Erro: token é nullptr mas há um terminal no topo da pilha: ");
+                std::string error("Erro: token é END_OF_FILE mas há um terminal no topo da pilha: ");
                 error += stack_.back().get_string() + "!";
                 this->log_.write(error);
             } else {

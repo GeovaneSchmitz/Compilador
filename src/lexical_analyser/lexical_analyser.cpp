@@ -1,7 +1,9 @@
 #include "lexical_analyser.hpp"
+#include "token.hpp"
 #include "token_type.hpp"
 #include <cstdlib>
 #include <cstring>
+#include <iostream>
 #include <string>
 #include <sys/types.h>
 #include <unordered_map>
@@ -32,6 +34,8 @@ LexicalAnalyser::~LexicalAnalyser() {
     }
 }
 
+
+
 /**
  * @brief Recupera o próximo token do código-fonte.
  *
@@ -49,45 +53,45 @@ LexicalAnalyser::~LexicalAnalyser() {
  *         se nenhum token válido puder ser construído.
  */
 
-Token *LexicalAnalyser::getNextToken() {
+TokenType LexicalAnalyser::next_token() {
     int state = 0;
-    std::string::iterator start = current_position;
+    std::string::iterator start = this->current_position;
     std::string new_token_msg;
     /**
      * O current_position é um ponteiro para um caractere no código-fonte atual, nesta função nós percorremos
      * caractere por caractere até conseguir montar um token válido.
      */
 
-    while (current_position != source_code->end()) {
+    while (this->current_position != source_code->end()) {
         this->col++;
-        if (*current_position == '\n') {
+        if (*this->current_position == '\n') {
             this->row++;
             this->col = 1;
         }
         switch (state) {
         case 0:
-            switch (*current_position++) {
+            switch (*this->current_position++) {
             case '*':
             case '/':
             case '%':
-                new_token_msg = "Token " + lexical_analyser::to_string(TokenType::HIGH_PRIORITY_OPERATOR) + " encontrado: " + std::string(start, current_position);
-                this->log_.write(new_token_msg);
-                return new Token(TokenType::HIGH_PRIORITY_OPERATOR, start, current_position);
+                this->append_token_list(TokenType::HIGH_PRIORITY_OPERATOR, start);
+                return TokenType::HIGH_PRIORITY_OPERATOR;
+                // return new Token(TokenType::HIGH_PRIORITY_OPERATOR, start, current_position);
                 break;
             case ',':
-                new_token_msg = "Token " + lexical_analyser::to_string(TokenType::COMMA) + " encontrado: " + std::string(start, current_position);
-                this->log_.write(new_token_msg);
-                return new Token(TokenType::COMMA, start, current_position);
+                this->append_token_list(TokenType::COMMA, start);
+                return TokenType::COMMA;
+                // return new Token(TokenType::COMMA, start, current_position);
                 break;
             case ')':
-                new_token_msg = "Token " + lexical_analyser::to_string(TokenType::CLOSE_PARENTHESIS) + " encontrado: " + std::string(start, current_position);
-                this->log_.write(new_token_msg);
-                return new Token(TokenType::CLOSE_PARENTHESIS, start, current_position);
+                this->append_token_list(TokenType::CLOSE_PARENTHESIS, start);
+                return TokenType::CLOSE_PARENTHESIS;
+                // return new Token(TokenType::CLOSE_PARENTHESIS, start, current_position);
                 break;
             case '(':
-                new_token_msg = "Token " + lexical_analyser::to_string(TokenType::OPEN_PARENTHESIS) + " encontrado: " + std::string(start, current_position);
-                this->log_.write(new_token_msg);
-                return new Token(TokenType::OPEN_PARENTHESIS, start, current_position);
+                this->append_token_list(TokenType::OPEN_PARENTHESIS, start);
+                return TokenType::OPEN_PARENTHESIS;
+                // return new Token(TokenType::OPEN_PARENTHESIS, start, current_position);
                 break;
             case '!':
                 state = 5;
@@ -97,22 +101,22 @@ Token *LexicalAnalyser::getNextToken() {
                 state = 3;
                 break;
             case '[':
-                new_token_msg = "Token " + lexical_analyser::to_string(TokenType::OPEN_SQUARE_BRACKET) + " encontrado: " + std::string(start, current_position);
-                this->log_.write(new_token_msg);
-                return new Token(TokenType::OPEN_SQUARE_BRACKET, start, current_position);
+                this->append_token_list(TokenType::OPEN_SQUARE_BRACKET, start);
+                return TokenType::OPEN_SQUARE_BRACKET;
+                // return new Token(TokenType::OPEN_SQUARE_BRACKET, start, current_position);
                 break;
             case '"':
                 state = 1;
                 break;
             case ';':
-                new_token_msg = "Token " + lexical_analyser::to_string(TokenType::SEMICOLON) + " encontrado: " + std::string(start, current_position);
-                this->log_.write(new_token_msg);
-                return new Token(TokenType::SEMICOLON, start, current_position);
+                this->append_token_list(TokenType::SEMICOLON, start);
+                return TokenType::SEMICOLON;
+                // return new Token(TokenType::SEMICOLON, start, current_position);
                 break;
             case ']':
-                new_token_msg = "Token " + lexical_analyser::to_string(TokenType::CLOSE_SQUARE_BRACKET) + " encontrado: " + std::string(start, current_position);
-                this->log_.write(new_token_msg);
-                return new Token(TokenType::CLOSE_SQUARE_BRACKET, start, current_position);
+                this->append_token_list(TokenType::CLOSE_SQUARE_BRACKET, start);
+                return TokenType::CLOSE_SQUARE_BRACKET;
+                // return new Token(TokenType::CLOSE_SQUARE_BRACKET, start, current_position);
                 break;
             case 'a':
             case 'b':
@@ -171,19 +175,19 @@ Token *LexicalAnalyser::getNextToken() {
                 break;
             case '+':
             case '-':
-                new_token_msg = "Token " + lexical_analyser::to_string(TokenType::LOW_PRIORITY_OPERATOR) + " encontrado: " + std::string(start, current_position);
-                this->log_.write(new_token_msg);
-                return new Token(TokenType::LOW_PRIORITY_OPERATOR, start, current_position);
+                this->append_token_list(TokenType::LOW_PRIORITY_OPERATOR, start);
+                return TokenType::LOW_PRIORITY_OPERATOR;
+                // return new Token(TokenType::LOW_PRIORITY_OPERATOR, start, current_position);
                 break;
             case '{':
-                new_token_msg = "Token " + lexical_analyser::to_string(TokenType::OPEN_CURLY_BRACE) + " encontrado: " + std::string(start, current_position);
-                this->log_.write(new_token_msg);
-                return new Token(TokenType::OPEN_CURLY_BRACE, start, current_position);
+                this->append_token_list(TokenType::OPEN_CURLY_BRACE, start);
+                return TokenType::OPEN_CURLY_BRACE;
+                // return new Token(TokenType::OPEN_CURLY_BRACE, start, current_position);
                 break;
             case '}':
-                new_token_msg = "Token " + lexical_analyser::to_string(TokenType::CLOSE_CURLY_BRACE) + " encontrado: " + std::string(start, current_position);
-                this->log_.write(new_token_msg);
-                return new Token(TokenType::CLOSE_CURLY_BRACE, start, current_position);
+                this->append_token_list(TokenType::CLOSE_CURLY_BRACE, start);
+                return TokenType::CLOSE_CURLY_BRACE;
+                // return new Token(TokenType::CLOSE_CURLY_BRACE, start, current_position);
                 break;
             case '0':
             case '1':
@@ -201,23 +205,23 @@ Token *LexicalAnalyser::getNextToken() {
                 state = 8;
                 break;
             default:
-                start = current_position;
+                start = this->current_position;
                 break;
             }
             break;
         case 1:
-            switch (*current_position++) {
+            switch (*this->current_position++) {
             case '"':
-                new_token_msg = "Token " + lexical_analyser::to_string(TokenType::STRING_CONSTANT) + " encontrado: " + std::string(start, current_position);
-                this->log_.write(new_token_msg);
-                return new Token(TokenType::STRING_CONSTANT, start, current_position);
+                this->append_token_list(TokenType::STRING_CONSTANT, start);
+                return TokenType::STRING_CONSTANT;
+                // return new Token(TokenType::STRING_CONSTANT, start, current_position);
                 break;
             default:
                 break;
             }
             break;
         case 2:
-            switch (*current_position++) {
+            switch (*this->current_position++) {
             case 'a':
             case 'b':
             case 'c':
@@ -283,40 +287,39 @@ Token *LexicalAnalyser::getNextToken() {
             case '_':
                 break;
             default: {
-                current_position--;
+                this->current_position--;
                 std::string word(start, current_position);
                 auto it = reserved_words.find(word);
                 if (it != reserved_words.end()) {
-                new_token_msg = "Token " + lexical_analyser::to_string(it->second) + " encontrado: " + std::string(start, current_position);
-                    this->log_.write(new_token_msg);
-                    return new Token(it->second, start, current_position);
+
+                    this->append_token_list(it->second, start);
+
+                    return it->second;
+                    // return new Token(it->second, start, current_position);
                 }
-                new_token_msg = "Token " + lexical_analyser::to_string(TokenType::IDENT) + " encontrado: " + std::string(start, current_position);
-                new_token_msg += "(" + std::to_string(row) + ", " + std::to_string(col) + ");";
-                this->log_.write(new_token_msg);
-                Token* new_token = new Token(TokenType::IDENT, start, current_position);
-                this->symbol_table_[new_token->value()].push_back(std::make_pair(row, col));
-                return new_token;
+                this->append_token_list(TokenType::IDENT, start);
+                return TokenType::IDENT;
+                // return new_token;
                 break;
             }
             }
             break;
         case 3:
-            switch (*current_position++) {
+            switch (*this->current_position++) {
             case '=':
-                new_token_msg = "Token " + lexical_analyser::to_string(TokenType::COMPARATOR) + " encontrado: " + std::string(start, current_position);
-                this->log_.write(new_token_msg);
-                return new Token(TokenType::COMPARATOR, start, current_position);
+                this->append_token_list(TokenType::COMPARATOR, start);
+                return TokenType::COMPARATOR;
+                // return new Token(TokenType::COMPARATOR, start, current_position);
                 break;
             default:
-                current_position--;
-                new_token_msg = "Token " + lexical_analyser::to_string(TokenType::COMPARATOR) + " encontrado: " + std::string(start, current_position);
-                this->log_.write(new_token_msg);
-                return new Token(TokenType::COMPARATOR, start, current_position);
+                this->current_position--;
+                this->append_token_list(TokenType::COMPARATOR, start);
+                return TokenType::COMPARATOR;
+                // return new Token(TokenType::COMPARATOR, start, current_position);
                 break;
             }
         case 4:
-            switch (*current_position++) {
+            switch (*this->current_position++) {
             case '.':
                 state = 6;
                 break;
@@ -332,27 +335,28 @@ Token *LexicalAnalyser::getNextToken() {
             case '9':
                 break;
             default:
-                current_position--;
-                new_token_msg = "Token " + lexical_analyser::to_string(TokenType::INT_CONSTANT) + " encontrado: " + std::string(start, current_position);
-                this->log_.write(new_token_msg);
-                return new Token(TokenType::INT_CONSTANT, start, current_position);
+                this->current_position--;
+                this->append_token_list(TokenType::INT_CONSTANT, start);
+                return TokenType::INT_CONSTANT;
+                // return new Token(TokenType::INT_CONSTANT, start, current_position);
                 break;
             }
             break;
         case 5:
-            switch (*current_position++) {
+            switch (*this->current_position++) {
             case '=':
-                new_token_msg = "Token " + lexical_analyser::to_string(TokenType::COMPARATOR) + " encontrado: " + std::string(start, current_position);
-                this->log_.write(new_token_msg);
-                return new Token(TokenType::COMPARATOR, start, current_position);
+                this->append_token_list(TokenType::COMPARATOR, start);
+                return TokenType::COMPARATOR;
+                // return new Token(TokenType::COMPARATOR, start, current_position);
                 break;
             default:
-                return nullptr;
+                return TokenType::END_OF_FILE;
+                // return nullptr;
                 break;
             }
             break;
         case 6:
-            switch (*current_position++) {
+            switch (*this->current_position++) {
             case '0':
             case '1':
             case '2':
@@ -366,12 +370,12 @@ Token *LexicalAnalyser::getNextToken() {
                 state = 7;
                 break;
             default:
-                return nullptr;
+                return TokenType::END_OF_FILE;
                 break;
             }
             break;
         case 7:
-            switch (*current_position++) {
+            switch (*this->current_position++) {
             case '0':
             case '1':
             case '2':
@@ -384,25 +388,25 @@ Token *LexicalAnalyser::getNextToken() {
             case '9':
                 break;
             default:
-                current_position--;
-                new_token_msg = "Token " + lexical_analyser::to_string(TokenType::FLOAT_CONSTANT) + " encontrado: " + std::string(start, current_position);
-                this->log_.write(new_token_msg);
-                return new Token(TokenType::FLOAT_CONSTANT, start, current_position);
+                this->current_position--;
+                this->append_token_list(TokenType::FLOAT_CONSTANT, start);
+                return TokenType::FLOAT_CONSTANT;
+                // return new Token(TokenType::FLOAT_CONSTANT, start, current_position);
                 break;
             }
             break;
         case 8:
-            switch (*current_position++) {
+            switch (*this->current_position++) {
             case '=':
-                new_token_msg = "Token " + lexical_analyser::to_string(TokenType::COMPARATOR) + " encontrado: " + std::string(start, current_position);
-                this->log_.write(new_token_msg);
-                return new Token(TokenType::COMPARATOR, start, current_position);
+                this->append_token_list(TokenType::COMPARATOR, start);
+                return TokenType::COMPARATOR;
+                // return new Token(TokenType::COMPARATOR, start, current_position);
                 break;
             default:
-                current_position--;
-                new_token_msg = "Token " + lexical_analyser::to_string(TokenType::ASSIGNMENT) + " encontrado: " + std::string(start, current_position);
-                this->log_.write(new_token_msg);
-                return new Token(TokenType::ASSIGNMENT, start, current_position);
+                this->current_position--;
+                this->append_token_list(TokenType::ASSIGNMENT, start);
+                return TokenType::ASSIGNMENT;
+                // return new Token(TokenType::ASSIGNMENT, start, current_position);
                 break;
             }
             break;
@@ -410,8 +414,24 @@ Token *LexicalAnalyser::getNextToken() {
             break;
         }
     }
-    return nullptr;
+    return TokenType::END_OF_FILE;
+    // return nullptr;
 }
+
+bool LexicalAnalyser::in_token_list(const std::string& value) const {
+    if (this->token_list().size() <= 0) {
+        return false;
+    }
+
+    for (auto token : this->token_list_) {
+        if (token->value() == value) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 
 const std::unordered_map<std::string, std::list<std::pair<uint, uint>>> LexicalAnalyser::symbol_table() const {
     return this->symbol_table_;
@@ -421,17 +441,24 @@ const std::vector<Token*> LexicalAnalyser::token_list() const {
     return this->token_list_;
 }
 
-// append_token_list não coloca duplicatas
-void LexicalAnalyser::append_token_list(Token* token) {
-    for (auto ptr : this->token_list_) {
-        if (ptr == token) {
-            this->log_.write("Tentou adicionar um token que já está na lista!!!");
-            return;
-        }
+// Não coloca duplicatas
+void LexicalAnalyser::append_token_list(TokenType type, std::string::iterator start) {
+    std::string value = "";
+    value.assign(start, this->current_position);
+    std::string new_token_msg = "(" + std::to_string(this->row) + ", " + std::to_string(this->col) + ") " + " Token " + lexical_analyser::to_string(type) + " encontrado: " + value;
+    this->log_.write(new_token_msg);
+    
+    if (type == TokenType::IDENT) {
+        this->symbol_table_[value].push_back(std::make_pair(row, col));
     }
 
-    this->token_list_.push_back(token);
-}
+    if (this->in_token_list(value)) {
+        this->log_.write("Token já está na lista.");
+        return;
+    }
 
+    this->token_list_.push_back(new Token(type, value));
+    value.clear();
+}
 
 } // namespace lexical_analyser

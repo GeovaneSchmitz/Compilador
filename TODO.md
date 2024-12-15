@@ -18,7 +18,7 @@ Uma entrada para cada token **Identificador**, com uma lista de ocorrências do 
 
 ## Analisador Semântico
 ### - Usar regras semânticas para:
-#### 1. Construir uma árvore de expressão T (somente com operadores e operandos nos nós)
+#### 1. Construir uma árvore de expressão T (somente com operadores e operandos nos nós) QUASE OK
 #### 2. Inserir os tipos das variáveis na tabela de símbolos
 ### - Também devemos tratar:
 #### 1. Verificação de tipos em expressões

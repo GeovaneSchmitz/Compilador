@@ -2,6 +2,7 @@
 
 #include "token.hpp"
 #include "../log/log.hpp"
+#include "token_type.hpp"
 #include <cstdlib>
 #include <cstring>
 #include <string>
@@ -18,7 +19,9 @@ class LexicalAnalyser {
 
     const std::unordered_map<std::string, std::list<std::pair<uint, uint>>> symbol_table() const;
     const std::vector<Token*> token_list() const;
-    void append_token_list(Token* token);
+    bool in_token_list(const std::string& value) const;
+    const std::pair<uint, uint> coordinates() const;
+    void append_token_list(TokenType type, std::string::iterator start);
 
     /**
      * @brief Recupera o próximo token do código-fonte.
@@ -37,7 +40,7 @@ class LexicalAnalyser {
      *         se nenhum token válido puder ser construído.
      */
 
-    Token *getNextToken();
+    TokenType next_token();
 
     private:
     std::string *source_code;

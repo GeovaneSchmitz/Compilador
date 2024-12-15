@@ -5,7 +5,9 @@ namespace lexical_analyser {
 
 Token::Token(TokenType type, std::string::iterator start, std::string::iterator end)
     : type_{type},
-      value_{start, end} {};
+      value_{start, end} {}
+
+Token::Token(TokenType type, std::string& value) : type_(type), value_(value) {}
 
 Token::~Token() {
     for (auto prop : this->properties_) {
