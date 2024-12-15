@@ -1,0 +1,117 @@
+def pseudoaleatorio(float seed, float multiplier, float a, float c, int number) {
+    int i;
+    float new_random;
+    new_random = seed;
+    for (i = 0; i < number; i = i + 1) {
+        new_random = (a*new_random+c) % multiplier;
+        print new_random / multiplier;
+    }
+}
+
+def dist_uniform(float seed, float multiplier, float a, float c, int number, float min, float max) {
+    int i;
+    float new_random;
+    new_random = seed;
+    for (i = 0; i < number; i = i + 1) {
+        new_random = (a*new_random+c) % multiplier;
+        print min + (new_random / multiplier)*(max-min);
+    }
+}
+
+def sum_array(float array, int size) {
+    int sum;
+    sum = 0;
+    int i;
+    for (i = 0; i < size; i = i + 1) {
+        sum = sum + array[i];
+    }
+    print sum;
+}
+
+def prod_array(float array, int size) {
+    int prod;
+    prod = 0;
+    int i;
+    for (i = 0; i < size; i = i + 1) {
+        prod = prod * array[i];
+    }
+    print prod;
+}
+
+def avg_array(float array, int size) {
+    int sum;
+    int i;
+    sum = 0;
+    for (i = 0; i < size; i = i + 1) {
+        sum = sum + array[i];
+    }
+    print sum/size;
+}
+
+def find_in_array(float array, int size, float number) {
+    int i;
+    i = 0;
+    for (i = 0; i < size; i = i + 1) {
+        if (number == array[i]) {
+            print number;
+            print " na posição: ";
+            print i;
+        }
+    }
+}
+
+def main() {
+    print "Criando números pseudoaleatorios";
+
+    float seed;
+    float multiplier;
+    float a;
+    float c;
+    float number;
+
+    string result;
+
+    seed = 24;
+    multiplier = 100;
+    c = 43;
+    a = 17;
+    number = 30;
+
+    result = call pseudoaleatorio(seed, multiplier, a, c, number);
+
+    print "Distribuição de probabilidade uniforme com pseudoaleatorios";
+
+    float min;
+    float max;
+
+    min = 5.85;
+    max = 150.23;
+    result = call dist_uniform(seed, multiplier, a, c, number, min, max);
+
+    print "Operações com vetores";
+
+    int array[5];
+	int size;
+	size = 5;
+	array = newint[5];
+
+	array[0] = 15;
+	array[1] = 9;
+	array[2] = 23;
+	array[3] = 12;
+	array[4] = 0;
+
+	string result;
+	result = call sum_array(array, size);
+	result = call avg_array(array, size);
+	result = call prod_array(array, size);
+
+    int x0;
+    x0 = 23;
+    
+    int x1;
+    x1 = 1213;
+
+    result = call find_in_array(array, size, x0);
+    result = call find_in_array(array, size, x1);
+}
