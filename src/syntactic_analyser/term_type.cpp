@@ -1,36 +1,36 @@
-#include "term.hpp"
+#include "term_type.hpp"
+#include "lexical_analyser/token_type.hpp"
 #include <stdexcept>
 #include <string>
 
-using lexical_analyser::Token;
 using lexical_analyser::TokenType;
 
 namespace syntactic_analyser {
 
-Term::Term(NonTerminal nt)
+TermType::TermType(NonTerminal nt)
     : is_terminal_{false},
-      terminal_{Token(TokenType::INVALID)},
+      terminal_{TokenType::INVALID},
       non_terminal_{nt} {}
 
-Term::Term(Token tt)
+TermType::TermType(TokenType tt)
     : is_terminal_{true},
       terminal_{tt},
       non_terminal_{NonTerminal::PROGRAM} {}
 
-Term::~Term() {}
+TermType::~TermType() {}
 
-bool Term::isTerminal() const { return is_terminal_; }
+bool TermType::isTerminal() const { return is_terminal_; }
 
-bool Term::isNonTerminal() const { return !is_terminal_; }
+bool TermType::isNonTerminal() const { return !is_terminal_; }
 
-Token Term::getTerminal() const {
+TokenType TermType::getTerminal() const {
     if (!is_terminal_) {
         throw std::runtime_error("Term is non-terminal");
     }
     return terminal_;
 }
 
-NonTerminal Term::getNonTerminal() const {
+NonTerminal TermType::getNonTerminal() const {
     if (is_terminal_) {
         throw std::runtime_error("Term is terminal");
     }
@@ -38,17 +38,17 @@ NonTerminal Term::getNonTerminal() const {
     return non_terminal_;
 }
 
-std::string Term::toString() const {
+std::string TermType::toString() const {
     if (this->isTerminal()) {
-        return lexical_analyser::to_string(this->getTerminal().type()) + ":" + this->getTerminal().value();
+        return lexical_analyser::to_string(this->getTerminal());
     } else {
         return to_string(this->getNonTerminal());
     }
 }
 
-std::ostream &operator<<(std::ostream &os, Term const &m) {
+std::ostream &operator<<(std::ostream &os, TermType const &m) {
     if (m.isTerminal()) {
-        os << lexical_analyser::to_string(m.getTerminal().type()) << std::string(":") << m.getTerminal().value();
+        os << lexical_analyser::to_string(m.getTerminal());
     } else {
         os << to_string(m.getNonTerminal());
     }

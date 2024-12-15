@@ -3,7 +3,7 @@
 #include "../lexical_analyser/token_type.hpp"
 #include "../log/log.hpp"
 #include "non_terminal.hpp"
-#include "term.hpp"
+#include "term_type.hpp"
 #include <map>
 #include <vector>
 
@@ -18,13 +18,9 @@ class SyntacticAnalyser {
 
     private:
     cmp_log::Log log;
-    std::map<std::pair<NonTerminal, lexical_analyser::TokenType>, std::vector<Term>> table_;
+    std::map<std::pair<NonTerminal, lexical_analyser::TokenType>, std::vector<TermType>> table_;
 
-    Term pop();
-
-    const std::vector<Term> &stack() const;
-
-    const std::map<std::pair<NonTerminal, lexical_analyser::TokenType>, std::vector<Term>> &table() const;
+    const std::map<std::pair<NonTerminal, lexical_analyser::TokenType>, std::vector<TermType>> &table() const;
 };
 
 } // namespace syntactic_analyser

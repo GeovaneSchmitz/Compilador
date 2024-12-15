@@ -23,7 +23,7 @@ Token::~Token() {
 
 const std::string &Token::value() const { return value_; }
 
-TokenType Token::type() { return type_; }
+TokenType Token::type()  const { return type_; }
 
 template <typename T> void Token::add_property(std::string &id, T &value) {
     if (this->get_property<T>(id) != nullptr) {

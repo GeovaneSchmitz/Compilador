@@ -16,12 +16,12 @@ add_executable(main
     src/log/log_thread_safe.cpp
     src/log/log.cpp
     src/main.cpp
-    src/semantic_analyser/ast_node.cpp
     src/semantic_analyser/scope.cpp
     src/semantic_analyser/semantic_analyser.cpp
+    src/syntactic_analyser/ast_node.cpp
     src/syntactic_analyser/non_terminal.cpp
     src/syntactic_analyser/syntactic_analyser.cpp
-    src/syntactic_analyser/term.cpp
+    src/syntactic_analyser/term_type.cpp
 )
 
 install(TARGETS main
@@ -32,7 +32,7 @@ install(TARGETS main
 target_include_directories(main PRIVATE src)
 
 
-set(CMAKE_CXX_FLAGS_DEBUG "-g")
+set(CMAKE_CXX_FLAGS_DEBUG "-g -glldb")
 
 # Include directories for headers
 target_include_directories(main PRIVATE src)

@@ -16,7 +16,7 @@ class Token {
 
     const std::string &value() const;
 
-    TokenType type();
+    TokenType type() const;
 
     template <typename T> void add_property(std::string &id, T &value);
 
