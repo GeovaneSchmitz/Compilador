@@ -17,9 +17,7 @@ const std::map<std::pair<NonTerminal, TokenType>, std::vector<Term>> &SyntacticA
     return table_;
 }
 
-SyntacticAnalyser::SyntacticAnalyser() : log_("log/syntactic_analyser.log") {
-    this->initialize_table();
-}
+SyntacticAnalyser::SyntacticAnalyser() : log_("log/syntactic_analyser.log") {}
 
 bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
     std::vector<Term> stack_;

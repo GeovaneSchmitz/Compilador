@@ -21,6 +21,9 @@ add_executable(main
     src/syntactic_analyser/syntactic_analyser.cpp
     src/syntactic_analyser/term.cpp
     src/syntactic_analyser/non_terminal.cpp
+    src/binary_tree/binary_tree.cpp
+    src/semantic_analyser/semantic_analyser.cpp
+    src/compiler/compiler.cpp
 )
 
 install(TARGETS main

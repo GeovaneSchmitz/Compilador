@@ -1,709 +1,709 @@
-[2024-12-15 00:16:01] Token RESERVED_WORD_DEF encontrado: def
-[2024-12-15 00:16:01] Token IDENT encontrado: mult_matrix(1, 18);
-[2024-12-15 00:16:01] Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 00:16:01] Token RESERVED_WORD_FLOAT encontrado: float
-[2024-12-15 00:16:01] Token IDENT encontrado: A(1, 28);
-[2024-12-15 00:16:01] Token COMMA encontrado: ,
-[2024-12-15 00:16:01] Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 00:16:01] Token IDENT encontrado: mA(1, 38);
-[2024-12-15 00:16:01] Token COMMA encontrado: ,
-[2024-12-15 00:16:01] Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 00:16:01] Token IDENT encontrado: nA(1, 48);
-[2024-12-15 00:16:01] Token COMMA encontrado: ,
-[2024-12-15 00:16:01] Token RESERVED_WORD_FLOAT encontrado: float
-[2024-12-15 00:16:01] Token IDENT encontrado: B(1, 59);
-[2024-12-15 00:16:01] Token COMMA encontrado: ,
-[2024-12-15 00:16:01] Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 00:16:01] Token IDENT encontrado: mB(1, 69);
-[2024-12-15 00:16:01] Token COMMA encontrado: ,
-[2024-12-15 00:16:01] Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 00:16:01] Token IDENT encontrado: nB(1, 79);
-[2024-12-15 00:16:01] Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 00:16:01] Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 00:16:01] Token RESERVED_WORD_IF encontrado: if
-[2024-12-15 00:16:01] Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 00:16:01] Token IDENT encontrado: nA(2, 13);
-[2024-12-15 00:16:01] Token COMPARATOR encontrado: !=
-[2024-12-15 00:16:01] Token IDENT encontrado: mB(2, 20);
-[2024-12-15 00:16:01] Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 00:16:01] Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 00:16:01] Token RESERVED_WORD_PRINT encontrado: print
-[2024-12-15 00:16:01] Token STRING_CONSTANT encontrado: "Error: número de colunas de A é diferente do número de linhas de B"
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token RESERVED_WORD_RETURN encontrado: return
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 00:16:01] Token RESERVED_WORD_FLOAT encontrado: float
-[2024-12-15 00:16:01] Token IDENT encontrado: C(7, 14);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: C(8, 7);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token RESERVED_WORD_NEW encontrado: new
-[2024-12-15 00:16:01] Token RESERVED_WORD_FLOAT encontrado: float
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token IDENT encontrado: mA(8, 26);
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token IDENT encontrado: nB(8, 31);
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 00:16:01] Token IDENT encontrado: i(10, 12);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 00:16:01] Token IDENT encontrado: j(11, 12);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 00:16:01] Token IDENT encontrado: k(12, 12);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token RESERVED_WORD_FOR encontrado: for
-[2024-12-15 00:16:01] Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 00:16:01] Token IDENT encontrado: i(13, 13);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: i(13, 23);
-[2024-12-15 00:16:01] Token COMPARATOR encontrado: <
-[2024-12-15 00:16:01] Token IDENT encontrado: mA(13, 30);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: i(13, 34);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token IDENT encontrado: i(13, 40);
-[2024-12-15 00:16:01] Token LOW_PRIORITY_OPERATOR encontrado: +
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 1
-[2024-12-15 00:16:01] Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 00:16:01] Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 00:16:01] Token RESERVED_WORD_FOR encontrado: for
-[2024-12-15 00:16:01] Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 00:16:01] Token IDENT encontrado: j(14, 17);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: j(14, 27);
-[2024-12-15 00:16:01] Token COMPARATOR encontrado: <
-[2024-12-15 00:16:01] Token IDENT encontrado: nB(14, 34);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: j(14, 38);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token IDENT encontrado: j(14, 44);
-[2024-12-15 00:16:01] Token LOW_PRIORITY_OPERATOR encontrado: +
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 1
-[2024-12-15 00:16:01] Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 00:16:01] Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 00:16:01] Token RESERVED_WORD_FOR encontrado: for
-[2024-12-15 00:16:01] Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 00:16:01] Token IDENT encontrado: k(15, 21);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: k(15, 31);
-[2024-12-15 00:16:01] Token COMPARATOR encontrado: <
-[2024-12-15 00:16:01] Token IDENT encontrado: nA(15, 38);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: k(15, 42);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token IDENT encontrado: k(15, 48);
-[2024-12-15 00:16:01] Token LOW_PRIORITY_OPERATOR encontrado: +
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 1
-[2024-12-15 00:16:01] Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 00:16:01] Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 00:16:01] Token IDENT encontrado: C(16, 19);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token IDENT encontrado: i(16, 22);
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token IDENT encontrado: j(16, 26);
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token IDENT encontrado: C(16, 33);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token IDENT encontrado: i(16, 36);
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token IDENT encontrado: j(16, 40);
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token LOW_PRIORITY_OPERATOR encontrado: +
-[2024-12-15 00:16:01] Token IDENT encontrado: A(16, 46);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token IDENT encontrado: i(16, 49);
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token IDENT encontrado: k(16, 53);
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token HIGH_PRIORITY_OPERATOR encontrado: *
-[2024-12-15 00:16:01] Token IDENT encontrado: B(16, 59);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token IDENT encontrado: k(16, 62);
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token IDENT encontrado: j(16, 66);
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 00:16:01] Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 00:16:01] Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 00:16:01] Token RESERVED_WORD_FOR encontrado: for
-[2024-12-15 00:16:01] Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 00:16:01] Token IDENT encontrado: i(21, 13);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: i(21, 23);
-[2024-12-15 00:16:01] Token COMPARATOR encontrado: <
-[2024-12-15 00:16:01] Token IDENT encontrado: mA(21, 30);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: i(21, 34);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token IDENT encontrado: i(21, 40);
-[2024-12-15 00:16:01] Token LOW_PRIORITY_OPERATOR encontrado: +
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 1
-[2024-12-15 00:16:01] Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 00:16:01] Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 00:16:01] Token RESERVED_WORD_PRINT encontrado: print
-[2024-12-15 00:16:01] Token IDENT encontrado: C(22, 18);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token IDENT encontrado: i(22, 21);
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 00:16:01] Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 00:16:01] Token RESERVED_WORD_DEF encontrado: def
-[2024-12-15 00:16:01] Token IDENT encontrado: transpose_matrix(26, 23);
-[2024-12-15 00:16:01] Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 00:16:01] Token RESERVED_WORD_FLOAT encontrado: float
-[2024-12-15 00:16:01] Token IDENT encontrado: A(26, 33);
-[2024-12-15 00:16:01] Token COMMA encontrado: ,
-[2024-12-15 00:16:01] Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 00:16:01] Token IDENT encontrado: m(26, 42);
-[2024-12-15 00:16:01] Token COMMA encontrado: ,
-[2024-12-15 00:16:01] Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 00:16:01] Token IDENT encontrado: n(26, 51);
-[2024-12-15 00:16:01] Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 00:16:01] Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 00:16:01] Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 00:16:01] Token IDENT encontrado: i(27, 12);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 00:16:01] Token IDENT encontrado: j(28, 12);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token RESERVED_WORD_FLOAT encontrado: float
-[2024-12-15 00:16:01] Token IDENT encontrado: At(30, 15);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: At(31, 8);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token RESERVED_WORD_NEW encontrado: new
-[2024-12-15 00:16:01] Token RESERVED_WORD_FLOAT encontrado: float
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token IDENT encontrado: m(31, 26);
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token IDENT encontrado: n(31, 30);
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token RESERVED_WORD_FOR encontrado: for
-[2024-12-15 00:16:01] Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 00:16:01] Token IDENT encontrado: i(33, 13);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: i(33, 23);
-[2024-12-15 00:16:01] Token COMPARATOR encontrado: <
-[2024-12-15 00:16:01] Token IDENT encontrado: m(33, 29);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: i(33, 33);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token IDENT encontrado: i(33, 39);
-[2024-12-15 00:16:01] Token LOW_PRIORITY_OPERATOR encontrado: +
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 1
-[2024-12-15 00:16:01] Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 00:16:01] Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 00:16:01] Token RESERVED_WORD_FOR encontrado: for
-[2024-12-15 00:16:01] Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 00:16:01] Token IDENT encontrado: j(34, 17);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: j(34, 27);
-[2024-12-15 00:16:01] Token COMPARATOR encontrado: <
-[2024-12-15 00:16:01] Token IDENT encontrado: n(34, 33);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: j(34, 37);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token IDENT encontrado: j(34, 43);
-[2024-12-15 00:16:01] Token LOW_PRIORITY_OPERATOR encontrado: +
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 1
-[2024-12-15 00:16:01] Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 00:16:01] Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 00:16:01] Token IDENT encontrado: At(35, 16);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token IDENT encontrado: i(35, 19);
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token IDENT encontrado: j(35, 23);
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token IDENT encontrado: At(35, 31);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token IDENT encontrado: j(35, 34);
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token IDENT encontrado: i(35, 38);
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 00:16:01] Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 00:16:01] Token RESERVED_WORD_FOR encontrado: for
-[2024-12-15 00:16:01] Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 00:16:01] Token IDENT encontrado: i(38, 13);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: i(38, 23);
-[2024-12-15 00:16:01] Token COMPARATOR encontrado: <
-[2024-12-15 00:16:01] Token IDENT encontrado: m(38, 29);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: i(38, 33);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token IDENT encontrado: i(38, 39);
-[2024-12-15 00:16:01] Token LOW_PRIORITY_OPERATOR encontrado: +
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 1
-[2024-12-15 00:16:01] Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 00:16:01] Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 00:16:01] Token RESERVED_WORD_PRINT encontrado: print
-[2024-12-15 00:16:01] Token IDENT encontrado: At(39, 19);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token IDENT encontrado: i(39, 22);
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 00:16:01] Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 00:16:01] Token RESERVED_WORD_DEF encontrado: def
-[2024-12-15 00:16:01] Token IDENT encontrado: aprox_raiz_quadrada(43, 26);
-[2024-12-15 00:16:01] Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 00:16:01] Token RESERVED_WORD_FLOAT encontrado: float
-[2024-12-15 00:16:01] Token IDENT encontrado: x(43, 36);
-[2024-12-15 00:16:01] Token COMMA encontrado: ,
-[2024-12-15 00:16:01] Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 00:16:01] Token IDENT encontrado: iterations(43, 54);
-[2024-12-15 00:16:01] Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 00:16:01] Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 00:16:01] Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 00:16:01] Token IDENT encontrado: i(44, 12);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 00:16:01] Token IDENT encontrado: r(45, 12);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: r(46, 7);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 50
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token RESERVED_WORD_FOR encontrado: for
-[2024-12-15 00:16:01] Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 00:16:01] Token IDENT encontrado: i(47, 13);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: i(47, 23);
-[2024-12-15 00:16:01] Token COMPARATOR encontrado: <
-[2024-12-15 00:16:01] Token IDENT encontrado: iterations(47, 38);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: i(47, 42);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token IDENT encontrado: i(47, 48);
-[2024-12-15 00:16:01] Token LOW_PRIORITY_OPERATOR encontrado: +
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 1
-[2024-12-15 00:16:01] Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 00:16:01] Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 00:16:01] Token IDENT encontrado: r(48, 11);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 00:16:01] Token IDENT encontrado: r(48, 18);
-[2024-12-15 00:16:01] Token LOW_PRIORITY_OPERATOR encontrado: +
-[2024-12-15 00:16:01] Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 00:16:01] Token IDENT encontrado: x(48, 24);
-[2024-12-15 00:16:01] Token HIGH_PRIORITY_OPERATOR encontrado: /
-[2024-12-15 00:16:01] Token IDENT encontrado: r(48, 29);
-[2024-12-15 00:16:01] Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 00:16:01] Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 00:16:01] Token HIGH_PRIORITY_OPERATOR encontrado: /
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 2
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 00:16:01] Token RESERVED_WORD_PRINT encontrado: print
-[2024-12-15 00:16:01] Token IDENT encontrado: r(51, 14);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 00:16:01] Token RESERVED_WORD_DEF encontrado: def
-[2024-12-15 00:16:01] Token IDENT encontrado: potencia(54, 15);
-[2024-12-15 00:16:01] Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 00:16:01] Token RESERVED_WORD_FLOAT encontrado: float
-[2024-12-15 00:16:01] Token IDENT encontrado: x(54, 25);
-[2024-12-15 00:16:01] Token COMMA encontrado: ,
-[2024-12-15 00:16:01] Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 00:16:01] Token IDENT encontrado: exp(54, 36);
-[2024-12-15 00:16:01] Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 00:16:01] Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 00:16:01] Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 00:16:01] Token IDENT encontrado: i(55, 12);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 00:16:01] Token IDENT encontrado: prod(56, 15);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: prod(57, 10);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 1
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token RESERVED_WORD_FOR encontrado: for
-[2024-12-15 00:16:01] Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 00:16:01] Token IDENT encontrado: i(58, 13);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: i(58, 23);
-[2024-12-15 00:16:01] Token COMPARATOR encontrado: <
-[2024-12-15 00:16:01] Token IDENT encontrado: exp(58, 31);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: i(58, 35);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token IDENT encontrado: i(58, 41);
-[2024-12-15 00:16:01] Token LOW_PRIORITY_OPERATOR encontrado: +
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 1
-[2024-12-15 00:16:01] Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 00:16:01] Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 00:16:01] Token IDENT encontrado: prod(59, 14);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token IDENT encontrado: prod(59, 23);
-[2024-12-15 00:16:01] Token HIGH_PRIORITY_OPERATOR encontrado: *
-[2024-12-15 00:16:01] Token IDENT encontrado: x(59, 28);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 00:16:01] Token RESERVED_WORD_PRINT encontrado: print
-[2024-12-15 00:16:01] Token IDENT encontrado: x(61, 14);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 00:16:01] Token RESERVED_WORD_DEF encontrado: def
-[2024-12-15 00:16:01] Token IDENT encontrado: main(64, 11);
-[2024-12-15 00:16:01] Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 00:16:01] Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 00:16:01] Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 00:16:01] Token RESERVED_WORD_PRINT encontrado: print
-[2024-12-15 00:16:01] Token STRING_CONSTANT encontrado: "Operações com matrizes"
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token RESERVED_WORD_FLOAT encontrado: float
-[2024-12-15 00:16:01] Token IDENT encontrado: A(68, 14);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 3
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 3
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token RESERVED_WORD_FLOAT encontrado: float
-[2024-12-15 00:16:01] Token IDENT encontrado: B(69, 14);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 3
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 3
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 00:16:01] Token IDENT encontrado: mA(70, 13);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 00:16:01] Token IDENT encontrado: nA(71, 13);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 00:16:01] Token IDENT encontrado: mB(72, 13);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 00:16:01] Token IDENT encontrado: nB(73, 13);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: mA(74, 8);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 3
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: nA(75, 8);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 3
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: mB(76, 8);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 3
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: nB(77, 8);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 3
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: A(79, 7);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 5
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: A(79, 25);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 2
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 7
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: A(79, 43);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 3
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token LOW_PRIORITY_OPERATOR encontrado: -
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 5
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: A(80, 7);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 12
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: A(80, 26);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 2
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token LOW_PRIORITY_OPERATOR encontrado: -
-[2024-12-15 00:16:01] Token FLOAT_CONSTANT encontrado: 5.53
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: A(80, 48);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 3
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token LOW_PRIORITY_OPERATOR encontrado: -
-[2024-12-15 00:16:01] Token FLOAT_CONSTANT encontrado: 25.3
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: A(81, 7);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token FLOAT_CONSTANT encontrado: 5.3
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: A(81, 27);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 2
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token FLOAT_CONSTANT encontrado: 0.12
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: A(81, 48);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 3
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token FLOAT_CONSTANT encontrado: 49.98
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: B(83, 7);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 6
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: B(83, 25);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 2
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token LOW_PRIORITY_OPERATOR encontrado: -
-[2024-12-15 00:16:01] Token FLOAT_CONSTANT encontrado: 32.4
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: B(83, 47);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 3
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token FLOAT_CONSTANT encontrado: 76.4
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: B(84, 7);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token FLOAT_CONSTANT encontrado: 16.4
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: B(84, 28);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 2
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token FLOAT_CONSTANT encontrado: 0.7
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: B(84, 48);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 3
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token FLOAT_CONSTANT encontrado: 12.5
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: B(85, 7);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token FLOAT_CONSTANT encontrado: 13.1
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: B(85, 28);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 2
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 7
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: B(85, 46);
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 0
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 3
-[2024-12-15 00:16:01] Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 12
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token RESERVED_WORD_STRING encontrado: string
-[2024-12-15 00:16:01] Token IDENT encontrado: result(87, 20);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: result(89, 12);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token RESERVED_WORD_CALL encontrado: call
-[2024-12-15 00:16:01] Token IDENT encontrado: mult_matrix(89, 34);
-[2024-12-15 00:16:01] Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 00:16:01] Token IDENT encontrado: A(89, 37);
-[2024-12-15 00:16:01] Token COMMA encontrado: ,
-[2024-12-15 00:16:01] Token IDENT encontrado: mA(89, 42);
-[2024-12-15 00:16:01] Token COMMA encontrado: ,
-[2024-12-15 00:16:01] Token IDENT encontrado: nA(89, 47);
-[2024-12-15 00:16:01] Token COMMA encontrado: ,
-[2024-12-15 00:16:01] Token IDENT encontrado: B(89, 51);
-[2024-12-15 00:16:01] Token COMMA encontrado: ,
-[2024-12-15 00:16:01] Token IDENT encontrado: mB(89, 56);
-[2024-12-15 00:16:01] Token COMMA encontrado: ,
-[2024-12-15 00:16:01] Token IDENT encontrado: nB(89, 61);
-[2024-12-15 00:16:01] Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: result(90, 12);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token RESERVED_WORD_CALL encontrado: call
-[2024-12-15 00:16:01] Token IDENT encontrado: transpose_matrix(90, 39);
-[2024-12-15 00:16:01] Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 00:16:01] Token IDENT encontrado: A(90, 42);
-[2024-12-15 00:16:01] Token COMMA encontrado: ,
-[2024-12-15 00:16:01] Token IDENT encontrado: mA(90, 47);
-[2024-12-15 00:16:01] Token COMMA encontrado: ,
-[2024-12-15 00:16:01] Token IDENT encontrado: nA(90, 52);
-[2024-12-15 00:16:01] Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token RESERVED_WORD_PRINT encontrado: print
-[2024-12-15 00:16:01] Token STRING_CONSTANT encontrado: "Aproximação de uma raiz quadrática"
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token RESERVED_WORD_FLOAT encontrado: float
-[2024-12-15 00:16:01] Token IDENT encontrado: value(94, 18);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: value(95, 11);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 131
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 00:16:01] Token IDENT encontrado: iterations(96, 21);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: iterations(97, 16);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 1000
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: result(98, 12);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token RESERVED_WORD_CALL encontrado: call
-[2024-12-15 00:16:01] Token IDENT encontrado: aprox_raiz_quadrada(98, 42);
-[2024-12-15 00:16:01] Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 00:16:01] Token IDENT encontrado: value(98, 49);
-[2024-12-15 00:16:01] Token COMMA encontrado: ,
-[2024-12-15 00:16:01] Token IDENT encontrado: iterations(98, 62);
-[2024-12-15 00:16:01] Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token RESERVED_WORD_PRINT encontrado: print
-[2024-12-15 00:16:01] Token STRING_CONSTANT encontrado: "Potenciação"
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token RESERVED_WORD_FLOAT encontrado: float
-[2024-12-15 00:16:01] Token IDENT encontrado: x(102, 14);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 00:16:01] Token IDENT encontrado: exp(103, 14);
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: x(104, 7);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token FLOAT_CONSTANT encontrado: 9.3
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: exp(105, 9);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token INT_CONSTANT encontrado: 5
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token IDENT encontrado: result(106, 12);
-[2024-12-15 00:16:01] Token ASSIGNMENT encontrado: =
-[2024-12-15 00:16:01] Token RESERVED_WORD_CALL encontrado: call
-[2024-12-15 00:16:01] Token IDENT encontrado: potencia(106, 31);
-[2024-12-15 00:16:01] Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 00:16:01] Token IDENT encontrado: x(106, 34);
-[2024-12-15 00:16:01] Token COMMA encontrado: ,
-[2024-12-15 00:16:01] Token IDENT encontrado: exp(106, 40);
-[2024-12-15 00:16:01] Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 00:16:01] Token SEMICOLON encontrado: ;
-[2024-12-15 00:16:01] Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 01:29:45] Token RESERVED_WORD_DEF encontrado: def
+[2024-12-15 01:29:45] Token IDENT encontrado: mult_matrix(1, 18);
+[2024-12-15 01:29:45] Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 01:29:45] Token RESERVED_WORD_FLOAT encontrado: float
+[2024-12-15 01:29:45] Token IDENT encontrado: A(1, 28);
+[2024-12-15 01:29:45] Token COMMA encontrado: ,
+[2024-12-15 01:29:45] Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 01:29:45] Token IDENT encontrado: mA(1, 38);
+[2024-12-15 01:29:45] Token COMMA encontrado: ,
+[2024-12-15 01:29:45] Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 01:29:45] Token IDENT encontrado: nA(1, 48);
+[2024-12-15 01:29:45] Token COMMA encontrado: ,
+[2024-12-15 01:29:45] Token RESERVED_WORD_FLOAT encontrado: float
+[2024-12-15 01:29:45] Token IDENT encontrado: B(1, 59);
+[2024-12-15 01:29:45] Token COMMA encontrado: ,
+[2024-12-15 01:29:45] Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 01:29:45] Token IDENT encontrado: mB(1, 69);
+[2024-12-15 01:29:45] Token COMMA encontrado: ,
+[2024-12-15 01:29:45] Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 01:29:45] Token IDENT encontrado: nB(1, 79);
+[2024-12-15 01:29:45] Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 01:29:45] Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 01:29:45] Token RESERVED_WORD_IF encontrado: if
+[2024-12-15 01:29:45] Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 01:29:45] Token IDENT encontrado: nA(2, 13);
+[2024-12-15 01:29:45] Token COMPARATOR encontrado: !=
+[2024-12-15 01:29:45] Token IDENT encontrado: mB(2, 20);
+[2024-12-15 01:29:45] Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 01:29:45] Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 01:29:45] Token RESERVED_WORD_PRINT encontrado: print
+[2024-12-15 01:29:45] Token STRING_CONSTANT encontrado: "Error: número de colunas de A é diferente do número de linhas de B"
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token RESERVED_WORD_RETURN encontrado: return
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 01:29:45] Token RESERVED_WORD_FLOAT encontrado: float
+[2024-12-15 01:29:45] Token IDENT encontrado: C(7, 14);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: C(8, 7);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token RESERVED_WORD_NEW encontrado: new
+[2024-12-15 01:29:45] Token RESERVED_WORD_FLOAT encontrado: float
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token IDENT encontrado: mA(8, 26);
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token IDENT encontrado: nB(8, 31);
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 01:29:45] Token IDENT encontrado: i(10, 12);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 01:29:45] Token IDENT encontrado: j(11, 12);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 01:29:45] Token IDENT encontrado: k(12, 12);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token RESERVED_WORD_FOR encontrado: for
+[2024-12-15 01:29:45] Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 01:29:45] Token IDENT encontrado: i(13, 13);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: i(13, 23);
+[2024-12-15 01:29:45] Token COMPARATOR encontrado: <
+[2024-12-15 01:29:45] Token IDENT encontrado: mA(13, 30);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: i(13, 34);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token IDENT encontrado: i(13, 40);
+[2024-12-15 01:29:45] Token LOW_PRIORITY_OPERATOR encontrado: +
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 1
+[2024-12-15 01:29:45] Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 01:29:45] Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 01:29:45] Token RESERVED_WORD_FOR encontrado: for
+[2024-12-15 01:29:45] Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 01:29:45] Token IDENT encontrado: j(14, 17);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: j(14, 27);
+[2024-12-15 01:29:45] Token COMPARATOR encontrado: <
+[2024-12-15 01:29:45] Token IDENT encontrado: nB(14, 34);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: j(14, 38);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token IDENT encontrado: j(14, 44);
+[2024-12-15 01:29:45] Token LOW_PRIORITY_OPERATOR encontrado: +
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 1
+[2024-12-15 01:29:45] Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 01:29:45] Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 01:29:45] Token RESERVED_WORD_FOR encontrado: for
+[2024-12-15 01:29:45] Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 01:29:45] Token IDENT encontrado: k(15, 21);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: k(15, 31);
+[2024-12-15 01:29:45] Token COMPARATOR encontrado: <
+[2024-12-15 01:29:45] Token IDENT encontrado: nA(15, 38);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: k(15, 42);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token IDENT encontrado: k(15, 48);
+[2024-12-15 01:29:45] Token LOW_PRIORITY_OPERATOR encontrado: +
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 1
+[2024-12-15 01:29:45] Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 01:29:45] Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 01:29:45] Token IDENT encontrado: C(16, 19);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token IDENT encontrado: i(16, 22);
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token IDENT encontrado: j(16, 26);
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token IDENT encontrado: C(16, 33);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token IDENT encontrado: i(16, 36);
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token IDENT encontrado: j(16, 40);
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token LOW_PRIORITY_OPERATOR encontrado: +
+[2024-12-15 01:29:45] Token IDENT encontrado: A(16, 46);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token IDENT encontrado: i(16, 49);
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token IDENT encontrado: k(16, 53);
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token HIGH_PRIORITY_OPERATOR encontrado: *
+[2024-12-15 01:29:45] Token IDENT encontrado: B(16, 59);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token IDENT encontrado: k(16, 62);
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token IDENT encontrado: j(16, 66);
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 01:29:45] Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 01:29:45] Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 01:29:45] Token RESERVED_WORD_FOR encontrado: for
+[2024-12-15 01:29:45] Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 01:29:45] Token IDENT encontrado: i(21, 13);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: i(21, 23);
+[2024-12-15 01:29:45] Token COMPARATOR encontrado: <
+[2024-12-15 01:29:45] Token IDENT encontrado: mA(21, 30);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: i(21, 34);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token IDENT encontrado: i(21, 40);
+[2024-12-15 01:29:45] Token LOW_PRIORITY_OPERATOR encontrado: +
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 1
+[2024-12-15 01:29:45] Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 01:29:45] Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 01:29:45] Token RESERVED_WORD_PRINT encontrado: print
+[2024-12-15 01:29:45] Token IDENT encontrado: C(22, 18);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token IDENT encontrado: i(22, 21);
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 01:29:45] Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 01:29:45] Token RESERVED_WORD_DEF encontrado: def
+[2024-12-15 01:29:45] Token IDENT encontrado: transpose_matrix(26, 23);
+[2024-12-15 01:29:45] Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 01:29:45] Token RESERVED_WORD_FLOAT encontrado: float
+[2024-12-15 01:29:45] Token IDENT encontrado: A(26, 33);
+[2024-12-15 01:29:45] Token COMMA encontrado: ,
+[2024-12-15 01:29:45] Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 01:29:45] Token IDENT encontrado: m(26, 42);
+[2024-12-15 01:29:45] Token COMMA encontrado: ,
+[2024-12-15 01:29:45] Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 01:29:45] Token IDENT encontrado: n(26, 51);
+[2024-12-15 01:29:45] Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 01:29:45] Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 01:29:45] Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 01:29:45] Token IDENT encontrado: i(27, 12);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 01:29:45] Token IDENT encontrado: j(28, 12);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token RESERVED_WORD_FLOAT encontrado: float
+[2024-12-15 01:29:45] Token IDENT encontrado: At(30, 15);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: At(31, 8);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token RESERVED_WORD_NEW encontrado: new
+[2024-12-15 01:29:45] Token RESERVED_WORD_FLOAT encontrado: float
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token IDENT encontrado: m(31, 26);
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token IDENT encontrado: n(31, 30);
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token RESERVED_WORD_FOR encontrado: for
+[2024-12-15 01:29:45] Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 01:29:45] Token IDENT encontrado: i(33, 13);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: i(33, 23);
+[2024-12-15 01:29:45] Token COMPARATOR encontrado: <
+[2024-12-15 01:29:45] Token IDENT encontrado: m(33, 29);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: i(33, 33);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token IDENT encontrado: i(33, 39);
+[2024-12-15 01:29:45] Token LOW_PRIORITY_OPERATOR encontrado: +
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 1
+[2024-12-15 01:29:45] Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 01:29:45] Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 01:29:45] Token RESERVED_WORD_FOR encontrado: for
+[2024-12-15 01:29:45] Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 01:29:45] Token IDENT encontrado: j(34, 17);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: j(34, 27);
+[2024-12-15 01:29:45] Token COMPARATOR encontrado: <
+[2024-12-15 01:29:45] Token IDENT encontrado: n(34, 33);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: j(34, 37);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token IDENT encontrado: j(34, 43);
+[2024-12-15 01:29:45] Token LOW_PRIORITY_OPERATOR encontrado: +
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 1
+[2024-12-15 01:29:45] Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 01:29:45] Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 01:29:45] Token IDENT encontrado: At(35, 16);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token IDENT encontrado: i(35, 19);
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token IDENT encontrado: j(35, 23);
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token IDENT encontrado: At(35, 31);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token IDENT encontrado: j(35, 34);
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token IDENT encontrado: i(35, 38);
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 01:29:45] Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 01:29:45] Token RESERVED_WORD_FOR encontrado: for
+[2024-12-15 01:29:45] Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 01:29:45] Token IDENT encontrado: i(38, 13);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: i(38, 23);
+[2024-12-15 01:29:45] Token COMPARATOR encontrado: <
+[2024-12-15 01:29:45] Token IDENT encontrado: m(38, 29);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: i(38, 33);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token IDENT encontrado: i(38, 39);
+[2024-12-15 01:29:45] Token LOW_PRIORITY_OPERATOR encontrado: +
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 1
+[2024-12-15 01:29:45] Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 01:29:45] Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 01:29:45] Token RESERVED_WORD_PRINT encontrado: print
+[2024-12-15 01:29:45] Token IDENT encontrado: At(39, 19);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token IDENT encontrado: i(39, 22);
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 01:29:45] Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 01:29:45] Token RESERVED_WORD_DEF encontrado: def
+[2024-12-15 01:29:45] Token IDENT encontrado: aprox_raiz_quadrada(43, 26);
+[2024-12-15 01:29:45] Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 01:29:45] Token RESERVED_WORD_FLOAT encontrado: float
+[2024-12-15 01:29:45] Token IDENT encontrado: x(43, 36);
+[2024-12-15 01:29:45] Token COMMA encontrado: ,
+[2024-12-15 01:29:45] Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 01:29:45] Token IDENT encontrado: iterations(43, 54);
+[2024-12-15 01:29:45] Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 01:29:45] Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 01:29:45] Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 01:29:45] Token IDENT encontrado: i(44, 12);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 01:29:45] Token IDENT encontrado: r(45, 12);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: r(46, 7);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 50
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token RESERVED_WORD_FOR encontrado: for
+[2024-12-15 01:29:45] Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 01:29:45] Token IDENT encontrado: i(47, 13);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: i(47, 23);
+[2024-12-15 01:29:45] Token COMPARATOR encontrado: <
+[2024-12-15 01:29:45] Token IDENT encontrado: iterations(47, 38);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: i(47, 42);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token IDENT encontrado: i(47, 48);
+[2024-12-15 01:29:45] Token LOW_PRIORITY_OPERATOR encontrado: +
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 1
+[2024-12-15 01:29:45] Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 01:29:45] Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 01:29:45] Token IDENT encontrado: r(48, 11);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 01:29:45] Token IDENT encontrado: r(48, 18);
+[2024-12-15 01:29:45] Token LOW_PRIORITY_OPERATOR encontrado: +
+[2024-12-15 01:29:45] Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 01:29:45] Token IDENT encontrado: x(48, 24);
+[2024-12-15 01:29:45] Token HIGH_PRIORITY_OPERATOR encontrado: /
+[2024-12-15 01:29:45] Token IDENT encontrado: r(48, 29);
+[2024-12-15 01:29:45] Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 01:29:45] Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 01:29:45] Token HIGH_PRIORITY_OPERATOR encontrado: /
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 2
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 01:29:45] Token RESERVED_WORD_PRINT encontrado: print
+[2024-12-15 01:29:45] Token IDENT encontrado: r(51, 14);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 01:29:45] Token RESERVED_WORD_DEF encontrado: def
+[2024-12-15 01:29:45] Token IDENT encontrado: potencia(54, 15);
+[2024-12-15 01:29:45] Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 01:29:45] Token RESERVED_WORD_FLOAT encontrado: float
+[2024-12-15 01:29:45] Token IDENT encontrado: x(54, 25);
+[2024-12-15 01:29:45] Token COMMA encontrado: ,
+[2024-12-15 01:29:45] Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 01:29:45] Token IDENT encontrado: exp(54, 36);
+[2024-12-15 01:29:45] Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 01:29:45] Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 01:29:45] Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 01:29:45] Token IDENT encontrado: i(55, 12);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 01:29:45] Token IDENT encontrado: prod(56, 15);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: prod(57, 10);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 1
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token RESERVED_WORD_FOR encontrado: for
+[2024-12-15 01:29:45] Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 01:29:45] Token IDENT encontrado: i(58, 13);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: i(58, 23);
+[2024-12-15 01:29:45] Token COMPARATOR encontrado: <
+[2024-12-15 01:29:45] Token IDENT encontrado: exp(58, 31);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: i(58, 35);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token IDENT encontrado: i(58, 41);
+[2024-12-15 01:29:45] Token LOW_PRIORITY_OPERATOR encontrado: +
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 1
+[2024-12-15 01:29:45] Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 01:29:45] Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 01:29:45] Token IDENT encontrado: prod(59, 14);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token IDENT encontrado: prod(59, 23);
+[2024-12-15 01:29:45] Token HIGH_PRIORITY_OPERATOR encontrado: *
+[2024-12-15 01:29:45] Token IDENT encontrado: x(59, 28);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 01:29:45] Token RESERVED_WORD_PRINT encontrado: print
+[2024-12-15 01:29:45] Token IDENT encontrado: x(61, 14);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 01:29:45] Token RESERVED_WORD_DEF encontrado: def
+[2024-12-15 01:29:45] Token IDENT encontrado: main(64, 11);
+[2024-12-15 01:29:45] Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 01:29:45] Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 01:29:45] Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 01:29:45] Token RESERVED_WORD_PRINT encontrado: print
+[2024-12-15 01:29:45] Token STRING_CONSTANT encontrado: "Operações com matrizes"
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token RESERVED_WORD_FLOAT encontrado: float
+[2024-12-15 01:29:45] Token IDENT encontrado: A(68, 14);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 3
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 3
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token RESERVED_WORD_FLOAT encontrado: float
+[2024-12-15 01:29:45] Token IDENT encontrado: B(69, 14);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 3
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 3
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 01:29:45] Token IDENT encontrado: mA(70, 13);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 01:29:45] Token IDENT encontrado: nA(71, 13);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 01:29:45] Token IDENT encontrado: mB(72, 13);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 01:29:45] Token IDENT encontrado: nB(73, 13);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: mA(74, 8);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 3
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: nA(75, 8);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 3
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: mB(76, 8);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 3
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: nB(77, 8);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 3
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: A(79, 7);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 5
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: A(79, 25);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 2
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 7
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: A(79, 43);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 3
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token LOW_PRIORITY_OPERATOR encontrado: -
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 5
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: A(80, 7);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 12
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: A(80, 26);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 2
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token LOW_PRIORITY_OPERATOR encontrado: -
+[2024-12-15 01:29:45] Token FLOAT_CONSTANT encontrado: 5.53
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: A(80, 48);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 3
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token LOW_PRIORITY_OPERATOR encontrado: -
+[2024-12-15 01:29:45] Token FLOAT_CONSTANT encontrado: 25.3
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: A(81, 7);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token FLOAT_CONSTANT encontrado: 5.3
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: A(81, 27);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 2
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token FLOAT_CONSTANT encontrado: 0.12
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: A(81, 48);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 3
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token FLOAT_CONSTANT encontrado: 49.98
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: B(83, 7);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 6
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: B(83, 25);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 2
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token LOW_PRIORITY_OPERATOR encontrado: -
+[2024-12-15 01:29:45] Token FLOAT_CONSTANT encontrado: 32.4
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: B(83, 47);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 3
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token FLOAT_CONSTANT encontrado: 76.4
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: B(84, 7);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token FLOAT_CONSTANT encontrado: 16.4
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: B(84, 28);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 2
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token FLOAT_CONSTANT encontrado: 0.7
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: B(84, 48);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 3
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token FLOAT_CONSTANT encontrado: 12.5
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: B(85, 7);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token FLOAT_CONSTANT encontrado: 13.1
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: B(85, 28);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 2
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 7
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: B(85, 46);
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 0
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 3
+[2024-12-15 01:29:45] Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 12
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token RESERVED_WORD_STRING encontrado: string
+[2024-12-15 01:29:45] Token IDENT encontrado: result(87, 20);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: result(89, 12);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token RESERVED_WORD_CALL encontrado: call
+[2024-12-15 01:29:45] Token IDENT encontrado: mult_matrix(89, 34);
+[2024-12-15 01:29:45] Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 01:29:45] Token IDENT encontrado: A(89, 37);
+[2024-12-15 01:29:45] Token COMMA encontrado: ,
+[2024-12-15 01:29:45] Token IDENT encontrado: mA(89, 42);
+[2024-12-15 01:29:45] Token COMMA encontrado: ,
+[2024-12-15 01:29:45] Token IDENT encontrado: nA(89, 47);
+[2024-12-15 01:29:45] Token COMMA encontrado: ,
+[2024-12-15 01:29:45] Token IDENT encontrado: B(89, 51);
+[2024-12-15 01:29:45] Token COMMA encontrado: ,
+[2024-12-15 01:29:45] Token IDENT encontrado: mB(89, 56);
+[2024-12-15 01:29:45] Token COMMA encontrado: ,
+[2024-12-15 01:29:45] Token IDENT encontrado: nB(89, 61);
+[2024-12-15 01:29:45] Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: result(90, 12);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token RESERVED_WORD_CALL encontrado: call
+[2024-12-15 01:29:45] Token IDENT encontrado: transpose_matrix(90, 39);
+[2024-12-15 01:29:45] Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 01:29:45] Token IDENT encontrado: A(90, 42);
+[2024-12-15 01:29:45] Token COMMA encontrado: ,
+[2024-12-15 01:29:45] Token IDENT encontrado: mA(90, 47);
+[2024-12-15 01:29:45] Token COMMA encontrado: ,
+[2024-12-15 01:29:45] Token IDENT encontrado: nA(90, 52);
+[2024-12-15 01:29:45] Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token RESERVED_WORD_PRINT encontrado: print
+[2024-12-15 01:29:45] Token STRING_CONSTANT encontrado: "Aproximação de uma raiz quadrática"
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token RESERVED_WORD_FLOAT encontrado: float
+[2024-12-15 01:29:45] Token IDENT encontrado: value(94, 18);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: value(95, 11);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 131
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 01:29:45] Token IDENT encontrado: iterations(96, 21);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: iterations(97, 16);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 1000
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: result(98, 12);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token RESERVED_WORD_CALL encontrado: call
+[2024-12-15 01:29:45] Token IDENT encontrado: aprox_raiz_quadrada(98, 42);
+[2024-12-15 01:29:45] Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 01:29:45] Token IDENT encontrado: value(98, 49);
+[2024-12-15 01:29:45] Token COMMA encontrado: ,
+[2024-12-15 01:29:45] Token IDENT encontrado: iterations(98, 62);
+[2024-12-15 01:29:45] Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token RESERVED_WORD_PRINT encontrado: print
+[2024-12-15 01:29:45] Token STRING_CONSTANT encontrado: "Potenciação"
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token RESERVED_WORD_FLOAT encontrado: float
+[2024-12-15 01:29:45] Token IDENT encontrado: x(102, 14);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 01:29:45] Token IDENT encontrado: exp(103, 14);
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: x(104, 7);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token FLOAT_CONSTANT encontrado: 9.3
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: exp(105, 9);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token INT_CONSTANT encontrado: 5
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token IDENT encontrado: result(106, 12);
+[2024-12-15 01:29:45] Token ASSIGNMENT encontrado: =
+[2024-12-15 01:29:45] Token RESERVED_WORD_CALL encontrado: call
+[2024-12-15 01:29:45] Token IDENT encontrado: potencia(106, 31);
+[2024-12-15 01:29:45] Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 01:29:45] Token IDENT encontrado: x(106, 34);
+[2024-12-15 01:29:45] Token COMMA encontrado: ,
+[2024-12-15 01:29:45] Token IDENT encontrado: exp(106, 40);
+[2024-12-15 01:29:45] Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 01:29:45] Token SEMICOLON encontrado: ;
+[2024-12-15 01:29:45] Token CLOSE_CURLY_BRACE encontrado: }

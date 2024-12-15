@@ -51,10 +51,10 @@ int main(int argc, char **argv) {
     main_log.write("Arquivo lido.");
     main_log.write("Compilando...");
 
-    LexicalAnalyser lexical(&source_str);
-    SyntacticAnalyser syntactic;
-    SemanticAnalyser semantic;
-    Compiler compiler(&lexical, &syntactic, &semantic);
+    LexicalAnalyser* lexical = new LexicalAnalyser(&source_str);
+    SyntacticAnalyser* syntactic = new SyntacticAnalyser();
+    SemanticAnalyser* semantic = new SemanticAnalyser();
+    Compiler compiler(lexical, syntactic, semantic);
 
     int status = compiler.compile(source_str.c_str());
 
@@ -65,5 +65,9 @@ int main(int argc, char **argv) {
 
     main_log.write("Compilação encerrada.");
     
+    delete lexical;
+    delete syntactic;
+    delete semantic;
+
     return EXIT_SUCCESS;
 }
