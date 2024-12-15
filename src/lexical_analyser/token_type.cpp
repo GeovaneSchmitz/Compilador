@@ -4,7 +4,7 @@
 
 namespace lexical_analyser {
 
-std::string to_string(TokenType tt) {
+std::string toString(TokenType tt) {
     switch (tt) {
     case TokenType::IDENT:
         return "IDENT";

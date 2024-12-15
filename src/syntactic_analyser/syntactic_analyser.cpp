@@ -20,12 +20,10 @@ const std::map<std::pair<NonTerminal, TokenType>, std::vector<TermType>> &Syntac
 
 SyntacticAnalyser::SyntacticAnalyser()
     : log("log/syntactic_analyser.log") {}
-
-bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
+bool SyntacticAnalyser::analyse(LexicalAnalyser &lex, ASTNode *root) {
     std::list<ASTNode *> stack_;
 
     stack_.push_back(new ASTNode(TokenType::END_OF_FILE));
-    ASTNode *root = new ASTNode(NonTerminal::PROGRAM);
     stack_.push_back(root);
 
     std::string buffer_log;
@@ -36,7 +34,7 @@ bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
     Token token = lex.nextToken();
 
     while (token.type() != TokenType::END_OF_FILE) {
-        buffer_log = "Buffer: " + to_string(token.type());
+        buffer_log = "Buffer: " + toString(token.type());
         this->log.write(buffer_log);
         stack_log = "Stack: ";
 
@@ -59,14 +57,14 @@ bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
                 token = lex.nextToken();
             } else {
                 std::string item_token_error_str("Erro: Token lido (");
-                item_token_error_str += lexical_analyser::to_string(token.type()) +
+                item_token_error_str += lexical_analyser::toString(token.type()) +
                                         ") não corresponde ao topo da pilha (" + current_item->toString() + ")";
                 this->log.write(item_token_error_str);
                 return false;
             }
         } else {
             prod_log = "Procurando produção para " + current_item->toString() + " e " +
-                       lexical_analyser::to_string(token.type());
+                       lexical_analyser::toString(token.type());
             this->log.write(prod_log);
             const auto production = table_.find({current_item->getNonTerminal(), token.type()});
             if (production == table_.end()) {
@@ -120,7 +118,7 @@ bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
     }
 
     if (current_item->isTerminal() && current_item->getTokenType() == TokenType::END_OF_FILE) {
-        root->printTree(0);
+        root->printTree(&this->log, 0);
         this->log.write("Análise sintática concluída com sucesso!");
         return true;
     }

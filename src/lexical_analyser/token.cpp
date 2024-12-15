@@ -3,9 +3,11 @@
 
 namespace lexical_analyser {
 
-Token::Token(TokenType type, std::string::iterator start, std::string::iterator end)
+Token::Token(TokenType type, std::string::iterator start, std::string::iterator end, uint row, uint column)
     : type_{type},
-      value_{start, end} {}
+      value_{start, end},
+      row_{row},    
+      column_{column} {}
 
 Token::Token(TokenType type, std::string &value)
     : type_(type),
@@ -23,7 +25,7 @@ Token::~Token() {
 
 const std::string &Token::value() const { return value_; }
 
-TokenType Token::type()  const { return type_; }
+TokenType Token::type() const { return type_; }
 
 template <typename T> void Token::add_property(std::string &id, T &value) {
     if (this->get_property<T>(id) != nullptr) {

@@ -1,8 +1,9 @@
 #pragma once
-#include "../lexical_analyser/lexical_analyser.hpp"
-#include "../lexical_analyser/token_type.hpp"
-#include "../log/log.hpp"
+#include "lexical_analyser/lexical_analyser.hpp"
+#include "lexical_analyser/token_type.hpp"
+#include "log/log.hpp"
 #include "non_terminal.hpp"
+#include "ast_node.hpp"
 #include "term_type.hpp"
 #include <map>
 #include <vector>
@@ -13,7 +14,7 @@ class SyntacticAnalyser {
     public:
     SyntacticAnalyser();
 
-    bool analyse(lexical_analyser::LexicalAnalyser &lex);
+    bool analyse(lexical_analyser::LexicalAnalyser &lex, ASTNode *root);
     void initialize_table();
 
     private:

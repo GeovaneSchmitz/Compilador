@@ -5,7 +5,6 @@
 #include "token_type.hpp"
 #include <cstdlib>
 #include <cstring>
-#include <list>
 #include <string>
 #include <sys/types.h>
 #include <unordered_map>
@@ -17,11 +16,8 @@ class LexicalAnalyser {
     LexicalAnalyser(std::string *str);
     ~LexicalAnalyser();
 
-    const std::unordered_map<std::string, std::list<std::pair<uint, uint>>> symbol_table() const;
     const std::vector<Token *> token_list() const;
     bool inTokenList(const std::string &value) const;
-    const std::pair<uint, uint> coordinates() const;
-    void appendTokenList(TokenType type, std::string::iterator start);
 
     /**
      * @brief Recupera o próximo token do código-fonte.
@@ -47,8 +43,6 @@ class LexicalAnalyser {
     std::string::iterator current_position;
     cmp_log::Log log_;
     uint row = 1, col = 1;
-    std::unordered_map<std::string, std::list<std::pair<uint, uint>>> symbol_table_;
-    std::vector<Token *> token_list_;
     std::unordered_map<std::string, TokenType> reserved_words;
 };
 

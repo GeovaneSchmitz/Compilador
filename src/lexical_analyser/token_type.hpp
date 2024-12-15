@@ -40,6 +40,6 @@ enum class TokenType {
 
 };
 
-std::string to_string(TokenType tt);
+std::string toString(TokenType tt);
 
 } // namespace lexical_analyser

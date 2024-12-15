@@ -9,9 +9,9 @@ namespace lexical_analyser {
 
 class Token {
     public:
-    Token(TokenType type, std::string::iterator start, std::string::iterator end);
+    Token(TokenType type, std::string::iterator start, std::string::iterator end, uint row, uint column);
     Token(TokenType type);
-    Token(TokenType type, std::string& value);
+    Token(TokenType type, std::string &value);
     ~Token();
 
     const std::string &value() const;
@@ -30,6 +30,8 @@ class Token {
     TokenType type_;
     std::string value_;
     std::vector<TokenPropertyBase *> properties_;
+    uint row_;
+    uint column_;
 
     /**
      * NOTE: Retorna nullptr se não encontrada a propriedade.

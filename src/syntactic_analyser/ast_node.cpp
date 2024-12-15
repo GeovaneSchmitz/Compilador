@@ -1,11 +1,10 @@
 #include "ast_node.hpp"
 #include "lexical_analyser/token_type.hpp"
 #include <iostream>
+#include <log/log.hpp>
 #include <stdexcept>
-
 using lexical_analyser::Token;
 using lexical_analyser::TokenType;
-
 namespace syntactic_analyser {
 
 ASTNode::ASTNode(NonTerminal nt)
@@ -58,7 +57,7 @@ void ASTNode::setToken(Token token) {
     is_token_type_ = false;
 }
 
-void ASTNode::addChild(ASTNode *node) { children.push_back(node); }
+void ASTNode::addChild(ASTNode *node) { children.push_front(node); }
 
 TokenType ASTNode::getTokenType() const {
     if (!is_terminal_) {
@@ -80,29 +79,32 @@ NonTerminal ASTNode::getNonTerminal() const {
 
 std::string ASTNode::toString() const {
     if (this->is_token_type_) {
-        return lexical_analyser::to_string(this->token_type_);
+        return lexical_analyser::toString(this->token_type_);
     } else if (this->isTerminal()) {
-        return lexical_analyser::to_string(this->getTerminal().type()) + std::string(":") + this->getTerminal().value();
+        return lexical_analyser::toString(this->getTerminal().type()) + std::string(":") + this->getTerminal().value();
     } else {
         return to_string(this->getNonTerminal());
     }
 }
 
-void ASTNode::printTree(int level) const {
-    std::string indent(static_cast<unsigned long>(level), ' ');
+void ASTNode::printTree(cmp_log::Log *log, int level) const {
+    std::string buffer(static_cast<unsigned long>(level), ' ');
     if (this->isTerminal()) {
-        std::cout << indent << this->toString() << std::endl;
+        std::string text = buffer + this->toString();
+        log->write(text);
     } else {
-        std::cout << indent << to_string(this->getNonTerminal()) << std::endl;
+        std::string text = buffer + to_string(this->getNonTerminal());
+        log->write(text);
+
         for (const auto &child : this->children) {
-            child->printTree(level + 1);
+            child->printTree(log, level + 1);
         }
     }
 }
 
 std::ostream &operator<<(std::ostream &os, ASTNode const &m) {
     if (m.isTerminal()) {
-        os << lexical_analyser::to_string(m.getTerminal().type()) << std::string(":") << m.getTerminal().value();
+        os << lexical_analyser::toString(m.getTerminal().type()) << std::string(":") << m.getTerminal().value();
     } else {
         os << to_string(m.getNonTerminal());
     }

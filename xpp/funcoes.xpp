@@ -61,7 +61,7 @@ def main() {
 	int array[5];
 	int size;
 	size = 5;
-	array = ABABA[5];
+	array = new int[5];
 
 	array[0] = 15;
 	array[1] = 9;

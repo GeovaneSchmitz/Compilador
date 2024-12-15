@@ -1,8 +1,9 @@
 #pragma once
 #include "lexical_analyser/token.hpp"
+#include "log/log.hpp"
 #include "syntactic_analyser/non_terminal.hpp"
+#include <list>
 #include <string>
-#include <vector>
 
 namespace syntactic_analyser {
 
@@ -25,7 +26,7 @@ class ASTNode {
     lexical_analyser::Token getTerminal() const;
     lexical_analyser::TokenType getTokenType() const;
 
-    void printTree(int level) const;
+    void printTree(cmp_log::Log *log, int level) const;
 
     NonTerminal getNonTerminal() const;
     friend std::ostream &operator<<(std::ostream &os, ASTNode const &m);
@@ -39,6 +40,6 @@ class ASTNode {
 
     NonTerminal non_terminal_;
 
-    std::vector<ASTNode *> children;
+    std::list<ASTNode *> children;
 };
 } // namespace syntactic_analyser

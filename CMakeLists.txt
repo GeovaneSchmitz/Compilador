@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Add the executable target
-add_executable(main 
+add_executable(main
     src/binary_tree/binary_tree.cpp
     src/compiler/compiler.cpp
     src/lexical_analyser/lexical_analyser.cpp
@@ -16,8 +16,11 @@ add_executable(main
     src/log/log_thread_safe.cpp
     src/log/log.cpp
     src/main.cpp
-    src/semantic_analyser/scope.cpp
+    src/semantic_analyser/return_value.cpp
     src/semantic_analyser/semantic_analyser.cpp
+    src/semantic_analyser/symbol_table.cpp
+    src/semantic_analyser/symbol_type.cpp
+    src/semantic_analyser/symbol.cpp
     src/syntactic_analyser/ast_node.cpp
     src/syntactic_analyser/non_terminal.cpp
     src/syntactic_analyser/syntactic_analyser.cpp

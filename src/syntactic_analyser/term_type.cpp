@@ -40,7 +40,7 @@ NonTerminal TermType::getNonTerminal() const {
 
 std::string TermType::toString() const {
     if (this->isTerminal()) {
-        return lexical_analyser::to_string(this->getTerminal());
+        return lexical_analyser::toString(this->getTerminal());
     } else {
         return to_string(this->getNonTerminal());
     }
@@ -48,7 +48,7 @@ std::string TermType::toString() const {
 
 std::ostream &operator<<(std::ostream &os, TermType const &m) {
     if (m.isTerminal()) {
-        os << lexical_analyser::to_string(m.getTerminal());
+        os << lexical_analyser::toString(m.getTerminal());
     } else {
         os << to_string(m.getNonTerminal());
     }
