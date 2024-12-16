@@ -31,6 +31,10 @@ class ASTNode {
     NonTerminal getNonTerminal() const;
     friend std::ostream &operator<<(std::ostream &os, ASTNode const &m);
 
+    std::list<ASTNode *>::iterator begin();
+    std::list<ASTNode *>::iterator end();
+    size_t size() const { return children.size(); }
+
     private:
     bool is_terminal_;
     bool is_token_type_;

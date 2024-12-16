@@ -37,6 +37,8 @@ class LexicalAnalyser {
      */
 
     Token nextToken();
+    void toPreviousCharacter();
+    void toNextCharacter();
 
     private:
     std::string *source_code;

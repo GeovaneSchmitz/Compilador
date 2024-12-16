@@ -12,9 +12,14 @@ class Symbol {
     SymbolType type() const;
     std::string name() const;
 
+    void setInternalRepresentation(std::string ir);
+
+    std::string getInternalRepresentation() const;
+
     private:
     SymbolType type_;
     std::string name_;
+    std::string internal_representation;
 };
 
 } // namespace semantic_analyser

@@ -102,6 +102,11 @@ void ASTNode::printTree(cmp_log::Log *log, int level) const {
     }
 }
 
+
+std::list<ASTNode *>::iterator ASTNode::begin() { return children.begin(); }
+
+std::list<ASTNode *>::iterator ASTNode::end() { return children.end(); }
+
 std::ostream &operator<<(std::ostream &os, ASTNode const &m) {
     if (m.isTerminal()) {
         os << lexical_analyser::toString(m.getTerminal().type()) << std::string(":") << m.getTerminal().value();

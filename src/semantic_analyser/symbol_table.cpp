@@ -6,11 +6,13 @@
 namespace semantic_analyser {
 
 SymbolTable::SymbolTable()
-    : parent_scope_(nullptr),
+    : temp_index{0},
+      parent_scope_(nullptr),
       global_scope_(this) {}
 
 SymbolTable::SymbolTable(SymbolTable *global_scope, SymbolTable *parent_scope)
-    : parent_scope_(parent_scope),
+    : temp_index{0},
+      parent_scope_(parent_scope),
       global_scope_(global_scope) {}
 
 Symbol *SymbolTable::resolveSymbol(const std::string symbol_name) const {
@@ -24,7 +26,19 @@ Symbol *SymbolTable::resolveSymbol(const std::string symbol_name) const {
     return nullptr;
 }
 
-void SymbolTable::addSymbol(Symbol *symbol) { symbol_map_[symbol->name()] = symbol; }
+int SymbolTable::generateTempIndex() {
+    if (parent_scope_ != nullptr) {
+        return parent_scope_->generateTempIndex();
+    }
+    return temp_index++;
+}
+
+void SymbolTable::addSymbol(Symbol *symbol) {
+    if (symbol->type() == SymbolType::VARIABLE) {
+        symbol->setInternalRepresentation("_" + symbol->name() + "_" + std::to_string(this->generateTempIndex()));
+    }
+    symbol_map_[symbol->name()] = symbol;
+}
 
 std::map<const std::string, Symbol *>::const_iterator SymbolTable::begin() const { return symbol_map_.begin(); }
 std::map<const std::string, Symbol *>::const_iterator SymbolTable::end() const { return symbol_map_.end(); }

@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Debug",
       "program": "${workspaceRoot}/bin/main",
-      "args": ["xpp/primo.xpp"],
+      "args": ["xpp/funcoes.xpp"],
       "env": [],
       "cwd": "${workspaceRoot}"
     }

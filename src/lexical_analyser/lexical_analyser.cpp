@@ -26,6 +26,27 @@ LexicalAnalyser::LexicalAnalyser(std::string *str)
 
 LexicalAnalyser::~LexicalAnalyser() {}
 
+void LexicalAnalyser::toPreviousCharacter() {
+    if (this->current_position != source_code->begin()) {
+        this->current_position--;
+        this->col--;
+        if (*this->current_position == '\n') {
+            this->row--;
+        }
+    }
+}
+
+void LexicalAnalyser::toNextCharacter() {
+    if (this->current_position != source_code->end()) {
+        this->current_position++;
+        this->col++;
+        if (*this->current_position == '\n') {
+            this->row++;
+            this->col = 0;
+        }
+    }
+}
+
 /**
  * @brief Recupera o próximo token do código-fonte.
  *
@@ -196,7 +217,6 @@ Token LexicalAnalyser::nextToken() {
                 break;
             default:
                 start = this->current_position;
-                return Token(TokenType::INVALID, start, current_position, row, col);
                 break;
             }
             break;

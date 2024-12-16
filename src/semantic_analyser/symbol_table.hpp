@@ -13,12 +13,15 @@ class SymbolTable {
 
     Symbol *resolveSymbol(const std::string symbol_name) const;
     void addSymbol(Symbol *symbol);
+    int generateTempIndex();
 
     SymbolTable *getNewSymbolTable();
+
     std::map<const std::string, Symbol *>::const_iterator begin() const;
     std::map<const std::string, Symbol *>::const_iterator end() const;
 
     private:
+    int temp_index;
     SymbolTable *parent_scope_;
     SymbolTable *global_scope_;
     std::map<const std::string, Symbol *> symbol_map_;

@@ -16,6 +16,7 @@ add_executable(main
     src/log/log_thread_safe.cpp
     src/log/log.cpp
     src/main.cpp
+    src/semantic_analyser/ast_and_result.cpp
     src/semantic_analyser/return_value.cpp
     src/semantic_analyser/semantic_analyser.cpp
     src/semantic_analyser/symbol_table.cpp

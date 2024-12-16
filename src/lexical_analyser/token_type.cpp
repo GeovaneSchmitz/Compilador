@@ -70,6 +70,8 @@ std::string toString(TokenType tt) {
         return "RESERVED_WORD_STRING";
     case TokenType::END_OF_FILE:
         return "END_OF_FILE";
+    case TokenType::INVALID:
+        return "INVALID";
     default:
         return "UNKNOWN";
     }
