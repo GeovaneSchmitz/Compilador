@@ -42,9 +42,15 @@ Para executar o compilador, deve-se fazer o seguinte:
     ./bin/main filepath/file.xpp
 ```
 
-Os arquivos prontos para testes estão na pasta xpp, segue um exemplo de comando:
+Os arquivos prontos para testes estão na pasta xpp, segue alguns exemplos de arquivos com 100 ou mais linhas:
 ```bash
-   ./bin/main xpp/funcoes.xpp
+   ./bin/main xpp/arquivo1.xpp
+```
+```bash
+   ./bin/main xpp/arquivo2.xpp
+```
+```bash
+   ./bin/main xpp/arquivo3.xpp
 ```
 
 ## Resultados
