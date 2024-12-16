@@ -4,6 +4,7 @@
 #include "../syntactic_analyser/term.hpp"
 #include <iostream>
 #include <map>
+#include <stdexcept>
 #include <string>
 #include <vector>
 
@@ -46,9 +47,10 @@ bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
                 stack_.pop_back();
                 token_type = lex.next_token();
             } else {
-                std::string item_token_error_str("Erro: Token lido (");
+                std::string item_token_error_str("Erro Sintático: Token lido (");
                 item_token_error_str += lexical_analyser::to_string(token_type) + ") não corresponde ao topo da pilha (" + current_item.get_string() + ")";
                 this->log_.write(item_token_error_str);
+                throw std::runtime_error(item_token_error_str);
                 return false;
             }
         } else {
@@ -56,7 +58,8 @@ bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
             this->log_.write(prod_log);
             const auto production = table_.find({current_item.getNonTerminal(), token_type});
             if (production == table_.end()) {
-                this->log_.write("Erro: Produção não encontrada na tabela.");
+                this->log_.write("Erro Sintático: Produção não encontrada na tabela.");
+                throw std::runtime_error("Erro Sintático: Produção não encontrada na tabela.");
                 return false;
             }
 
@@ -74,12 +77,13 @@ bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
             }
         }
 
-        // FIXME: Esse if aqui não deveria existir, temos que repensar a condição do while(token != TokenTi) da linha 36. 
         if (token_type == TokenType::END_OF_FILE) {
             if (stack_.back().isTerminal()) {
                 std::string error("Erro: token é END_OF_FILE mas há um terminal no topo da pilha: ");
                 error += stack_.back().get_string() + "!";
                 this->log_.write(error);
+                throw std::runtime_error(error);
+                return false;
             } else {
                 bool quick_fix = stack_.back().getNonTerminal() == NonTerminal::FUNCLIST_ || stack_.back().getNonTerminal() == NonTerminal::IFSTAT_;
                 if (quick_fix) {
