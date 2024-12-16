@@ -8,7 +8,7 @@ GRUPO: <br/>
  Guilherme Adenilson <br/>
  Gustavo Konescki <br/>
 
-## Requirementos
+## Requerimentos
 
 ## Compilação
 
@@ -35,3 +35,7 @@ Os arquivos prontos para testes estão na pasta xpp, segue alguns exemplos de ar
 ## Resultados
 
 Um log para cada parte do compilador pode ser vista na pasta /log.
+
+## Observação
+
+As declarações da gramática em LL1, juntamente com uma SDD e uma SDT para expressões numéricas, estão na pasta *docs*.
