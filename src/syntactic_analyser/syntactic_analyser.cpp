@@ -47,7 +47,7 @@ bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
                 stack_.pop_back();
                 token_type = lex.next_token();
             } else {
-                std::string item_token_error_str("Erro Sintático: Token lido (");
+                std::string item_token_error_str("Erro Sintático " + lex.row_col() + ": Token lido (");
                 item_token_error_str += lexical_analyser::to_string(token_type) + ") não corresponde ao topo da pilha (" + current_item.get_string() + ")";
                 this->log_.write(item_token_error_str);
                 throw std::runtime_error(item_token_error_str);
@@ -59,7 +59,7 @@ bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
             const auto production = table_.find({current_item.getNonTerminal(), token_type});
             if (production == table_.end()) {
                 this->log_.write("Erro Sintático: Produção não encontrada na tabela.");
-                throw std::runtime_error("Erro Sintático: Produção não encontrada na tabela.");
+                throw std::runtime_error("Erro Sintático " + lex.row_col() + ": Produção não encontrada na tabela.");
                 return false;
             }
 
@@ -79,7 +79,7 @@ bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
 
         if (token_type == TokenType::END_OF_FILE) {
             if (stack_.back().isTerminal()) {
-                std::string error("Erro: token é END_OF_FILE mas há um terminal no topo da pilha: ");
+                std::string error("Erro " + lex.row_col() + ": token é END_OF_FILE mas há um terminal no topo da pilha: ");
                 error += stack_.back().get_string() + "!";
                 this->log_.write(error);
                 throw std::runtime_error(error);
@@ -105,6 +105,7 @@ bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
     }
 
     this->log_.write("Erro: Análise sintática falhou.");
+    std::cout << "Erro " + lex.row_col() + ": Análise sintática falhou." << std::endl;
     return false;
 }
 

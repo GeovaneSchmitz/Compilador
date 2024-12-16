@@ -23,6 +23,8 @@ class LexicalAnalyser {
     const std::pair<uint, uint> coordinates() const;
     void append_token_list(TokenType type, std::string::iterator start);
 
+    std::string row_col();
+
     /**
      * @brief Recupera o próximo token do código-fonte.
      *
@@ -36,8 +38,7 @@ class LexicalAnalyser {
      * cada caractere.
      *
      *
-     * @return Um ponteiro para o próximo objeto Token se um token válido for encontrado, ou nullptr
-     *         se nenhum token válido puder ser construído.
+     * @return O tipo do token encontrado.
      */
 
     TokenType next_token();

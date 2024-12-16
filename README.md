@@ -29,7 +29,7 @@ Os arquivos prontos para testes estão na pasta xpp, segue alguns exemplos de ar
    ./bin/compilador xpp/arquivo2.xpp
 ```
 ```bash
-   ./bin/compilador xpp/funcoes.xpp
+   ./bin/compilador xpp/arquivo3.xpp
 ```
 
 ## Resultados

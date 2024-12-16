@@ -1,5 +1,5 @@
-[2024-12-15 22:01:49] Log da main() iniciado.
-[2024-12-15 22:01:49] Lendo arquivo: xpp/arquivo3.xpp
-[2024-12-15 22:01:49] Arquivo lido.
-[2024-12-15 22:01:49] Compilando...
-[2024-12-15 22:01:49] Compilação encerrada.
+[2024-12-15 23:03:10] Log da main() iniciado.
+[2024-12-15 23:03:10] Lendo arquivo: xpp/erro_lexico.xpp
+[2024-12-15 23:03:10] Arquivo lido.
+[2024-12-15 23:03:10] Compilando...
+[2024-12-15 23:03:10] Compilação falhou. Encerrando.

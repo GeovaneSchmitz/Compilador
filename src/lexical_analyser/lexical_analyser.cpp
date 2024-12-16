@@ -467,4 +467,8 @@ void LexicalAnalyser::append_token_list(TokenType type, std::string::iterator st
     value.clear();
 }
 
+std::string LexicalAnalyser::row_col() {
+    return "(" + std::to_string(row) + ", " + std::to_string(col) + ")";
+}
+
 } // namespace lexical_analyser
