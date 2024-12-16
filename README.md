@@ -38,4 +38,4 @@ Um log para cada parte do compilador pode ser vista na pasta /log.
 
 ## Observação
 
-As declarações da gramática em LL1, juntamente com uma SDD e uma SDT para expressões numéricas, estão na pasta *docs*.
+As declarações da gramática em LL1, juntamente com uma SDD e uma SDT para expressões numéricas, estão na pasta *docs*. Apenas as tarefas AL e AS estão implementadas totalmente.
