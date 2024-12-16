@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <iostream>
+#include <stdexcept>
 #include <string>
 #include <sys/types.h>
 #include <unordered_map>
@@ -33,8 +34,6 @@ LexicalAnalyser::~LexicalAnalyser() {
         }
     }
 }
-
-
 
 /**
  * @brief Recupera o próximo token do código-fonte.
@@ -66,7 +65,7 @@ TokenType LexicalAnalyser::next_token() {
         this->col++;
         if (*this->current_position == '\n') {
             this->row++;
-            this->col = 1;
+            this->col = 0;
         }
         switch (state) {
         case 0:
@@ -204,8 +203,15 @@ TokenType LexicalAnalyser::next_token() {
             case '=':
                 state = 8;
                 break;
-            default:
+            case '\n':
+            case '\t':
+            case ' ':
                 start = this->current_position;
+                break;
+            default:
+                std::string row_str = std::to_string(row);
+                std::string col_str = std::to_string(col);
+                throw std::runtime_error("Erro léxico: " + std::string(start, current_position) + " (" + row_str + ", " + col_str + ")");
                 break;
             }
             break;

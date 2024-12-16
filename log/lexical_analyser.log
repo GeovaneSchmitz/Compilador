@@ -1,998 +1,1001 @@
-[2024-12-15 02:33:16]  (1, 5):  Token RESERVED_WORD_DEF encontrado: def
-[2024-12-15 02:33:16]  (1, 11):  Token IDENT encontrado: mruv
-[2024-12-15 02:33:16]  (1, 12):  Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 02:33:16]  (1, 18):  Token RESERVED_WORD_FLOAT encontrado: float
-[2024-12-15 02:33:16]  (1, 22):  Token IDENT encontrado: s0
-[2024-12-15 02:33:16]  (1, 23):  Token COMMA encontrado: ,
-[2024-12-15 02:33:16]  (1, 30):  Token RESERVED_WORD_FLOAT encontrado: float
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (1, 34):  Token IDENT encontrado: v0
-[2024-12-15 02:33:16]  (1, 35):  Token COMMA encontrado: ,
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (1, 42):  Token RESERVED_WORD_FLOAT encontrado: float
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (1, 45):  Token IDENT encontrado: t
-[2024-12-15 02:33:16]  (1, 46):  Token COMMA encontrado: ,
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (1, 53):  Token RESERVED_WORD_FLOAT encontrado: float
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (1, 56):  Token IDENT encontrado: a
-[2024-12-15 02:33:16]  (1, 57):  Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 02:33:16]  (1, 59):  Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 02:33:16]  (2, 6):  Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 02:33:16]  (2, 9):  Token IDENT encontrado: s
-[2024-12-15 02:33:16]  (2, 10):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16]  (3, 4):  Token IDENT encontrado: s
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (3, 7):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16]  (3, 11):  Token IDENT encontrado: s0
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (3, 13):  Token LOW_PRIORITY_OPERATOR encontrado: +
-[2024-12-15 02:33:16]  (3, 17):  Token IDENT encontrado: v0
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (3, 18):  Token HIGH_PRIORITY_OPERATOR encontrado: *
-[2024-12-15 02:33:16]  (3, 20):  Token IDENT encontrado: t
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (3, 22):  Token LOW_PRIORITY_OPERATOR encontrado: +
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (3, 24):  Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (3, 26):  Token IDENT encontrado: a
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (3, 27):  Token HIGH_PRIORITY_OPERATOR encontrado: *
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (3, 29):  Token IDENT encontrado: t
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (3, 30):  Token HIGH_PRIORITY_OPERATOR encontrado: *
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (3, 32):  Token IDENT encontrado: t
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (3, 33):  Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (3, 34):  Token HIGH_PRIORITY_OPERATOR encontrado: /
-[2024-12-15 02:33:16]  (3, 36):  Token INT_CONSTANT encontrado: 2
-[2024-12-15 02:33:16]  (3, 37):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (4, 8):  Token RESERVED_WORD_PRINT encontrado: print
-[2024-12-15 02:33:16]  (4, 11):  Token IDENT encontrado: s
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (4, 12):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (5, 2):  Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 02:33:16]  (7, 5):  Token RESERVED_WORD_DEF encontrado: def
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (7, 16):  Token IDENT encontrado: factorial
-[2024-12-15 02:33:16]  (7, 17):  Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (7, 21):  Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (7, 24):  Token IDENT encontrado: n
-[2024-12-15 02:33:16]  (7, 25):  Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (7, 27):  Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (8, 6):  Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (8, 9):  Token IDENT encontrado: i
-[2024-12-15 02:33:16]  (8, 10):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (9, 6):  Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (9, 10):  Token IDENT encontrado: x0
-[2024-12-15 02:33:16]  (9, 11):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (11, 5):  Token IDENT encontrado: x0
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (11, 8):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (11, 11):  Token INT_CONSTANT encontrado: 1
-[2024-12-15 02:33:16]  (11, 12):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (12, 6):  Token RESERVED_WORD_FOR encontrado: for
-[2024-12-15 02:33:16]  (12, 8):  Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (12, 10):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (12, 13):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (12, 16):  Token INT_CONSTANT encontrado: 1
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (12, 17):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (12, 20):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (12, 23):  Token COMPARATOR encontrado: <=
-[2024-12-15 02:33:16]  (12, 26):  Token IDENT encontrado: n
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (12, 27):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (12, 30):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (12, 33):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (12, 36):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (12, 38):  Token LOW_PRIORITY_OPERATOR encontrado: +
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (12, 41):  Token INT_CONSTANT encontrado: 1
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (12, 42):  Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (12, 44):  Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (13, 6):  Token IDENT encontrado: x0
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (13, 9):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (13, 13):  Token IDENT encontrado: x0
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (13, 15):  Token HIGH_PRIORITY_OPERATOR encontrado: *
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (13, 18):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (13, 19):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (14, 3):  Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (15, 8):  Token RESERVED_WORD_PRINT encontrado: print
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (15, 12):  Token IDENT encontrado: x0
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (15, 13):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (16, 2):  Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (18, 5):  Token RESERVED_WORD_DEF encontrado: def
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (18, 19):  Token IDENT encontrado: greater_then
-[2024-12-15 02:33:16]  (18, 20):  Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (18, 26):  Token RESERVED_WORD_FLOAT encontrado: float
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (18, 29):  Token IDENT encontrado: a
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (18, 30):  Token COMMA encontrado: ,
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (18, 37):  Token RESERVED_WORD_FLOAT encontrado: float
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (18, 40):  Token IDENT encontrado: b
-[2024-12-15 02:33:16]  (18, 41):  Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (18, 43):  Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (19, 5):  Token RESERVED_WORD_IF encontrado: if
-[2024-12-15 02:33:16]  (19, 7):  Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (19, 9):  Token IDENT encontrado: a
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (19, 12):  Token COMPARATOR encontrado: >
-[2024-12-15 02:33:16]  (19, 15):  Token IDENT encontrado: b
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (19, 16):  Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (19, 18):  Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (20, 9):  Token RESERVED_WORD_PRINT encontrado: print
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (20, 20):  Token STRING_CONSTANT encontrado: "é maior"
-[2024-12-15 02:33:16]  (20, 21):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (21, 3):  Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (21, 9):  Token RESERVED_WORD_ELSE encontrado: else
-[2024-12-15 02:33:16]  (21, 11):  Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (22, 9):  Token RESERVED_WORD_PRINT encontrado: print
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (22, 29):  Token STRING_CONSTANT encontrado: "é menor ou igual"
-[2024-12-15 02:33:16]  (22, 30):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (23, 3):  Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (24, 2):  Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (26, 5):  Token RESERVED_WORD_DEF encontrado: def
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (26, 18):  Token IDENT encontrado: bubble_sort
-[2024-12-15 02:33:16]  (26, 19):  Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (26, 23):  Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (26, 30):  Token IDENT encontrado: array
-[2024-12-15 02:33:16]  (26, 31):  Token COMMA encontrado: ,
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (26, 36):  Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (26, 42):  Token IDENT encontrado: size
-[2024-12-15 02:33:16]  (26, 43):  Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (26, 45):  Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (27, 6):  Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (27, 9):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (27, 10):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (28, 6):  Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (28, 9):  Token IDENT encontrado: j
-[2024-12-15 02:33:16]  (28, 10):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (29, 6):  Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (29, 12):  Token IDENT encontrado: temp
-[2024-12-15 02:33:16]  (29, 13):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (31, 6):  Token RESERVED_WORD_FOR encontrado: for
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (31, 8):  Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (31, 10):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (31, 13):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (31, 16):  Token INT_CONSTANT encontrado: 0
-[2024-12-15 02:33:16]  (31, 17):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (31, 20):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (31, 23):  Token COMPARATOR encontrado: <
-[2024-12-15 02:33:16]  (31, 26):  Token IDENT encontrado: n
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (31, 28):  Token LOW_PRIORITY_OPERATOR encontrado: -
-[2024-12-15 02:33:16]  (31, 31):  Token INT_CONSTANT encontrado: 1
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (31, 32):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (31, 35):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (31, 38):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (31, 41):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (31, 43):  Token LOW_PRIORITY_OPERATOR encontrado: +
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (31, 46):  Token INT_CONSTANT encontrado: 1
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (31, 47):  Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (31, 49):  Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (32, 7):  Token RESERVED_WORD_FOR encontrado: for
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (32, 9):  Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (32, 11):  Token IDENT encontrado: j
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (32, 14):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (32, 17):  Token INT_CONSTANT encontrado: 0
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (32, 18):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (32, 21):  Token IDENT encontrado: j
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (32, 24):  Token COMPARATOR encontrado: <
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (32, 27):  Token IDENT encontrado: n
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (32, 29):  Token LOW_PRIORITY_OPERATOR encontrado: -
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (32, 32):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (32, 34):  Token LOW_PRIORITY_OPERATOR encontrado: -
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (32, 37):  Token INT_CONSTANT encontrado: 1
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (32, 38):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (32, 41):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (32, 44):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (32, 47):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (32, 49):  Token LOW_PRIORITY_OPERATOR encontrado: +
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (32, 52):  Token INT_CONSTANT encontrado: 1
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (32, 53):  Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (32, 55):  Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (33, 7):  Token RESERVED_WORD_IF encontrado: if
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (33, 9):  Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (33, 15):  Token IDENT encontrado: array
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (33, 16):  Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 02:33:16]  (33, 18):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (33, 19):  Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 02:33:16]  (33, 22):  Token COMPARATOR encontrado: >
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (33, 29):  Token IDENT encontrado: array
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (33, 30):  Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (33, 32):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (33, 33):  Token LOW_PRIORITY_OPERATOR encontrado: +
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (33, 35):  Token INT_CONSTANT encontrado: 1
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (33, 36):  Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (33, 37):  Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (33, 39):  Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (34, 10):  Token IDENT encontrado: temp
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (34, 13):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (34, 20):  Token IDENT encontrado: array
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (34, 21):  Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (34, 23):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (34, 24):  Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (34, 25):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (35, 11):  Token IDENT encontrado: array
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (35, 12):  Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (35, 14):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (35, 15):  Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (35, 18):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (35, 25):  Token IDENT encontrado: array
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (35, 26):  Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (35, 28):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (35, 29):  Token LOW_PRIORITY_OPERATOR encontrado: +
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (35, 31):  Token INT_CONSTANT encontrado: 1
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (35, 32):  Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (35, 33):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (36, 11):  Token IDENT encontrado: array
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (36, 12):  Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (36, 14):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (36, 15):  Token LOW_PRIORITY_OPERATOR encontrado: +
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (36, 17):  Token INT_CONSTANT encontrado: 1
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (36, 18):  Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (36, 21):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (36, 27):  Token IDENT encontrado: temp
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (36, 28):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (37, 5):  Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (38, 4):  Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (39, 3):  Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (41, 6):  Token RESERVED_WORD_FOR encontrado: for
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (41, 8):  Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (41, 10):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (41, 13):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (41, 16):  Token INT_CONSTANT encontrado: 0
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (41, 17):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (41, 20):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (41, 23):  Token COMPARATOR encontrado: <
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (41, 26):  Token IDENT encontrado: n
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (41, 28):  Token LOW_PRIORITY_OPERATOR encontrado: -
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (41, 31):  Token INT_CONSTANT encontrado: 1
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (41, 32):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (41, 35):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (41, 38):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (41, 41):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (41, 43):  Token LOW_PRIORITY_OPERATOR encontrado: +
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (41, 46):  Token INT_CONSTANT encontrado: 1
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (41, 47):  Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (41, 49):  Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (42, 9):  Token RESERVED_WORD_PRINT encontrado: print
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (42, 16):  Token IDENT encontrado: array
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (42, 17):  Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (42, 19):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (42, 20):  Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (42, 21):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (43, 3):  Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (44, 2):  Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (46, 5):  Token RESERVED_WORD_DEF encontrado: def
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (46, 20):  Token IDENT encontrado: concat_string
-[2024-12-15 02:33:16]  (46, 21):  Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (46, 28):  Token RESERVED_WORD_STRING encontrado: string
-[2024-12-15 02:33:16]  (46, 31):  Token IDENT encontrado: x
-[2024-12-15 02:33:16]  (46, 32):  Token COMMA encontrado: ,
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (46, 37):  Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (46, 45):  Token IDENT encontrado: size_x
-[2024-12-15 02:33:16]  (46, 46):  Token COMMA encontrado: ,
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (46, 54):  Token RESERVED_WORD_STRING encontrado: string
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (46, 57):  Token IDENT encontrado: y
-[2024-12-15 02:33:16]  (46, 58):  Token COMMA encontrado: ,
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (46, 63):  Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (46, 71):  Token IDENT encontrado: size_y
-[2024-12-15 02:33:16]  (46, 72):  Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (46, 74):  Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (47, 9):  Token RESERVED_WORD_STRING encontrado: string
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (47, 24):  Token IDENT encontrado: result_concat
-[2024-12-15 02:33:16]  (47, 25):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (48, 16):  Token IDENT encontrado: result_concat
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (48, 19):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (48, 24):  Token RESERVED_WORD_NEW encontrado: new
-[2024-12-15 02:33:16]  (48, 32):  Token RESERVED_WORD_STRING encontrado: string
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (48, 33):  Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (48, 40):  Token IDENT encontrado: size_x
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (48, 41):  Token LOW_PRIORITY_OPERATOR encontrado: +
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (48, 48):  Token IDENT encontrado: size_y
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (48, 49):  Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (48, 50):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (49, 6):  Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (49, 9):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (49, 10):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (50, 6):  Token RESERVED_WORD_FOR encontrado: for
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (50, 8):  Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (50, 10):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (50, 13):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (50, 16):  Token INT_CONSTANT encontrado: 0
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (50, 17):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (50, 20):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (50, 23):  Token COMPARATOR encontrado: <
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (50, 31):  Token IDENT encontrado: size_x
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (50, 32):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (50, 35):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (50, 38):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (50, 41):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (50, 43):  Token LOW_PRIORITY_OPERATOR encontrado: +
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (50, 46):  Token INT_CONSTANT encontrado: 1
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (50, 47):  Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (50, 49):  Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (51, 17):  Token IDENT encontrado: result_concat
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (51, 18):  Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (51, 20):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (51, 21):  Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (51, 24):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (51, 27):  Token IDENT encontrado: x
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (51, 28):  Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (51, 30):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (51, 31):  Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (51, 32):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (52, 3):  Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (53, 6):  Token RESERVED_WORD_FOR encontrado: for
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (53, 8):  Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (53, 10):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (53, 13):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (53, 21):  Token IDENT encontrado: size_x
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (53, 22):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (53, 25):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (53, 28):  Token COMPARATOR encontrado: <
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (53, 36):  Token IDENT encontrado: size_x
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (53, 37):  Token LOW_PRIORITY_OPERATOR encontrado: +
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (53, 44):  Token IDENT encontrado: size_y
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (53, 45):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (53, 48):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (53, 51):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (53, 54):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (53, 56):  Token LOW_PRIORITY_OPERATOR encontrado: +
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (53, 59):  Token INT_CONSTANT encontrado: 1
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (53, 60):  Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (53, 62):  Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (54, 17):  Token IDENT encontrado: result_concat
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (54, 18):  Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (54, 20):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (54, 21):  Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (54, 24):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (54, 27):  Token IDENT encontrado: y
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (54, 28):  Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (54, 30):  Token IDENT encontrado: i
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (54, 31):  Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (54, 32):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (55, 3):  Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (57, 8):  Token RESERVED_WORD_PRINT encontrado: print
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (57, 23):  Token IDENT encontrado: result_concat
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (57, 24):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (58, 2):  Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (60, 5):  Token RESERVED_WORD_DEF encontrado: def
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (60, 11):  Token IDENT encontrado: main
-[2024-12-15 02:33:16]  (60, 12):  Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (60, 13):  Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (60, 15):  Token OPEN_CURLY_BRACE encontrado: {
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (61, 6):  Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (61, 13):  Token IDENT encontrado: array
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (61, 14):  Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (61, 16):  Token INT_CONSTANT encontrado: 5
-[2024-12-15 02:33:16]  (61, 17):  Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (61, 18):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (62, 6):  Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (62, 12):  Token IDENT encontrado: size
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (62, 13):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (63, 7):  Token IDENT encontrado: size
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (63, 10):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (63, 13):  Token INT_CONSTANT encontrado: 5
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (63, 14):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (64, 8):  Token IDENT encontrado: array
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (64, 11):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (64, 18):  Token IDENT encontrado: ABABA
-[2024-12-15 02:33:16]  (64, 19):  Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (64, 21):  Token INT_CONSTANT encontrado: 5
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (64, 22):  Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (64, 23):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (66, 8):  Token IDENT encontrado: array
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (66, 9):  Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (66, 11):  Token INT_CONSTANT encontrado: 0
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (66, 12):  Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (66, 15):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (66, 19):  Token INT_CONSTANT encontrado: 15
-[2024-12-15 02:33:16]  (66, 20):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (67, 8):  Token IDENT encontrado: array
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (67, 9):  Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (67, 11):  Token INT_CONSTANT encontrado: 1
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (67, 12):  Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (67, 15):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (67, 18):  Token INT_CONSTANT encontrado: 9
-[2024-12-15 02:33:16]  (67, 19):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (68, 8):  Token IDENT encontrado: array
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (68, 9):  Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (68, 11):  Token INT_CONSTANT encontrado: 2
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (68, 12):  Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (68, 15):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (68, 19):  Token INT_CONSTANT encontrado: 23
-[2024-12-15 02:33:16]  (68, 20):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (69, 8):  Token IDENT encontrado: array
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (69, 9):  Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (69, 11):  Token INT_CONSTANT encontrado: 3
-[2024-12-15 02:33:16]  (69, 12):  Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (69, 15):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (69, 19):  Token INT_CONSTANT encontrado: 12
-[2024-12-15 02:33:16]  (69, 20):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (70, 8):  Token IDENT encontrado: array
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (70, 9):  Token OPEN_SQUARE_BRACKET encontrado: [
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (70, 11):  Token INT_CONSTANT encontrado: 4
-[2024-12-15 02:33:16]  (70, 12):  Token CLOSE_SQUARE_BRACKET encontrado: ]
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (70, 15):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (70, 18):  Token INT_CONSTANT encontrado: 0
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (70, 19):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (72, 9):  Token RESERVED_WORD_STRING encontrado: string
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (72, 17):  Token IDENT encontrado: result
-[2024-12-15 02:33:16]  (72, 18):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (73, 9):  Token IDENT encontrado: result
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (73, 12):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (73, 18):  Token RESERVED_WORD_CALL encontrado: call
-[2024-12-15 02:33:16]  (73, 31):  Token IDENT encontrado: bubble_sort
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (73, 32):  Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (73, 38):  Token IDENT encontrado: array
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (73, 39):  Token COMMA encontrado: ,
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (73, 45):  Token IDENT encontrado: size
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (73, 46):  Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (73, 47):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (75, 6):  Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (75, 9):  Token IDENT encontrado: a
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (75, 10):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (76, 6):  Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (76, 9):  Token IDENT encontrado: b
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (76, 10):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (77, 4):  Token IDENT encontrado: a
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (77, 7):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (77, 11):  Token INT_CONSTANT encontrado: 25
-[2024-12-15 02:33:16]  (77, 12):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (78, 4):  Token IDENT encontrado: b
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (78, 7):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (78, 11):  Token INT_CONSTANT encontrado: 23
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (78, 12):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (79, 9):  Token IDENT encontrado: result
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (79, 12):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (79, 18):  Token RESERVED_WORD_CALL encontrado: call
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (79, 32):  Token IDENT encontrado: greater_then
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (79, 33):  Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (79, 35):  Token IDENT encontrado: a
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (79, 36):  Token COMMA encontrado: ,
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (79, 39):  Token IDENT encontrado: b
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (79, 40):  Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (79, 41):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (81, 6):  Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (81, 9):  Token IDENT encontrado: n
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (81, 10):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (82, 4):  Token IDENT encontrado: n
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (82, 7):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (82, 11):  Token INT_CONSTANT encontrado: 10
-[2024-12-15 02:33:16]  (82, 12):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (83, 9):  Token IDENT encontrado: result
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (83, 12):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (83, 18):  Token RESERVED_WORD_CALL encontrado: call
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (83, 29):  Token IDENT encontrado: factorial
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (83, 30):  Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (83, 32):  Token IDENT encontrado: n
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (83, 33):  Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (83, 34):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (85, 8):  Token RESERVED_WORD_FLOAT encontrado: float
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (85, 12):  Token IDENT encontrado: s0
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (85, 13):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (86, 8):  Token RESERVED_WORD_FLOAT encontrado: float
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (86, 12):  Token IDENT encontrado: v0
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (86, 13):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (87, 8):  Token RESERVED_WORD_FLOAT encontrado: float
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (87, 14):  Token IDENT encontrado: time
-[2024-12-15 02:33:16]  (87, 15):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (88, 8):  Token RESERVED_WORD_FLOAT encontrado: float
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (88, 11):  Token IDENT encontrado: a
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (88, 12):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (90, 5):  Token IDENT encontrado: s0
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (90, 8):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (90, 14):  Token FLOAT_CONSTANT encontrado: 15.5
-[2024-12-15 02:33:16]  (90, 15):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (91, 5):  Token IDENT encontrado: v0
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (91, 8):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (91, 14):  Token FLOAT_CONSTANT encontrado: 80.3
-[2024-12-15 02:33:16]  (91, 15):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (92, 7):  Token IDENT encontrado: time
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (92, 10):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (92, 14):  Token INT_CONSTANT encontrado: 50
-[2024-12-15 02:33:16]  (92, 15):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (93, 4):  Token IDENT encontrado: a
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (93, 7):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (93, 13):  Token FLOAT_CONSTANT encontrado: 6.35
-[2024-12-15 02:33:16]  (93, 14):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (94, 9):  Token IDENT encontrado: result
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (94, 12):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (94, 18):  Token RESERVED_WORD_CALL encontrado: call
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (94, 24):  Token IDENT encontrado: mruv
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (94, 25):  Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (94, 28):  Token IDENT encontrado: s0
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (94, 29):  Token COMMA encontrado: ,
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (94, 33):  Token IDENT encontrado: v0
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (94, 34):  Token COMMA encontrado: ,
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (94, 40):  Token IDENT encontrado: time
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (94, 41):  Token COMMA encontrado: ,
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (94, 44):  Token IDENT encontrado: a
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (94, 45):  Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (94, 46):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (96, 9):  Token RESERVED_WORD_STRING encontrado: string
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (96, 19):  Token IDENT encontrado: string_x
-[2024-12-15 02:33:16]  (96, 20):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (97, 9):  Token RESERVED_WORD_STRING encontrado: string
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (97, 19):  Token IDENT encontrado: string_y
-[2024-12-15 02:33:16]  (97, 20):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (98, 6):  Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (98, 14):  Token IDENT encontrado: size_x
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (98, 15):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (99, 6):  Token RESERVED_WORD_INT encontrado: int
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (99, 14):  Token IDENT encontrado: size_y
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (99, 15):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (100, 4):  Token IDENT encontrado: x
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (100, 7):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (100, 16):  Token STRING_CONSTANT encontrado: "Arroz "
-[2024-12-15 02:33:16]  (100, 17):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (101, 9):  Token IDENT encontrado: size_x
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (101, 12):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (101, 15):  Token INT_CONSTANT encontrado: 6
-[2024-12-15 02:33:16]  (101, 16):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (102, 4):  Token IDENT encontrado: y
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (102, 7):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (102, 20):  Token STRING_CONSTANT encontrado: "com Frango"
-[2024-12-15 02:33:16]  (102, 21):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (103, 9):  Token IDENT encontrado: size_y
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (103, 12):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (103, 16):  Token INT_CONSTANT encontrado: 10
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (103, 17):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (104, 9):  Token IDENT encontrado: result
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (104, 12):  Token ASSIGNMENT encontrado: =
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (104, 18):  Token RESERVED_WORD_CALL encontrado: call
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (104, 33):  Token IDENT encontrado: concat_string
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (104, 34):  Token OPEN_PARENTHESIS encontrado: (
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (104, 43):  Token IDENT encontrado: string_x
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (104, 44):  Token COMMA encontrado: ,
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (104, 52):  Token IDENT encontrado: size_x
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (104, 53):  Token COMMA encontrado: ,
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (104, 63):  Token IDENT encontrado: string_y
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (104, 64):  Token COMMA encontrado: ,
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (104, 72):  Token IDENT encontrado: size_y
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (104, 73):  Token CLOSE_PARENTHESIS encontrado: )
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (104, 74):  Token SEMICOLON encontrado: ;
-[2024-12-15 02:33:16] Token já está na lista.
-[2024-12-15 02:33:16]  (105, 2):  Token CLOSE_CURLY_BRACE encontrado: }
-[2024-12-15 02:33:16] Token já está na lista.
+[2024-12-15 20:13:56] (1, 5)  Token RESERVED_WORD_DEF encontrado: def
+[2024-12-15 20:13:56] (1, 11)  Token IDENT encontrado: mruv
+[2024-12-15 20:13:56] (1, 12)  Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 20:13:56] (1, 18)  Token RESERVED_WORD_FLOAT encontrado: float
+[2024-12-15 20:13:56] (1, 22)  Token IDENT encontrado: s0
+[2024-12-15 20:13:56] (1, 23)  Token COMMA encontrado: ,
+[2024-12-15 20:13:56] (1, 30)  Token RESERVED_WORD_FLOAT encontrado: float
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (1, 34)  Token IDENT encontrado: v0
+[2024-12-15 20:13:56] (1, 35)  Token COMMA encontrado: ,
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (1, 42)  Token RESERVED_WORD_FLOAT encontrado: float
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (1, 45)  Token IDENT encontrado: t
+[2024-12-15 20:13:56] (1, 46)  Token COMMA encontrado: ,
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (1, 53)  Token RESERVED_WORD_FLOAT encontrado: float
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (1, 56)  Token IDENT encontrado: a
+[2024-12-15 20:13:56] (1, 57)  Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 20:13:56] (1, 59)  Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 20:13:56] (2, 5)  Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 20:13:56] (2, 8)  Token IDENT encontrado: s
+[2024-12-15 20:13:56] (2, 9)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] (3, 3)  Token IDENT encontrado: s
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (3, 6)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] (3, 10)  Token IDENT encontrado: s0
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (3, 12)  Token LOW_PRIORITY_OPERATOR encontrado: +
+[2024-12-15 20:13:56] (3, 16)  Token IDENT encontrado: v0
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (3, 17)  Token HIGH_PRIORITY_OPERATOR encontrado: *
+[2024-12-15 20:13:56] (3, 19)  Token IDENT encontrado: t
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (3, 21)  Token LOW_PRIORITY_OPERATOR encontrado: +
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (3, 23)  Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (3, 25)  Token IDENT encontrado: a
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (3, 26)  Token HIGH_PRIORITY_OPERATOR encontrado: *
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (3, 28)  Token IDENT encontrado: t
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (3, 29)  Token HIGH_PRIORITY_OPERATOR encontrado: *
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (3, 31)  Token IDENT encontrado: t
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (3, 32)  Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (3, 33)  Token HIGH_PRIORITY_OPERATOR encontrado: /
+[2024-12-15 20:13:56] (3, 35)  Token INT_CONSTANT encontrado: 2
+[2024-12-15 20:13:56] (3, 36)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (4, 7)  Token RESERVED_WORD_PRINT encontrado: print
+[2024-12-15 20:13:56] (4, 10)  Token IDENT encontrado: s
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (4, 11)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (5, 1)  Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 20:13:56] (7, 4)  Token RESERVED_WORD_DEF encontrado: def
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (7, 15)  Token IDENT encontrado: factorial
+[2024-12-15 20:13:56] (7, 16)  Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (7, 20)  Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (7, 23)  Token IDENT encontrado: n
+[2024-12-15 20:13:56] (7, 24)  Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (7, 26)  Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (8, 5)  Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (8, 8)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] (8, 9)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (9, 5)  Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (9, 9)  Token IDENT encontrado: x0
+[2024-12-15 20:13:56] (9, 10)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (11, 4)  Token IDENT encontrado: x0
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (11, 7)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (11, 10)  Token INT_CONSTANT encontrado: 1
+[2024-12-15 20:13:56] (11, 11)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (12, 5)  Token RESERVED_WORD_FOR encontrado: for
+[2024-12-15 20:13:56] (12, 7)  Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (12, 9)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (12, 12)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (12, 15)  Token INT_CONSTANT encontrado: 1
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (12, 16)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (12, 19)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (12, 22)  Token COMPARATOR encontrado: <=
+[2024-12-15 20:13:56] (12, 25)  Token IDENT encontrado: n
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (12, 26)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (12, 29)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (12, 32)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (12, 35)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (12, 37)  Token LOW_PRIORITY_OPERATOR encontrado: +
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (12, 40)  Token INT_CONSTANT encontrado: 1
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (12, 41)  Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (12, 43)  Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (13, 5)  Token IDENT encontrado: x0
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (13, 8)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (13, 12)  Token IDENT encontrado: x0
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (13, 14)  Token HIGH_PRIORITY_OPERATOR encontrado: *
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (13, 17)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (13, 18)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (14, 2)  Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (15, 7)  Token RESERVED_WORD_PRINT encontrado: print
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (15, 11)  Token IDENT encontrado: x0
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (15, 12)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (16, 1)  Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (18, 4)  Token RESERVED_WORD_DEF encontrado: def
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (18, 18)  Token IDENT encontrado: greater_then
+[2024-12-15 20:13:56] (18, 19)  Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (18, 25)  Token RESERVED_WORD_FLOAT encontrado: float
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (18, 28)  Token IDENT encontrado: a
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (18, 29)  Token COMMA encontrado: ,
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (18, 36)  Token RESERVED_WORD_FLOAT encontrado: float
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (18, 39)  Token IDENT encontrado: b
+[2024-12-15 20:13:56] (18, 40)  Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (18, 42)  Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (19, 4)  Token RESERVED_WORD_IF encontrado: if
+[2024-12-15 20:13:56] (19, 6)  Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (19, 8)  Token IDENT encontrado: a
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (19, 11)  Token COMPARATOR encontrado: >
+[2024-12-15 20:13:56] (19, 14)  Token IDENT encontrado: b
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (19, 15)  Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (19, 17)  Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (20, 8)  Token RESERVED_WORD_PRINT encontrado: print
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (20, 19)  Token STRING_CONSTANT encontrado: "é maior"
+[2024-12-15 20:13:56] (20, 20)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (21, 2)  Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (21, 8)  Token RESERVED_WORD_ELSE encontrado: else
+[2024-12-15 20:13:56] (21, 10)  Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (22, 8)  Token RESERVED_WORD_PRINT encontrado: print
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (22, 28)  Token STRING_CONSTANT encontrado: "é menor ou igual"
+[2024-12-15 20:13:56] (22, 29)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (23, 2)  Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (24, 1)  Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (26, 4)  Token RESERVED_WORD_DEF encontrado: def
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (26, 17)  Token IDENT encontrado: bubble_sort
+[2024-12-15 20:13:56] (26, 18)  Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (26, 22)  Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (26, 29)  Token IDENT encontrado: array
+[2024-12-15 20:13:56] (26, 30)  Token COMMA encontrado: ,
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (26, 35)  Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (26, 41)  Token IDENT encontrado: size
+[2024-12-15 20:13:56] (26, 42)  Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (26, 44)  Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (27, 5)  Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (27, 8)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (27, 9)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (28, 5)  Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (28, 8)  Token IDENT encontrado: j
+[2024-12-15 20:13:56] (28, 9)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (29, 5)  Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (29, 11)  Token IDENT encontrado: temp
+[2024-12-15 20:13:56] (29, 12)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (31, 5)  Token RESERVED_WORD_FOR encontrado: for
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (31, 7)  Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (31, 9)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (31, 12)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (31, 15)  Token INT_CONSTANT encontrado: 0
+[2024-12-15 20:13:56] (31, 16)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (31, 19)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (31, 22)  Token COMPARATOR encontrado: <
+[2024-12-15 20:13:56] (31, 25)  Token IDENT encontrado: n
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (31, 27)  Token LOW_PRIORITY_OPERATOR encontrado: -
+[2024-12-15 20:13:56] (31, 30)  Token INT_CONSTANT encontrado: 1
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (31, 31)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (31, 34)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (31, 37)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (31, 40)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (31, 42)  Token LOW_PRIORITY_OPERATOR encontrado: +
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (31, 45)  Token INT_CONSTANT encontrado: 1
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (31, 46)  Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (31, 48)  Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (32, 6)  Token RESERVED_WORD_FOR encontrado: for
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (32, 8)  Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (32, 10)  Token IDENT encontrado: j
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (32, 13)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (32, 16)  Token INT_CONSTANT encontrado: 0
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (32, 17)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (32, 20)  Token IDENT encontrado: j
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (32, 23)  Token COMPARATOR encontrado: <
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (32, 26)  Token IDENT encontrado: n
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (32, 28)  Token LOW_PRIORITY_OPERATOR encontrado: -
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (32, 31)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (32, 33)  Token LOW_PRIORITY_OPERATOR encontrado: -
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (32, 36)  Token INT_CONSTANT encontrado: 1
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (32, 37)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (32, 40)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (32, 43)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (32, 46)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (32, 48)  Token LOW_PRIORITY_OPERATOR encontrado: +
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (32, 51)  Token INT_CONSTANT encontrado: 1
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (32, 52)  Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (32, 54)  Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (33, 6)  Token RESERVED_WORD_IF encontrado: if
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (33, 8)  Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (33, 14)  Token IDENT encontrado: array
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (33, 15)  Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 20:13:56] (33, 17)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (33, 18)  Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 20:13:56] (33, 21)  Token COMPARATOR encontrado: >
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (33, 28)  Token IDENT encontrado: array
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (33, 29)  Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (33, 31)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (33, 32)  Token LOW_PRIORITY_OPERATOR encontrado: +
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (33, 34)  Token INT_CONSTANT encontrado: 1
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (33, 35)  Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (33, 36)  Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (33, 38)  Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (34, 9)  Token IDENT encontrado: temp
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (34, 12)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (34, 19)  Token IDENT encontrado: array
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (34, 20)  Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (34, 22)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (34, 23)  Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (34, 24)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (35, 10)  Token IDENT encontrado: array
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (35, 11)  Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (35, 13)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (35, 14)  Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (35, 17)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (35, 24)  Token IDENT encontrado: array
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (35, 25)  Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (35, 27)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (35, 28)  Token LOW_PRIORITY_OPERATOR encontrado: +
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (35, 30)  Token INT_CONSTANT encontrado: 1
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (35, 31)  Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (35, 32)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (36, 10)  Token IDENT encontrado: array
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (36, 11)  Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (36, 13)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (36, 14)  Token LOW_PRIORITY_OPERATOR encontrado: +
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (36, 16)  Token INT_CONSTANT encontrado: 1
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (36, 17)  Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (36, 20)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (36, 26)  Token IDENT encontrado: temp
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (36, 27)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (37, 4)  Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (38, 3)  Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (39, 2)  Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (41, 5)  Token RESERVED_WORD_FOR encontrado: for
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (41, 7)  Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (41, 9)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (41, 12)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (41, 15)  Token INT_CONSTANT encontrado: 0
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (41, 16)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (41, 19)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (41, 22)  Token COMPARATOR encontrado: <
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (41, 25)  Token IDENT encontrado: n
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (41, 27)  Token LOW_PRIORITY_OPERATOR encontrado: -
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (41, 30)  Token INT_CONSTANT encontrado: 1
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (41, 31)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (41, 34)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (41, 37)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (41, 40)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (41, 42)  Token LOW_PRIORITY_OPERATOR encontrado: +
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (41, 45)  Token INT_CONSTANT encontrado: 1
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (41, 46)  Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (41, 48)  Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (42, 8)  Token RESERVED_WORD_PRINT encontrado: print
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (42, 15)  Token IDENT encontrado: array
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (42, 16)  Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (42, 18)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (42, 19)  Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (42, 20)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (43, 2)  Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (44, 1)  Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (46, 4)  Token RESERVED_WORD_DEF encontrado: def
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (46, 19)  Token IDENT encontrado: concat_string
+[2024-12-15 20:13:56] (46, 20)  Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (46, 27)  Token RESERVED_WORD_STRING encontrado: string
+[2024-12-15 20:13:56] (46, 30)  Token IDENT encontrado: x
+[2024-12-15 20:13:56] (46, 31)  Token COMMA encontrado: ,
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (46, 36)  Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (46, 44)  Token IDENT encontrado: size_x
+[2024-12-15 20:13:56] (46, 45)  Token COMMA encontrado: ,
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (46, 53)  Token RESERVED_WORD_STRING encontrado: string
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (46, 56)  Token IDENT encontrado: y
+[2024-12-15 20:13:56] (46, 57)  Token COMMA encontrado: ,
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (46, 62)  Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (46, 70)  Token IDENT encontrado: size_y
+[2024-12-15 20:13:56] (46, 71)  Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (46, 73)  Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (47, 8)  Token RESERVED_WORD_STRING encontrado: string
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (47, 23)  Token IDENT encontrado: result_concat
+[2024-12-15 20:13:56] (47, 24)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (48, 15)  Token IDENT encontrado: result_concat
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (48, 18)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (48, 23)  Token RESERVED_WORD_NEW encontrado: new
+[2024-12-15 20:13:56] (48, 31)  Token RESERVED_WORD_STRING encontrado: string
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (48, 32)  Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (48, 39)  Token IDENT encontrado: size_x
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (48, 40)  Token LOW_PRIORITY_OPERATOR encontrado: +
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (48, 47)  Token IDENT encontrado: size_y
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (48, 48)  Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (48, 49)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (49, 5)  Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (49, 8)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (49, 9)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (50, 5)  Token RESERVED_WORD_FOR encontrado: for
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (50, 7)  Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (50, 9)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (50, 12)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (50, 15)  Token INT_CONSTANT encontrado: 0
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (50, 16)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (50, 19)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (50, 22)  Token COMPARATOR encontrado: <
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (50, 30)  Token IDENT encontrado: size_x
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (50, 31)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (50, 34)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (50, 37)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (50, 40)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (50, 42)  Token LOW_PRIORITY_OPERATOR encontrado: +
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (50, 45)  Token INT_CONSTANT encontrado: 1
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (50, 46)  Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (50, 48)  Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (51, 16)  Token IDENT encontrado: result_concat
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (51, 17)  Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (51, 19)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (51, 20)  Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (51, 23)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (51, 26)  Token IDENT encontrado: x
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (51, 27)  Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (51, 29)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (51, 30)  Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (51, 31)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (52, 2)  Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (53, 5)  Token RESERVED_WORD_FOR encontrado: for
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (53, 7)  Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (53, 9)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (53, 12)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (53, 20)  Token IDENT encontrado: size_x
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (53, 21)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (53, 24)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (53, 27)  Token COMPARATOR encontrado: <
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (53, 35)  Token IDENT encontrado: size_x
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (53, 36)  Token LOW_PRIORITY_OPERATOR encontrado: +
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (53, 43)  Token IDENT encontrado: size_y
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (53, 44)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (53, 47)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (53, 50)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (53, 53)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (53, 55)  Token LOW_PRIORITY_OPERATOR encontrado: +
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (53, 58)  Token INT_CONSTANT encontrado: 1
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (53, 59)  Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (53, 61)  Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (54, 16)  Token IDENT encontrado: result_concat
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (54, 17)  Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (54, 19)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (54, 20)  Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (54, 23)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (54, 26)  Token IDENT encontrado: y
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (54, 27)  Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (54, 29)  Token IDENT encontrado: i
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (54, 30)  Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (54, 31)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (55, 2)  Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (57, 7)  Token RESERVED_WORD_PRINT encontrado: print
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (57, 22)  Token IDENT encontrado: result_concat
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (57, 23)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (58, 1)  Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (60, 4)  Token RESERVED_WORD_DEF encontrado: def
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (60, 10)  Token IDENT encontrado: main
+[2024-12-15 20:13:56] (60, 11)  Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (60, 12)  Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (60, 14)  Token OPEN_CURLY_BRACE encontrado: {
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (61, 5)  Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (61, 12)  Token IDENT encontrado: array
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (61, 13)  Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (61, 15)  Token INT_CONSTANT encontrado: 5
+[2024-12-15 20:13:56] (61, 16)  Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (61, 17)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (62, 5)  Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (62, 11)  Token IDENT encontrado: size
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (62, 12)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (63, 6)  Token IDENT encontrado: size
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (63, 9)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (63, 12)  Token INT_CONSTANT encontrado: 5
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (63, 13)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (64, 7)  Token IDENT encontrado: array
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (64, 10)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (64, 15)  Token RESERVED_WORD_NEW encontrado: new
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (64, 20)  Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (64, 21)  Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (64, 23)  Token INT_CONSTANT encontrado: 5
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (64, 24)  Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (64, 25)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (66, 7)  Token IDENT encontrado: array
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (66, 8)  Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (66, 10)  Token INT_CONSTANT encontrado: 0
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (66, 11)  Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (66, 14)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (66, 18)  Token INT_CONSTANT encontrado: 15
+[2024-12-15 20:13:56] (66, 19)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (67, 7)  Token IDENT encontrado: array
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (67, 8)  Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (67, 10)  Token INT_CONSTANT encontrado: 1
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (67, 11)  Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (67, 14)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (67, 17)  Token INT_CONSTANT encontrado: 9
+[2024-12-15 20:13:56] (67, 18)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (68, 7)  Token IDENT encontrado: array
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (68, 8)  Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (68, 10)  Token INT_CONSTANT encontrado: 2
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (68, 11)  Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (68, 14)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (68, 18)  Token INT_CONSTANT encontrado: 23
+[2024-12-15 20:13:56] (68, 19)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (69, 7)  Token IDENT encontrado: array
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (69, 8)  Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (69, 10)  Token INT_CONSTANT encontrado: 3
+[2024-12-15 20:13:56] (69, 11)  Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (69, 14)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (69, 18)  Token INT_CONSTANT encontrado: 12
+[2024-12-15 20:13:56] (69, 19)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (70, 7)  Token IDENT encontrado: array
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (70, 8)  Token OPEN_SQUARE_BRACKET encontrado: [
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (70, 10)  Token INT_CONSTANT encontrado: 4
+[2024-12-15 20:13:56] (70, 11)  Token CLOSE_SQUARE_BRACKET encontrado: ]
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (70, 14)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (70, 17)  Token INT_CONSTANT encontrado: 0
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (70, 18)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (72, 8)  Token RESERVED_WORD_STRING encontrado: string
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (72, 16)  Token IDENT encontrado: result
+[2024-12-15 20:13:56] (72, 17)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (73, 8)  Token IDENT encontrado: result
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (73, 11)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (73, 17)  Token RESERVED_WORD_CALL encontrado: call
+[2024-12-15 20:13:56] (73, 30)  Token IDENT encontrado: bubble_sort
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (73, 31)  Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (73, 37)  Token IDENT encontrado: array
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (73, 38)  Token COMMA encontrado: ,
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (73, 44)  Token IDENT encontrado: size
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (73, 45)  Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (73, 46)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (75, 5)  Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (75, 8)  Token IDENT encontrado: a
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (75, 9)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (76, 5)  Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (76, 8)  Token IDENT encontrado: b
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (76, 9)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (77, 3)  Token IDENT encontrado: a
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (77, 6)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (77, 10)  Token INT_CONSTANT encontrado: 25
+[2024-12-15 20:13:56] (77, 11)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (78, 3)  Token IDENT encontrado: b
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (78, 6)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (78, 10)  Token INT_CONSTANT encontrado: 23
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (78, 11)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (79, 8)  Token IDENT encontrado: result
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (79, 11)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (79, 17)  Token RESERVED_WORD_CALL encontrado: call
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (79, 31)  Token IDENT encontrado: greater_then
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (79, 32)  Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (79, 34)  Token IDENT encontrado: a
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (79, 35)  Token COMMA encontrado: ,
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (79, 38)  Token IDENT encontrado: b
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (79, 39)  Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (79, 40)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (81, 5)  Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (81, 8)  Token IDENT encontrado: n
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (81, 9)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (82, 3)  Token IDENT encontrado: n
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (82, 6)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (82, 10)  Token INT_CONSTANT encontrado: 10
+[2024-12-15 20:13:56] (82, 11)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (83, 8)  Token IDENT encontrado: result
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (83, 11)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (83, 17)  Token RESERVED_WORD_CALL encontrado: call
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (83, 28)  Token IDENT encontrado: factorial
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (83, 29)  Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (83, 31)  Token IDENT encontrado: n
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (83, 32)  Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (83, 33)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (85, 7)  Token RESERVED_WORD_FLOAT encontrado: float
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (85, 11)  Token IDENT encontrado: s0
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (85, 12)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (86, 7)  Token RESERVED_WORD_FLOAT encontrado: float
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (86, 11)  Token IDENT encontrado: v0
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (86, 12)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (87, 7)  Token RESERVED_WORD_FLOAT encontrado: float
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (87, 13)  Token IDENT encontrado: time
+[2024-12-15 20:13:56] (87, 14)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (88, 7)  Token RESERVED_WORD_FLOAT encontrado: float
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (88, 10)  Token IDENT encontrado: a
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (88, 11)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (90, 4)  Token IDENT encontrado: s0
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (90, 7)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (90, 13)  Token FLOAT_CONSTANT encontrado: 15.5
+[2024-12-15 20:13:56] (90, 14)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (91, 4)  Token IDENT encontrado: v0
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (91, 7)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (91, 13)  Token FLOAT_CONSTANT encontrado: 80.3
+[2024-12-15 20:13:56] (91, 14)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (92, 6)  Token IDENT encontrado: time
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (92, 9)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (92, 13)  Token INT_CONSTANT encontrado: 50
+[2024-12-15 20:13:56] (92, 14)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (93, 3)  Token IDENT encontrado: a
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (93, 6)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (93, 12)  Token FLOAT_CONSTANT encontrado: 6.35
+[2024-12-15 20:13:56] (93, 13)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (94, 8)  Token IDENT encontrado: result
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (94, 11)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (94, 17)  Token RESERVED_WORD_CALL encontrado: call
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (94, 23)  Token IDENT encontrado: mruv
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (94, 24)  Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (94, 27)  Token IDENT encontrado: s0
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (94, 28)  Token COMMA encontrado: ,
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (94, 32)  Token IDENT encontrado: v0
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (94, 33)  Token COMMA encontrado: ,
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (94, 39)  Token IDENT encontrado: time
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (94, 40)  Token COMMA encontrado: ,
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (94, 43)  Token IDENT encontrado: a
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (94, 44)  Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (94, 45)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (96, 8)  Token RESERVED_WORD_STRING encontrado: string
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (96, 18)  Token IDENT encontrado: string_x
+[2024-12-15 20:13:56] (96, 19)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (97, 8)  Token RESERVED_WORD_STRING encontrado: string
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (97, 18)  Token IDENT encontrado: string_y
+[2024-12-15 20:13:56] (97, 19)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (98, 5)  Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (98, 13)  Token IDENT encontrado: size_x
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (98, 14)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (99, 5)  Token RESERVED_WORD_INT encontrado: int
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (99, 13)  Token IDENT encontrado: size_y
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (99, 14)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (100, 3)  Token IDENT encontrado: x
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (100, 6)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (100, 15)  Token STRING_CONSTANT encontrado: "Arroz "
+[2024-12-15 20:13:56] (100, 16)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (101, 8)  Token IDENT encontrado: size_x
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (101, 11)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (101, 14)  Token INT_CONSTANT encontrado: 6
+[2024-12-15 20:13:56] (101, 15)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (102, 3)  Token IDENT encontrado: y
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (102, 6)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (102, 19)  Token STRING_CONSTANT encontrado: "com Frango"
+[2024-12-15 20:13:56] (102, 20)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (103, 8)  Token IDENT encontrado: size_y
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (103, 11)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (103, 15)  Token INT_CONSTANT encontrado: 10
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (103, 16)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (104, 8)  Token IDENT encontrado: result
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (104, 11)  Token ASSIGNMENT encontrado: =
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (104, 17)  Token RESERVED_WORD_CALL encontrado: call
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (104, 32)  Token IDENT encontrado: concat_string
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (104, 33)  Token OPEN_PARENTHESIS encontrado: (
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (104, 42)  Token IDENT encontrado: string_x
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (104, 43)  Token COMMA encontrado: ,
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (104, 51)  Token IDENT encontrado: size_x
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (104, 52)  Token COMMA encontrado: ,
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (104, 62)  Token IDENT encontrado: string_y
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (104, 63)  Token COMMA encontrado: ,
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (104, 71)  Token IDENT encontrado: size_y
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (104, 72)  Token CLOSE_PARENTHESIS encontrado: )
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (104, 73)  Token SEMICOLON encontrado: ;
+[2024-12-15 20:13:56] Token já está na lista.
+[2024-12-15 20:13:56] (105, 1)  Token CLOSE_CURLY_BRACE encontrado: }
+[2024-12-15 20:13:56] Token já está na lista.

@@ -1,0 +1,7 @@
+{
+    def func(int a, int b) {
+        int return = new int[10];
+        return[1] = 99999999;
+        return;
+    }
+}

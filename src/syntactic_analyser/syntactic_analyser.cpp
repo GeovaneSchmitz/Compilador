@@ -106,6 +106,10 @@ bool SyntacticAnalyser::analyse(LexicalAnalyser &lex) {
 
 void SyntacticAnalyser::initialize_table() {
 
+    /**
+     * Esta tabela foi feita com uso do https://jsmachines.sourceforge.net/machines/ll1.html.
+     */
+
     // PROGRAM
     table_[std::make_pair(NonTerminal::PROGRAM, TokenType::RESERVED_WORD_DEF)] = {Term(NonTerminal::FUNCLIST)};
     table_[std::make_pair(NonTerminal::PROGRAM, TokenType::IDENT)] = {Term(NonTerminal::STATEMENT)};
@@ -146,8 +150,7 @@ void SyntacticAnalyser::initialize_table() {
         Term(TokenType::RESERVED_WORD_FLOAT), Term(TokenType::IDENT), Term(NonTerminal::PARAMLIST_)};
     table_[std::make_pair(NonTerminal::PARAMLIST, TokenType::RESERVED_WORD_STRING)] = {
         Term(TokenType::RESERVED_WORD_STRING), Term(TokenType::IDENT), Term(NonTerminal::PARAMLIST_)};
-    table_[std::make_pair(NonTerminal::PARAMLIST, TokenType::CLOSE_PARENTHESIS)] = {
-        Term(NonTerminal::PARAMLIST_)};
+    table_[std::make_pair(NonTerminal::PARAMLIST, TokenType::CLOSE_PARENTHESIS)] = {};
 
 
     // PARAMLIST'

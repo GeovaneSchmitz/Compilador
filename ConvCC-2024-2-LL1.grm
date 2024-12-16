@@ -1,3 +1,7 @@
+#####################
+Esta gramática teve permanência em LL(1) verificada pelo script que entregamos como exercício em aula.
+#####################
+
 PROGRAM -> STATEMENT 
 PROGRAM -> FUNCLIST 
 PROGRAM -> ''
@@ -9,12 +13,12 @@ FUNCLIST' -> ''
 
 FUNCDEF -> def ident ( PARAMLIST ) { STATELIST }
 
-PARAMLIST -> PARAMLIST'
+PARAMLIST -> ''
 PARAMLIST -> int ident PARAMLIST'
-PARAMLIST -> float ident PARAMLIST' 
+PARAMLIST -> float ident PARAMLIST'
 PARAMLIST -> string ident PARAMLIST'
 
-PARAMLIST' ->  , PARAMLIST 
+PARAMLIST' -> , PARAMLIST
 PARAMLIST' -> ''
 
 STATEMENT -> VARDECL ;
@@ -98,7 +102,7 @@ TERM -> UNARYEXPR UNARYTERM
 UNARYTERM -> * UNARYEXPR UNARYTERM 
 UNARYTERM -> / UNARYEXPR UNARYTERM
 UNARYTERM -> % UNARYEXPR UNARYTERM 
-UNARYTERM ->  ''
+UNARYTERM -> ''
 
 UNARYEXPR -> FACTOR 
 UNARYEXPR -> + FACTOR 

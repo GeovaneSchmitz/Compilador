@@ -5,6 +5,7 @@
 #include "../semantic_analyser/semantic_analyser.hpp"
 #include "../log/log.hpp"
 #include <string>
+#include <iostream>
 
 using lexical_analyser::LexicalAnalyser;
 using syntactic_analyser::SyntacticAnalyser;

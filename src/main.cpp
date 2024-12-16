@@ -59,8 +59,9 @@ int main(int argc, char **argv) {
     int status = compiler.compile(source_str.c_str());
 
     if (status < 0) {
-        main_log.write("Compilação falhou!");
-        std::cout << "Compilação falhou!" << std::endl;
+        main_log.write("Compilação falhou. Encerrando.");
+        std::cout << "Compilação falhou. Encerrando." << std::endl;
+        return EXIT_FAILURE;
     }
 
     main_log.write("Compilação encerrada.");

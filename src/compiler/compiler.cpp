@@ -1,4 +1,5 @@
 #include "compiler.hpp"
+#include <stdexcept>
 
 namespace xpp_compiler {
 
@@ -15,8 +16,23 @@ namespace xpp_compiler {
         log_.write("Tabela de derivação inicializada.");
 
         log_.write("Fazendo análise sintática...");
-        this->syntactic_analyser_->analyse(*this->lexical_analyser_);
+
+        try {
+            this->syntactic_analyser_->analyse(*this->lexical_analyser_);
+        } catch (std::runtime_error& e) {
+            std::cout << e.what() << std::endl;
+            return -1;
+        }
+
         log_.write("Análise sintática concluída!");
+
+        log_.write("Lista de tokens: ");
+        std::string tk = "";
+        for (auto token : this->lexical_analyser_->token_list()) {
+            tk += "\t" + token->value() + " : " + lexical_analyser::to_string(token->type());
+            log_.write(tk);
+            tk.clear();
+        }
 
         log_.write("Tabela de símbolos:");
 
