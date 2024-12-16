@@ -1,72 +1,86 @@
 [
 {
-  "directory": "/root/Compilador",
-  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/lexical_analyser/lexical_analyser.cpp.o -c /root/Compilador/src/lexical_analyser/lexical_analyser.cpp",
-  "file": "/root/Compilador/src/lexical_analyser/lexical_analyser.cpp"
+  "directory": "/home/guilhermeaj/Compilador",
+  "command": "/usr/bin/c++  -I/home/guilhermeaj/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/lexical_analyser/lexical_analyser.cpp.o -c /home/guilhermeaj/Compilador/src/lexical_analyser/lexical_analyser.cpp",
+  "file": "/home/guilhermeaj/Compilador/src/lexical_analyser/lexical_analyser.cpp",
+  "output": "CMakeFiles/main.dir/src/lexical_analyser/lexical_analyser.cpp.o"
 },
 {
-  "directory": "/root/Compilador",
-  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/lexical_analyser/token.cpp.o -c /root/Compilador/src/lexical_analyser/token.cpp",
-  "file": "/root/Compilador/src/lexical_analyser/token.cpp"
+  "directory": "/home/guilhermeaj/Compilador",
+  "command": "/usr/bin/c++  -I/home/guilhermeaj/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/lexical_analyser/token.cpp.o -c /home/guilhermeaj/Compilador/src/lexical_analyser/token.cpp",
+  "file": "/home/guilhermeaj/Compilador/src/lexical_analyser/token.cpp",
+  "output": "CMakeFiles/main.dir/src/lexical_analyser/token.cpp.o"
 },
 {
-  "directory": "/root/Compilador",
-  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/lexical_analyser/token_property.cpp.o -c /root/Compilador/src/lexical_analyser/token_property.cpp",
-  "file": "/root/Compilador/src/lexical_analyser/token_property.cpp"
+  "directory": "/home/guilhermeaj/Compilador",
+  "command": "/usr/bin/c++  -I/home/guilhermeaj/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/lexical_analyser/token_property.cpp.o -c /home/guilhermeaj/Compilador/src/lexical_analyser/token_property.cpp",
+  "file": "/home/guilhermeaj/Compilador/src/lexical_analyser/token_property.cpp",
+  "output": "CMakeFiles/main.dir/src/lexical_analyser/token_property.cpp.o"
 },
 {
-  "directory": "/root/Compilador",
-  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/lexical_analyser/token_type.cpp.o -c /root/Compilador/src/lexical_analyser/token_type.cpp",
-  "file": "/root/Compilador/src/lexical_analyser/token_type.cpp"
+  "directory": "/home/guilhermeaj/Compilador",
+  "command": "/usr/bin/c++  -I/home/guilhermeaj/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/lexical_analyser/token_type.cpp.o -c /home/guilhermeaj/Compilador/src/lexical_analyser/token_type.cpp",
+  "file": "/home/guilhermeaj/Compilador/src/lexical_analyser/token_type.cpp",
+  "output": "CMakeFiles/main.dir/src/lexical_analyser/token_type.cpp.o"
 },
 {
-  "directory": "/root/Compilador",
-  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/main.cpp.o -c /root/Compilador/src/main.cpp",
-  "file": "/root/Compilador/src/main.cpp"
+  "directory": "/home/guilhermeaj/Compilador",
+  "command": "/usr/bin/c++  -I/home/guilhermeaj/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/main.cpp.o -c /home/guilhermeaj/Compilador/src/main.cpp",
+  "file": "/home/guilhermeaj/Compilador/src/main.cpp",
+  "output": "CMakeFiles/main.dir/src/main.cpp.o"
 },
 {
-  "directory": "/root/Compilador",
-  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/semantic_analyser/scope.cpp.o -c /root/Compilador/src/semantic_analyser/scope.cpp",
-  "file": "/root/Compilador/src/semantic_analyser/scope.cpp"
+  "directory": "/home/guilhermeaj/Compilador",
+  "command": "/usr/bin/c++  -I/home/guilhermeaj/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/semantic_analyser/scope.cpp.o -c /home/guilhermeaj/Compilador/src/semantic_analyser/scope.cpp",
+  "file": "/home/guilhermeaj/Compilador/src/semantic_analyser/scope.cpp",
+  "output": "CMakeFiles/main.dir/src/semantic_analyser/scope.cpp.o"
 },
 {
-  "directory": "/root/Compilador",
-  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/log/log.cpp.o -c /root/Compilador/src/log/log.cpp",
-  "file": "/root/Compilador/src/log/log.cpp"
+  "directory": "/home/guilhermeaj/Compilador",
+  "command": "/usr/bin/c++  -I/home/guilhermeaj/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/log/log.cpp.o -c /home/guilhermeaj/Compilador/src/log/log.cpp",
+  "file": "/home/guilhermeaj/Compilador/src/log/log.cpp",
+  "output": "CMakeFiles/main.dir/src/log/log.cpp.o"
 },
 {
-  "directory": "/root/Compilador",
-  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/log/log_thread_safe.cpp.o -c /root/Compilador/src/log/log_thread_safe.cpp",
-  "file": "/root/Compilador/src/log/log_thread_safe.cpp"
+  "directory": "/home/guilhermeaj/Compilador",
+  "command": "/usr/bin/c++  -I/home/guilhermeaj/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/log/log_thread_safe.cpp.o -c /home/guilhermeaj/Compilador/src/log/log_thread_safe.cpp",
+  "file": "/home/guilhermeaj/Compilador/src/log/log_thread_safe.cpp",
+  "output": "CMakeFiles/main.dir/src/log/log_thread_safe.cpp.o"
 },
 {
-  "directory": "/root/Compilador",
-  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/syntactic_analyser/syntactic_analyser.cpp.o -c /root/Compilador/src/syntactic_analyser/syntactic_analyser.cpp",
-  "file": "/root/Compilador/src/syntactic_analyser/syntactic_analyser.cpp"
+  "directory": "/home/guilhermeaj/Compilador",
+  "command": "/usr/bin/c++  -I/home/guilhermeaj/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/syntactic_analyser/syntactic_analyser.cpp.o -c /home/guilhermeaj/Compilador/src/syntactic_analyser/syntactic_analyser.cpp",
+  "file": "/home/guilhermeaj/Compilador/src/syntactic_analyser/syntactic_analyser.cpp",
+  "output": "CMakeFiles/main.dir/src/syntactic_analyser/syntactic_analyser.cpp.o"
 },
 {
-  "directory": "/root/Compilador",
-  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/syntactic_analyser/term.cpp.o -c /root/Compilador/src/syntactic_analyser/term.cpp",
-  "file": "/root/Compilador/src/syntactic_analyser/term.cpp"
+  "directory": "/home/guilhermeaj/Compilador",
+  "command": "/usr/bin/c++  -I/home/guilhermeaj/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/syntactic_analyser/term.cpp.o -c /home/guilhermeaj/Compilador/src/syntactic_analyser/term.cpp",
+  "file": "/home/guilhermeaj/Compilador/src/syntactic_analyser/term.cpp",
+  "output": "CMakeFiles/main.dir/src/syntactic_analyser/term.cpp.o"
 },
 {
-  "directory": "/root/Compilador",
-  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/syntactic_analyser/non_terminal.cpp.o -c /root/Compilador/src/syntactic_analyser/non_terminal.cpp",
-  "file": "/root/Compilador/src/syntactic_analyser/non_terminal.cpp"
+  "directory": "/home/guilhermeaj/Compilador",
+  "command": "/usr/bin/c++  -I/home/guilhermeaj/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/syntactic_analyser/non_terminal.cpp.o -c /home/guilhermeaj/Compilador/src/syntactic_analyser/non_terminal.cpp",
+  "file": "/home/guilhermeaj/Compilador/src/syntactic_analyser/non_terminal.cpp",
+  "output": "CMakeFiles/main.dir/src/syntactic_analyser/non_terminal.cpp.o"
 },
 {
-  "directory": "/root/Compilador",
-  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/binary_tree/binary_tree.cpp.o -c /root/Compilador/src/binary_tree/binary_tree.cpp",
-  "file": "/root/Compilador/src/binary_tree/binary_tree.cpp"
+  "directory": "/home/guilhermeaj/Compilador",
+  "command": "/usr/bin/c++  -I/home/guilhermeaj/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/binary_tree/binary_tree.cpp.o -c /home/guilhermeaj/Compilador/src/binary_tree/binary_tree.cpp",
+  "file": "/home/guilhermeaj/Compilador/src/binary_tree/binary_tree.cpp",
+  "output": "CMakeFiles/main.dir/src/binary_tree/binary_tree.cpp.o"
 },
 {
-  "directory": "/root/Compilador",
-  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/semantic_analyser/semantic_analyser.cpp.o -c /root/Compilador/src/semantic_analyser/semantic_analyser.cpp",
-  "file": "/root/Compilador/src/semantic_analyser/semantic_analyser.cpp"
+  "directory": "/home/guilhermeaj/Compilador",
+  "command": "/usr/bin/c++  -I/home/guilhermeaj/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/semantic_analyser/semantic_analyser.cpp.o -c /home/guilhermeaj/Compilador/src/semantic_analyser/semantic_analyser.cpp",
+  "file": "/home/guilhermeaj/Compilador/src/semantic_analyser/semantic_analyser.cpp",
+  "output": "CMakeFiles/main.dir/src/semantic_analyser/semantic_analyser.cpp.o"
 },
 {
-  "directory": "/root/Compilador",
-  "command": "/usr/bin/c++  -I/root/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/compiler/compiler.cpp.o -c /root/Compilador/src/compiler/compiler.cpp",
-  "file": "/root/Compilador/src/compiler/compiler.cpp"
+  "directory": "/home/guilhermeaj/Compilador",
+  "command": "/usr/bin/c++  -I/home/guilhermeaj/Compilador/src  -Werror -Wall -Wextra -pedantic -pedantic-errors -Wconversion -Wsign-conversion -fsized-deallocation -g -std=gnu++23 -o CMakeFiles/main.dir/src/compiler/compiler.cpp.o -c /home/guilhermeaj/Compilador/src/compiler/compiler.cpp",
+  "file": "/home/guilhermeaj/Compilador/src/compiler/compiler.cpp",
+  "output": "CMakeFiles/main.dir/src/compiler/compiler.cpp.o"
 }
 ]

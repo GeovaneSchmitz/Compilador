@@ -42,4 +42,7 @@ Os arquivos prontos para testes estão na pasta xpp, segue um exemplo de comando
 ## Resultados
 
 O log de cada parte do compilador pode ser vista na pasta /log.
-Já o código intermediário do arquivo xpp enviado está em ...
+
+### Observação
+
+As declarações da gramática LL1, SDDs e SDTs estão expressas na pasta /docs.

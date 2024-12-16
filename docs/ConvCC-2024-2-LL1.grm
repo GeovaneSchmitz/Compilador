@@ -1,5 +1,5 @@
 #####################
-Esta gramática teve permanência em LL(1) verificada pelo script que entregamos como exercício em aula.
+Esta gramática teve permanência em LL(1) verificada pelo script que entregamos como exercício em aula (grammar_ll1.py).
 #####################
 
 PROGRAM -> STATEMENT 
