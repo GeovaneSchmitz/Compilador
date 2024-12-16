@@ -1,5 +1,13 @@
 # Compilador
 
+## Integrantes
+
+GRUPO: <br/>
+ Geovane Schmitz <br/>
+ Gian Carlo Ferrari <br/>
+ Guilherme Adenilson <br/>
+ Gustavo Konescki <br/>
+
 ## Requirementos
 
 Para o presente projeto, é necessário a instalação do cmake e clang
