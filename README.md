@@ -48,18 +48,18 @@ Então faça:
 
 Para executar o compilador, deve-se fazer o seguinte:
 ```bash
-    ./bin/compilador filepath/file.xpp
+    ./bin/main filepath/file.xpp
 ```
 
 Os arquivos prontos para testes estão na pasta xpp, segue alguns exemplos de arquivos com 100 ou mais linhas:
 ```bash
-   ./bin/compilador xpp/arquivo2.xpp
+   ./bin/main xpp/arquivo2.xpp
 ```
 ```bash
-   ./bin/compilador xpp/arquivo3.xpp
+   ./bin/main xpp/arquivo3.xpp
 ```
 ```bash
-   ./bin/compilador xpp/funcoes.xpp
+   ./bin/main xpp/funcoes.xpp
 ```
 
 ## Resultados
